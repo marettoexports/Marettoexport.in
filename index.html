@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maretto Export Import Company | Global Trading Excellence</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #122040;
+    --gold: #c9972c;
+    --gold-light: #e8b84b;
+    --cream: #f5f0e8;
+    --white: #ffffff;
+    --green: #1a5c3a;
+    --green-light: #2d8a57;
+    --green-pale: #e8f5ee;
+    --ceramic: #8b6f5e;
+    --ceramic-pale: #f5ede8;
+    --text: #1a1a2e;
+    --muted: #6b7280;
+    --border: #e5e0d5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(10,22,40,0.97);
+    backdrop-filter: blur(12px);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+    border-bottom: 1px solid rgba(201,151,44,0.2);
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .nav-logo .monogram {
+    width: 42px; height: 42px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900; font-size: 1.1rem;
+    color: var(--navy);
+  }
+  .nav-logo .brand { color: var(--white); }
+  .nav-logo .brand span { display: block; font-size: 0.65rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold); color: var(--navy);
+    padding: 8px 20px; border-radius: 6px;
+    font-weight: 600; font-size: 0.85rem; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 60%, #1a2d50 100%);
+    display: flex; align-items: center;
+    padding: 120px 2rem 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(201,151,44,0.08) 0%, transparent 60%);
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; max-width: 1200px; margin: 0 auto; width: 100%;
+    align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201,151,44,0.15); border: 1px solid rgba(201,151,44,0.3);
+    padding: 6px 16px; border-radius: 100px;
+    color: var(--gold); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--white); line-height: 1.1; margin-bottom: 1.5rem;
+  }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+  .hero p { color: rgba(255,255,255,0.65); font-size: 1.05rem; line-height: 1.7; margin-bottom: 2rem; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    padding: 14px 28px; border-radius: 8px;
+    font-weight: 700; text-decoration: none; font-size: 0.95rem;
+    transition: transform 0.2s, background 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,0.3); color: var(--white);
+    padding: 14px 28px; border-radius: 8px;
+    font-weight: 500; text-decoration: none; font-size: 0.95rem;
+    transition: border-color 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px; padding: 1.5rem;
+    text-align: center;
+  }
+  .stat-card .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; color: var(--gold); font-weight: 700;
+  }
+  .stat-card .lbl { color: rgba(255,255,255,0.55); font-size: 0.8rem; margin-top: 4px; }
+
+  .pill-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
+  .pill {
+    background: rgba(201,151,44,0.1); border: 1px solid rgba(201,151,44,0.25);
+    color: var(--gold); padding: 4px 12px; border-radius: 100px;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em;
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--navy);
+    padding: 1.5rem 2rem;
+    display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap;
+    border-bottom: 2px solid rgba(201,151,44,0.3);
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 10px;
+    color: rgba(255,255,255,0.7); font-size: 0.85rem;
+  }
+  .trust-item .icon { font-size: 1.2rem; }
+  .trust-item strong { color: var(--gold); }
+
+  /* ── SECTIONS COMMON ── */
+  section { padding: 90px 2rem; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-label::before {
+    content: ''; display: block;
+    width: 28px; height: 2px; background: var(--gold);
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    line-height: 1.2; margin-bottom: 1rem;
+  }
+  .lead { color: var(--muted); font-size: 1.05rem; line-height: 1.7; max-width: 600px; }
+
+  /* ── ABOUT ── */
+  #about { background: var(--white); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: start;
+  }
+  .vision-box {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    border-radius: 16px; padding: 2.5rem;
+    border: 1px solid rgba(201,151,44,0.2);
+    margin-top: 2rem;
+  }
+  .vision-box .quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; color: var(--cream); line-height: 1.6;
+    border-left: 3px solid var(--gold); padding-left: 1.2rem;
+    font-style: italic; margin-bottom: 1rem;
+  }
+  .vision-box .attr { color: var(--gold); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; }
+
+  .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+  .feat-card {
+    border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.2rem; background: var(--cream);
+  }
+  .feat-card .icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .feat-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .feat-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+
+  /* ── PRODUCTS ── */
+  #products { background: var(--cream); }
+  .products-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .product-card {
+    background: var(--white); border-radius: 14px;
+    border: 1px solid var(--border);
+    padding: 1.75rem; transition: transform 0.25s, box-shadow 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .product-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 4px;
+  }
+  .product-card.pp::before { background: linear-gradient(90deg,#4f46e5,#818cf8); }
+  .product-card.hdpe::before { background: linear-gradient(90deg,#0ea5e9,#38bdf8); }
+  .product-card.lldpe::before { background: linear-gradient(90deg,#f59e0b,#fcd34d); }
+  .product-card.ldpe::before { background: linear-gradient(90deg,#ec4899,#f9a8d4); }
+  .product-card.abs::before { background: linear-gradient(90deg,#ef4444,#fca5a5); }
+  .product-card.mb::before { background: linear-gradient(90deg,#8b5cf6,#c4b5fd); }
+  .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.1); }
+  .product-card .tag {
+    display: inline-block;
+    background: var(--cream); color: var(--muted);
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
+    padding: 3px 10px; border-radius: 4px; margin-bottom: 0.75rem;
+    text-transform: uppercase;
+  }
+  .product-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .product-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin-bottom: 1rem; }
+  .product-card .grades {
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .grade {
+    background: var(--cream); border: 1px solid var(--border);
+    font-size: 0.72rem; padding: 3px 10px; border-radius: 100px;
+    color: var(--text); font-family: 'DM Mono', monospace; font-weight: 500;
+  }
+
+  /* ── ORGANIC FERTILIZER ── */
+  #organic {
+    background: linear-gradient(160deg, #0f2d1a 0%, #1a5c3a 50%, #0f2d1a 100%);
+    position: relative; overflow: hidden;
+  }
+  #organic::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 60%, rgba(45,138,87,0.3) 0%, transparent 60%);
+  }
+  .organic-inner { position: relative; z-index: 1; }
+  .organic-grid {
+    display: grid; grid-template-columns: 1.1fr 1fr;
+    gap: 4rem; align-items: center; margin-top: 3rem;
+  }
+  #organic .section-label { color: #5fd68c; }
+  #organic .section-label::before { background: #5fd68c; }
+  #organic h2 { color: var(--white); }
+  #organic .lead { color: rgba(255,255,255,0.65); }
+  .organic-bag {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(95,214,140,0.2);
+    border-radius: 20px; padding: 2.5rem;
+    text-align: center;
+    position: relative;
+  }
+  .bag-visual {
+    width: 160px; height: 210px; margin: 0 auto 1.5rem;
+    background: linear-gradient(160deg, #2d8a57, #1a5c3a);
+    border-radius: 12px 12px 40px 40px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    border: 2px solid rgba(95,214,140,0.3);
+  }
+  .bag-visual .bag-label {
+    background: var(--white); color: var(--green);
+    padding: 6px 16px; border-radius: 4px;
+    font-weight: 800; font-size: 0.9rem; margin-bottom: 8px;
+  }
+  .bag-visual .bag-weight {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem; color: var(--white); font-weight: 900;
+    line-height: 1;
+  }
+  .bag-visual .bag-unit { color: rgba(255,255,255,0.7); font-size: 0.85rem; }
+  .bag-visual .bag-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .bag-caption { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+
+  .organic-benefits {
+    display: grid; gap: 1rem;
+  }
+  .benefit-row {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(95,214,140,0.15);
+    border-radius: 10px; padding: 1rem 1.2rem;
+  }
+  .benefit-row .bi { font-size: 1.5rem; flex-shrink: 0; }
+  .benefit-row h4 { color: #5fd68c; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .benefit-row p { color: rgba(255,255,255,0.6); font-size: 0.82rem; line-height: 1.5; }
+
+  /* ── CERAMICS ── */
+  #ceramics { background: var(--cream); }
+  .ceramics-card {
+    background: var(--white); border-radius: 20px;
+    border: 1px solid var(--border); overflow: hidden;
+    max-width: 900px; margin: 3rem auto 0;
+  }
+  .ceramics-header {
+    background: linear-gradient(135deg, #3d2b1f 0%, var(--ceramic) 100%);
+    padding: 2.5rem 3rem;
+    display: flex; align-items: center; gap: 2rem;
+  }
+  .ceramic-icon-big { font-size: 3.5rem; }
+  .ceramics-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; color: var(--white); margin-bottom: 0.25rem;
+  }
+  .ceramics-header p { color: rgba(255,255,255,0.7); }
+  .coming-soon-badge {
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+    color: var(--white); padding: 4px 14px; border-radius: 100px;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; display: inline-block; margin-top: 0.75rem;
+  }
+  .ceramics-body { padding: 2.5rem 3rem; }
+  .ceramics-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+  .ceramic-item {
+    text-align: center; padding: 1.5rem 1rem;
+    border: 1px solid var(--border); border-radius: 12px;
+    background: var(--ceramic-pale);
+  }
+  .ceramic-item .ci { font-size: 2rem; margin-bottom: 0.75rem; }
+  .ceramic-item h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.35rem; }
+  .ceramic-item p { font-size: 0.78rem; color: var(--muted); }
+  .ceramics-note {
+    margin-top: 2rem; padding: 1rem 1.5rem;
+    background: rgba(139,111,94,0.08); border-left: 3px solid var(--ceramic);
+    border-radius: 4px; font-size: 0.88rem; color: var(--muted);
+  }
+
+  /* ── VENDOR REGISTRATION ── */
+  #vendor {
+    background: var(--navy);
+    position: relative; overflow: hidden;
+  }
+  #vendor::before {
+    content: '';
+    position: absolute; top: -50%; right: -20%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201,151,44,0.06) 0%, transparent 70%);
+  }
+  #vendor .section-label { color: var(--gold); }
+  #vendor h2 { color: var(--white); }
+  #vendor .lead { color: rgba(255,255,255,0.6); }
+
+  .vendor-layout {
+    display: grid; grid-template-columns: 1fr 1.4fr;
+    gap: 4rem; align-items: start; margin-top: 3rem;
+  }
+  .vendor-perks { display: grid; gap: 1rem; }
+  .perk-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(201,151,44,0.12);
+    border-radius: 10px; padding: 1.2rem 1.4rem;
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .perk-card .pi { font-size: 1.5rem; flex-shrink: 0; }
+  .perk-card h4 { color: var(--gold); font-size: 0.9rem; font-weight: 700; margin-bottom: 0.2rem; }
+  .perk-card p { color: rgba(255,255,255,0.55); font-size: 0.82rem; line-height: 1.5; }
+
+  .vendor-form-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,151,44,0.2);
+    border-radius: 16px; padding: 2.5rem;
+  }
+  .vendor-form-box h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white); font-size: 1.4rem; margin-bottom: 0.5rem;
+  }
+  .vendor-form-box .sub { color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 2rem; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label { display: block; color: rgba(255,255,255,0.6); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 6px; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;
+    padding: 10px 14px; color: var(--white); font-size: 0.88rem;
+    font-family: 'DM Sans', sans-serif; transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none; border-color: var(--gold);
+  }
+  .form-group select option { background: var(--navy); }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+
+  .btn-vendor {
+    width: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    color: var(--navy); border: none; padding: 14px;
+    border-radius: 8px; font-weight: 700; font-size: 1rem;
+    cursor: pointer; transition: opacity 0.2s; letter-spacing: 0.02em;
+  }
+  .btn-vendor:hover { opacity: 0.9; }
+
+  /* ── TRUST SIGNALS ── */
+  #trust { background: var(--white); }
+  .trust-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 2rem; margin-top: 3rem;
+  }
+  .trust-card {
+    border: 1px solid var(--border); border-radius: 14px;
+    overflow: hidden; background: var(--cream);
+    transition: transform 0.25s;
+  }
+  .trust-card:hover { transform: translateY(-4px); }
+  .trust-card .tc-img {
+    height: 180px; display: flex; align-items: center; justify-content: center;
+    font-size: 4rem;
+    position: relative; overflow: hidden;
+  }
+  .trust-card.tc1 .tc-img { background: linear-gradient(135deg, #1a3a5c, #0a1628); }
+  .trust-card.tc2 .tc-img { background: linear-gradient(135deg, #2d4a1a, #1a3a0a); }
+  .trust-card.tc3 .tc-img { background: linear-gradient(135deg, #3d2b1f, #5c3d2b); }
+  .trust-card .tc-body { padding: 1.5rem; }
+  .trust-card .tc-body h4 { font-weight: 700; margin-bottom: 0.5rem; }
+  .trust-card .tc-body p { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+  .trust-card .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.5rem; }
+  .trust-card .reviewer { font-size: 0.78rem; color: var(--muted); margin-top: 0.75rem; font-weight: 600; }
+
+  .certifications {
+    display: flex; gap: 1.5rem; flex-wrap: wrap;
+    margin-top: 3rem; justify-content: center;
+  }
+  .cert-badge {
+    background: var(--navy); color: var(--white);
+    padding: 10px 20px; border-radius: 8px;
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.82rem; font-weight: 600;
+  }
+  .cert-badge .cert-icon { font-size: 1.1rem; }
+  .cert-badge span { color: var(--gold); font-family: 'DM Mono', monospace; font-size: 0.78rem; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--cream); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1.6fr;
+    gap: 4rem; margin-top: 3rem;
+  }
+  .contact-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; margin-bottom: 1.5rem;
+  }
+  .info-row {
+    display: flex; gap: 1rem; margin-bottom: 1.25rem; align-items: flex-start;
+  }
+  .info-row .icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+  .info-row .label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+  .info-row .value { font-size: 0.9rem; font-weight: 500; }
+  .info-row a { color: var(--text); text-decoration: none; }
+  .info-row a:hover { color: var(--gold); }
+
+  .wa-btn {
+    display: flex; align-items: center; gap: 10px;
+    background: #25d366; color: var(--white);
+    padding: 12px 24px; border-radius: 8px;
+    font-weight: 700; text-decoration: none; font-size: 0.95rem;
+    margin-top: 1.5rem; width: fit-content;
+    transition: background 0.2s;
+  }
+  .wa-btn:hover { background: #1fba59; }
+
+  .inquiry-form {
+    background: var(--white); border-radius: 16px;
+    border: 1px solid var(--border); padding: 2.5rem;
+  }
+  .inquiry-form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; margin-bottom: 1.5rem;
+  }
+  .iq-group { margin-bottom: 1rem; }
+  .iq-group label { display: block; font-size: 0.78rem; font-weight: 700; color: var(--muted); letter-spacing: 0.05em; margin-bottom: 5px; }
+  .iq-group input, .iq-group select, .iq-group textarea {
+    width: 100%; border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 10px 14px; font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem; transition: border-color 0.2s; background: var(--cream);
+  }
+  .iq-group input:focus, .iq-group select:focus, .iq-group textarea:focus {
+    outline: none; border-color: var(--gold);
+  }
+  .iq-group textarea { resize: vertical; min-height: 90px; }
+  .iq-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .btn-submit {
+    background: var(--navy); color: var(--white);
+    border: none; padding: 13px 28px; border-radius: 8px;
+    font-weight: 700; font-size: 0.95rem; cursor: pointer;
+    transition: background 0.2s; width: 100%;
+  }
+  .btn-submit:hover { background: #1a2d50; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    padding: 4rem 2rem 2rem;
+    color: rgba(255,255,255,0.6);
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem; max-width: 1200px; margin: 0 auto;
+    padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand .logo { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+  .footer-brand p { font-size: 0.85rem; line-height: 1.6; }
+  .footer-col h4 { color: var(--white); font-size: 0.85rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: 0.05em; }
+  .footer-col ul { list-style: none; display: grid; gap: 8px; }
+  .footer-col ul li a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.83rem; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--gold); }
+  .footer-bottom {
+    max-width: 1200px; margin: 2rem auto 0;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    font-size: 0.8rem;
+  }
+  .reg-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .reg-tag {
+    background: rgba(201,151,44,0.15); border: 1px solid rgba(201,151,44,0.2);
+    color: var(--gold); font-size: 0.7rem; padding: 3px 10px; border-radius: 4px;
+    font-family: 'DM Mono', monospace; font-weight: 500;
+  }
+
+  /* ── SUCCESS MSG ── */
+  .success-msg {
+    background: rgba(45,138,87,0.15); border: 1px solid rgba(45,138,87,0.3);
+    color: #5fd68c; padding: 12px 16px; border-radius: 8px;
+    font-size: 0.88rem; font-weight: 600; margin-top: 1rem; display: none;
+    align-items: center; gap: 8px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-grid, .about-grid, .organic-grid, .vendor-layout, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .trust-grid { grid-template-columns: 1fr 1fr; }
+    .ceramics-grid { grid-template-columns: 1fr 1fr; }
+    .form-row, .iq-row { grid-template-columns: 1fr; }
+    .ceramics-header { flex-direction: column; text-align: center; }
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+  }
+  @media (max-width: 600px) {
+    .trust-grid, .ceramics-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    section { padding: 60px 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <div class="nav-logo">
+    <div class="monogram">ME</div>
+    <div class="brand">
+      MARETTO
+      <span>Export Import Co.</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Polymers</a></li>
+    <li><a href="#organic">Organic</a></li>
+    <li><a href="#ceramics">Ceramics</a></li>
+    <li><a href="#vendor">Join as Vendor</a></li>
+    <li><a href="#trust">Trust</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get Quote</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-grid container">
+    <div>
+      <div class="hero-badge">🌐 Meerut → World Markets</div>
+      <h1>MARETTO <em>EXPORT</em> IMPORT</h1>
+      <p>India's rising global trading firm — connecting world-class polymers, organic agriculture, and premium ceramics to factories across the subcontinent and beyond.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Send Inquiry</a>
+        <a href="#products" class="btn-outline">View Products ↓</a>
+      </div>
+      <div class="pill-row">
+        <span class="pill">PP • HDPE • LLDPE • LDPE</span>
+        <span class="pill">Masterbatches</span>
+        <span class="pill">Organic Fertilizer</span>
+        <span class="pill">Ceramics</span>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="num">IEC</div>
+        <div class="lbl">DPJPR4127C</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">GST</div>
+        <div class="lbl">09DPJPR4127C1ZT</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">CIF</div>
+        <div class="lbl">ICD Patparganj & Mundra</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">UP</div>
+        <div class="lbl">UDYAM: 560155946</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="icon">🏛️</span> DGFT &amp; PSIC Compliant</div>
+  <div class="trust-item"><span class="icon">📋</span> IEC: <strong>DPJPR4127C</strong></div>
+  <div class="trust-item"><span class="icon">🏭</span> Direct Import — No Middlemen</div>
+  <div class="trust-item"><span class="icon">🔬</span> COA + MSDS with Every Lot</div>
+  <div class="trust-item"><span class="icon">🚚</span> Real-time Logistics Tracking</div>
+</div>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="section-label">About Us</div>
+        <h2>India's Rising<br>Global Trading Firm</h2>
+        <p class="lead">Maretto Export Import Company is a Meerut-based, globally connected trading firm specializing in premium polymer materials, organic agriculture inputs, and export-quality ceramics.</p>
+        <div class="vision-box">
+          <div class="quote">"Maretto Global का लक्ष्य भारत के छोटे उद्योगों को एक कॉर्पोरेट पहचान दिलाकर अंतरराष्ट्रीय बाजारों तक पहुँचाना है।"</div>
+          <div class="attr">— Nafees Ahmed, Managing Director &nbsp;|&nbsp; Our Dream, Our Mission</div>
+        </div>
+        <p style="margin-top:1.25rem; color:var(--muted); font-size:0.9rem; line-height:1.7;">
+          We believe every small Indian manufacturer deserves a corporate identity and access to global markets. By sourcing directly from world-class refineries and building a network of trusted vendors, we eliminate the middleman and give our partners the best market prices with full technical documentation.
+        </p>
+      </div>
+      <div>
+        <div class="about-features">
+          <div class="feat-card">
+            <div class="icon">🏭</div>
+            <h4>Direct Import Model</h4>
+            <p>Products sourced directly from global refineries with full traceability and compliance docs.</p>
+          </div>
+          <div class="feat-card">
+            <div class="icon">🔬</div>
+            <h4>Technical Matching</h4>
+            <p>MFI values and polymer grades precisely matched to your machine and process requirements.</p>
+          </div>
+          <div class="feat-card">
+            <div class="icon">📋</div>
+            <h4>DGFT Compliant</h4>
+            <p>All shipments comply with DGFT regulations. IEC & GST registered. Hassle-free clearance.</p>
+          </div>
+          <div class="feat-card">
+            <div class="icon">🌱</div>
+            <h4>Multi-Sector Growth</h4>
+            <p>Expanding into organic agriculture and premium ceramics — always with export-grade quality.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRODUCTS (POLYMERS) ── -->
+<section id="products">
+  <div class="container">
+    <div class="section-label">Polymer Products</div>
+    <h2>Premium Polymers<br>&amp; Masterbatches</h2>
+    <p class="lead">Sourced from world-class refineries with complete lab documentation. Every grade matched to your specific application and machinery.</p>
+    <div class="products-grid">
+      <div class="product-card pp">
+        <div class="tag">Virgin</div>
+        <h3>PP — Polypropylene</h3>
+        <p>Homo-polymer and Co-polymer PP directly from leading refineries for packaging, woven sacks, automotive and injection molding.</p>
+        <div class="grades">
+          <span class="grade">Raffia</span><span class="grade">Injection</span><span class="grade">Film</span><span class="grade">Homo-polymer</span>
+        </div>
+      </div>
+      <div class="product-card hdpe">
+        <div class="tag">Virgin</div>
+        <h3>HDPE — High Density PE</h3>
+        <p>Premium virgin HDPE for rigid packaging, pipes, bottles and industrial containers with high stiffness and chemical resistance.</p>
+        <div class="grades">
+          <span class="grade">Blow Molding</span><span class="grade">Injection</span><span class="grade">Pipe</span><span class="grade">Film</span>
+        </div>
+      </div>
+      <div class="product-card lldpe">
+        <div class="tag">Virgin</div>
+        <h3>LLDPE — Linear Low Density PE</h3>
+        <p>High-performance LLDPE for flexible films, stretch wrap, agricultural films and flexible packaging.</p>
+        <div class="grades">
+          <span class="grade">C4/C6/C8</span><span class="grade">Stretch Film</span><span class="grade">Agri Film</span>
+        </div>
+      </div>
+      <div class="product-card ldpe">
+        <div class="tag">Virgin</div>
+        <h3>LDPE — Low Density PE</h3>
+        <p>Soft and flexible virgin LDPE for squeezable bottles, wire &amp; cable insulation and low-temperature packaging films.</p>
+        <div class="grades">
+          <span class="grade">Extrusion</span><span class="grade">Cable</span><span class="grade">Flexible Film</span>
+        </div>
+      </div>
+      <div class="product-card abs">
+        <div class="tag">Engineering</div>
+        <h3>ABS &amp; Engineering Plastics</h3>
+        <p>High Impact and High Gloss ABS grades for electronics, automotive dashboards, TV bodies and precision injection components.</p>
+        <div class="grades">
+          <span class="grade">High Impact</span><span class="grade">High Gloss</span><span class="grade">PC</span><span class="grade">Nylon</span>
+        </div>
+      </div>
+      <div class="product-card mb">
+        <div class="tag">Masterbatch</div>
+        <h3>Color &amp; Additive Masterbatches</h3>
+        <p>Food-grade color masterbatches, high carbon black, TiO₂ white and performance additives. Custom Pantone matching available.</p>
+        <div class="grades">
+          <span class="grade">Food Grade</span><span class="grade">Custom Color</span><span class="grade">UV</span><span class="grade">Anti-static</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ORGANIC FERTILIZER ── -->
+<section id="organic">
+  <div class="container organic-inner">
+    <div class="section-label">Agriculture &amp; Organic</div>
+    <h2>Organic Fertilizer<br>&amp; Agriculture</h2>
+    <p class="lead">Premium-grade organic fertilizer for Indian farmers — packed in 25KG export-standard bags. Natural inputs for better yields and healthier soil.</p>
+    <div class="organic-grid">
+      <div class="organic-benefits">
+        <div class="benefit-row">
+          <span class="bi">🌿</span>
+          <div>
+            <h4>100% Natural Composition</h4>
+            <p>Derived from organic matter — no synthetic chemicals. Safe for soil, safe for crops, safe for consumers.</p>
+          </div>
+        </div>
+        <div class="benefit-row">
+          <span class="bi">🌱</span>
+          <div>
+            <h4>Improved Soil Microbiology</h4>
+            <p>Boosts beneficial microbes in soil, improving nutrient availability and long-term soil health naturally.</p>
+          </div>
+        </div>
+        <div class="benefit-row">
+          <span class="bi">💧</span>
+          <div>
+            <h4>Better Water Retention</h4>
+            <p>Organic matter content improves soil water-holding capacity — reducing irrigation frequency and costs.</p>
+          </div>
+        </div>
+        <div class="benefit-row">
+          <span class="bi">🌾</span>
+          <div>
+            <h4>Higher Yield Quality</h4>
+            <p>Crops grown with organic inputs show improved flavour, nutrition profile and market value.</p>
+          </div>
+        </div>
+        <div class="benefit-row">
+          <span class="bi">📦</span>
+          <div>
+            <h4>Export-Standard 25KG Packaging</h4>
+            <p>Packed in premium woven polypropylene bags with UV protection — suitable for domestic and international trade.</p>
+          </div>
+        </div>
+        <div class="benefit-row">
+          <span class="bi">🌍</span>
+          <div>
+            <h4>Export Ready</h4>
+            <p>Documentation, certifications and packaging aligned with international agricultural trade requirements.</p>
+          </div>
+        </div>
+      </div>
+      <div class="organic-bag">
+        <div class="bag-visual">
+          <div class="bag-icon">🌿</div>
+          <div class="bag-label">MARETTO ORGANIC</div>
+          <div class="bag-weight">25</div>
+          <div class="bag-unit">KG Premium Bag</div>
+        </div>
+        <div class="bag-caption">Export-quality organic fertilizer<br>in premium 25KG packaging</div>
+        <div style="margin-top:1.5rem; display:flex; gap:0.75rem; flex-wrap:wrap; justify-content:center;">
+          <span style="background:rgba(95,214,140,0.15);border:1px solid rgba(95,214,140,0.25);color:#5fd68c;padding:4px 12px;border-radius:100px;font-size:0.73rem;font-weight:700;">100% Organic</span>
+          <span style="background:rgba(95,214,140,0.15);border:1px solid rgba(95,214,140,0.25);color:#5fd68c;padding:4px 12px;border-radius:100px;font-size:0.73rem;font-weight:700;">Export Grade</span>
+          <span style="background:rgba(95,214,140,0.15);border:1px solid rgba(95,214,140,0.25);color:#5fd68c;padding:4px 12px;border-radius:100px;font-size:0.73rem;font-weight:700;">25KG Bag</span>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="#contact" style="display:inline-block;background:#2d8a57;color:#fff;padding:10px 24px;border-radius:8px;font-weight:700;text-decoration:none;font-size:0.9rem;">Inquire Now →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CERAMICS ── -->
+<section id="ceramics">
+  <div class="container">
+    <div class="section-label">Premium Ceramics</div>
+    <h2>Ceramic &amp; Sanitaryware</h2>
+    <p class="lead">Maretto is expanding into the premium ceramics export space — bringing the same quality-first approach to tiles and sanitaryware for global markets.</p>
+
+    <div class="ceramics-card">
+      <div class="ceramics-header">
+        <div class="ceramic-icon-big">🏺</div>
+        <div>
+          <h3>Premium Ceramics</h3>
+          <p>Export Quality Tiles &amp; Sanitaryware — Coming to Maretto's catalog</p>
+          <div class="coming-soon-badge">🔜 Coming Soon</div>
+        </div>
+      </div>
+      <div class="ceramics-body">
+        <div class="ceramics-grid">
+          <div class="ceramic-item">
+            <div class="ci">🟫</div>
+            <h4>Vitrified Floor Tiles</h4>
+            <p>Export-grade vitrified tiles with high abrasion resistance and low water absorption.</p>
+          </div>
+          <div class="ceramic-item">
+            <div class="ci">🪟</div>
+            <h4>Wall Tiles &amp; Elevation</h4>
+            <p>Premium glazed and digital wall tiles for residential and commercial applications.</p>
+          </div>
+          <div class="ceramic-item">
+            <div class="ci">🚿</div>
+            <h4>Sanitaryware</h4>
+            <p>WCs, washbasins and bathroom fittings meeting international quality standards.</p>
+          </div>
+        </div>
+        <div class="ceramics-note">
+          📣 <strong>Register your interest early.</strong> Maretto is onboarding manufacturer partners for its ceramic export division. If you're a tiles or sanitaryware manufacturer looking for global reach, <a href="#vendor" style="color:var(--ceramic);font-weight:600;">Join as a Vendor →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VENDOR REGISTRATION ── -->
+<section id="vendor">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="section-label">Join Our Network</div>
+    <h2>Join as a Vendor</h2>
+    <p class="lead">Are you a small or medium manufacturer looking for corporate-quality export support? Maretto connects Indian producers to international buyers — with documentation, logistics and marketing handled for you.</p>
+
+    <div class="vendor-layout">
+      <div class="vendor-perks">
+        <div class="perk-card">
+          <span class="pi">🌍</span>
+          <div>
+            <h4>Global Market Access</h4>
+            <p>Your products reach international buyers through Maretto's established export channels and IEC-backed documentation.</p>
+          </div>
+        </div>
+        <div class="perk-card">
+          <span class="pi">📋</span>
+          <div>
+            <h4>Full Compliance Support</h4>
+            <p>We handle DGFT, customs, COA, and all export documentation so you focus on manufacturing.</p>
+          </div>
+        </div>
+        <div class="perk-card">
+          <span class="pi">🏷️</span>
+          <div>
+            <h4>Corporate Branding</h4>
+            <p>Your products get professional export-grade packaging and positioning in international markets.</p>
+          </div>
+        </div>
+        <div class="perk-card">
+          <span class="pi">🤝</span>
+          <div>
+            <h4>Fair &amp; Transparent Pricing</h4>
+            <p>No hidden charges. Transparent margin structure that ensures both parties grow sustainably.</p>
+          </div>
+        </div>
+        <div class="perk-card">
+          <span class="pi">📦</span>
+          <div>
+            <h4>Logistics &amp; CIF Delivery</h4>
+            <p>We manage end-to-end logistics from your factory to ICD Patparganj, Mundra, or any destination port.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="vendor-form-box">
+        <h3>Register as a Vendor</h3>
+        <div class="sub">Fill this form and our team will contact you within 24 hours.</div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" placeholder="Full Name" id="v-name">
+          </div>
+          <div class="form-group">
+            <label>Company Name *</label>
+            <input type="text" placeholder="Business / Firm Name" id="v-company">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone / WhatsApp *</label>
+            <input type="tel" placeholder="+91 XXXXX XXXXX" id="v-phone">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="you@company.com" id="v-email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Product Category *</label>
+          <select id="v-category">
+            <option value="">-- Select Your Product --</option>
+            <option>Plastic Granules / Polymers</option>
+            <option>Masterbatches</option>
+            <option>Organic Fertilizer / Agriculture</option>
+            <option>Ceramic Tiles</option>
+            <option>Sanitaryware</option>
+            <option>Other (please describe)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Monthly Production Capacity</label>
+            <input type="text" placeholder="e.g., 50 MT / month" id="v-capacity">
+          </div>
+          <div class="form-group">
+            <label>City / State</label>
+            <input type="text" placeholder="e.g., Meerut, UP" id="v-city">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Tell us about your product</label>
+          <textarea placeholder="Describe your product, certifications, export experience..." id="v-desc"></textarea>
+        </div>
+        <button class="btn-vendor" onclick="submitVendor()">🤝 Submit Vendor Application →</button>
+        <div class="success-msg" id="vendor-success">✅ Application received! Our team will contact you within 24 hours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST SIGNALS ── -->
+<section id="trust">
+  <div class="container">
+    <div class="section-label">Trust &amp; Credibility</div>
+    <h2>Why Businesses Trust Maretto</h2>
+    <p class="lead">From verified registrations to real customer experiences — here's why factories across India choose Maretto as their import and supply partner.</p>
+
+    <div class="trust-grid">
+      <div class="trust-card tc1">
+        <div class="tc-img">🏭</div>
+        <div class="tc-body">
+          <div class="stars">★★★★★</div>
+          <h4>"Zero machine downtime since switching to Maretto"</h4>
+          <p>The MFI specifications were exactly as promised. Our PP raffia line ran without a single rejection batch across 3 consignments. Technical support from Nafees bhai is outstanding.</p>
+          <div class="reviewer">— Plant Manager, Woven Sack Manufacturer, Hapur</div>
+        </div>
+      </div>
+      <div class="trust-card tc2">
+        <div class="tc-img">🌿</div>
+        <div class="tc-body">
+          <div class="stars">★★★★★</div>
+          <h4>"Organic fertilizer quality is export-standard"</h4>
+          <p>We've tested Maretto's organic product on our sugarcane fields. The 25KG packaging is professional and the product quality speaks for itself. Looking forward to their expanding range.</p>
+          <div class="reviewer">— Agricultural Trader, Muzaffarnagar, UP</div>
+        </div>
+      </div>
+      <div class="trust-card tc3">
+        <div class="tc-img">📦</div>
+        <div class="tc-body">
+          <div class="stars">★★★★★</div>
+          <h4>"Documentation was perfect for our customs clearance"</h4>
+          <p>Every shipment came with COA, MSDS and all DGFT documentation in order. Our customs agent said it was one of the cleanest imports they'd processed. Will definitely reorder.</p>
+          <div class="reviewer">— Import Manager, HDPE Pipe Manufacturer, Delhi NCR</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="certifications">
+      <div class="cert-badge">🏛️ IEC Registered <span>DPJPR4127C</span></div>
+      <div class="cert-badge">📋 GST Verified <span>09DPJPR4127C1ZT</span></div>
+      <div class="cert-badge">🏭 UDYAM Registered <span>UP-560155946</span></div>
+      <div class="cert-badge">✅ DGFT Compliant</div>
+      <div class="cert-badge">🔬 COA + MSDS Every Lot</div>
+      <div class="cert-badge">🚚 CIF: Patparganj &amp; Mundra</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Get In Touch</div>
+    <h2>Start a Conversation</h2>
+    <p class="lead">Ready to source polymers, organic fertilizer, or explore vendor partnership? Our team responds within 24 hours.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Maretto Export Import Company</h3>
+        <div class="info-row">
+          <span class="icon">👤</span>
+          <div><div class="label">Managing Director</div><div class="value">Nafees Ahmed</div></div>
+        </div>
+        <div class="info-row">
+          <span class="icon">📍</span>
+          <div><div class="label">Address</div><div class="value">NH709A, Village Bubakpur, Near Bubakpur Bus Stand<br>Post Office Dabathwa, Sardhana<br>Meerut – 250341, Uttar Pradesh, India</div></div>
+        </div>
+        <div class="info-row">
+          <span class="icon">📞</span>
+          <div><div class="label">Phone</div><div class="value"><a href="tel:+919761128966">+91 9761128966</a></div></div>
+        </div>
+        <div class="info-row">
+          <span class="icon">💬</span>
+          <div><div class="label">WhatsApp</div><div class="value"><a href="tel:+918679661174">+91 8679661174</a></div></div>
+        </div>
+        <div class="info-row">
+          <span class="icon">✉️</span>
+          <div><div class="label">Email</div><div class="value"><a href="mailto:info@marettoexport.in">info@marettoexport.in</a></div></div>
+        </div>
+        <a href="https://wa.me/918679661174" class="wa-btn" target="_blank">
+          💬 Chat on WhatsApp
+        </a>
+      </div>
+
+      <div class="inquiry-form">
+        <h3>📋 Send Product Inquiry</h3>
+        <div class="iq-row">
+          <div class="iq-group">
+            <label>Your Name *</label>
+            <input type="text" placeholder="Full Name" id="i-name">
+          </div>
+          <div class="iq-group">
+            <label>Company Name</label>
+            <input type="text" placeholder="Your Company" id="i-company">
+          </div>
+        </div>
+        <div class="iq-row">
+          <div class="iq-group">
+            <label>Phone / WhatsApp *</label>
+            <input type="tel" placeholder="+91 XXXXX XXXXX" id="i-phone">
+          </div>
+          <div class="iq-group">
+            <label>Email</label>
+            <input type="email" placeholder="you@company.com" id="i-email">
+          </div>
+        </div>
+        <div class="iq-group">
+          <label>Product Required *</label>
+          <select id="i-product">
+            <option value="">-- Select Product --</option>
+            <option>PP - Polypropylene (Raffia Grade)</option>
+            <option>PP - Polypropylene (Injection Molding)</option>
+            <option>HDPE - High Density Polyethylene (Blow Molding)</option>
+            <option>HDPE - High Density Polyethylene (Pipe Grade)</option>
+            <option>LLDPE (C4/C6/C8 Grade)</option>
+            <option>LDPE - Low Density Polyethylene</option>
+            <option>ABS - High Impact Grade</option>
+            <option>Color Masterbatch</option>
+            <option>Black / White Masterbatch</option>
+            <option>Additive Masterbatch</option>
+            <option>Organic Fertilizer (25KG Bag)</option>
+            <option>Ceramic Tiles (Coming Soon)</option>
+            <option>Other / Multiple Products</option>
+          </select>
+        </div>
+        <div class="iq-row">
+          <div class="iq-group">
+            <label>Quantity (MT/Month)</label>
+            <input type="text" placeholder="e.g., 10 MT" id="i-qty">
+          </div>
+          <div class="iq-group">
+            <label>MFI / Grade Specification</label>
+            <input type="text" placeholder="e.g., MFI 25–35" id="i-mfi">
+          </div>
+        </div>
+        <div class="iq-group">
+          <label>Additional Requirements</label>
+          <textarea placeholder="Any specific requirements, delivery location, etc..." id="i-notes"></textarea>
+        </div>
+        <button class="btn-submit" onclick="submitInquiry()">SEND INQUIRY →</button>
+        <div class="success-msg" id="inquiry-success" style="display:none;">✅ Inquiry submitted! We will contact you within 24 hours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <div style="width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:900;color:var(--navy);">ME</div>
+        <div style="color:var(--white);font-weight:700;font-size:1rem;">MARETTO <span style="color:var(--gold);">Export Import Co.</span></div>
+      </div>
+      <p>India's rising global trading firm — connecting Indian manufacturers to world markets through premium polymers, organic agriculture, and export-quality ceramics.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="#products">PP Granules</a></li>
+        <li><a href="#products">HDPE / LLDPE / LDPE</a></li>
+        <li><a href="#products">ABS & Engineering</a></li>
+        <li><a href="#products">Masterbatches</a></li>
+        <li><a href="#organic">Organic Fertilizer</a></li>
+        <li><a href="#ceramics">Premium Ceramics</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#vendor">Join as Vendor</a></li>
+        <li><a href="#trust">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+919761128966">+91 9761128966</a></li>
+        <li><a href="tel:+918679661174">+91 8679661174 (WA)</a></li>
+        <li><a href="mailto:info@marettoexport.in">info@marettoexport.in</a></li>
+        <li><a href="https://www.marettoexport.in">www.marettoexport.in</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2024 Maretto Export Import Company. All rights reserved.</div>
+    <div class="reg-tags">
+      <span class="reg-tag">GST: 09DPJPR4127C1ZT</span>
+      <span class="reg-tag">IEC: DPJPR4127C</span>
+      <span class="reg-tag">UDYAM: UP-560155946</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function submitVendor() {
+  const name = document.getElementById('v-name').value;
+  const phone = document.getElementById('v-phone').value;
+  const cat = document.getElementById('v-category').value;
+  if (!name || !phone || !cat) { alert('Please fill Name, Phone and Product Category.'); return; }
+  const msg = document.getElementById('vendor-success');
+  msg.style.display = 'flex';
+  setTimeout(() => { msg.style.display = 'none'; }, 5000);
+}
+
+function submitInquiry() {
+  const name = document.getElementById('i-name').value;
+  const phone = document.getElementById('i-phone').value;
+  const product = document.getElementById('i-product').value;
+  if (!name || !phone || !product) { alert('Please fill Name, Phone and Product Required.'); return; }
+  const msg = document.getElementById('inquiry-success');
+  msg.style.display = 'flex';
+  setTimeout(() => { msg.style.display = 'none'; }, 5000);
+}
+</script>
+
+</body>
+</html>
