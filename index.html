@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maretto Export Import Co. | India's Transparent Supply Chain Partner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e0e0e;
+    --cream: #f5f0e8;
+    --gold: #c9922a;
+    --gold-light: #e8c06a;
+    --rust: #b94a2c;
+    --sage: #4a6741;
+    --clay: #8b5e3c;
+    --slate: #2c3e50;
+    --off-white: #faf8f3;
+    --border: #d4c9b0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    background: rgba(14,14,14,0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(201,146,42,0.3);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 900;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+  .nav-logo span { color: #fff; font-weight: 400; font-size: 0.7rem; display: block; letter-spacing: 0.2em; text-transform: uppercase; margin-top: -4px; }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: #ccc; text-decoration: none;
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    font-weight: 500; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold); color: #000; padding: 8px 20px;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; text-decoration: none; border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 2px; background: var(--gold); display: block; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: var(--ink);
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding-top: 64px;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 80% 50%, rgba(201,146,42,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(74,103,65,0.1) 0%, transparent 50%);
+  }
+
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.03;
+    background-image: linear-gradient(var(--gold) 1px, transparent 1px), linear-gradient(90deg, var(--gold) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-inner {
+    position: relative; z-index: 2;
+    padding: 0 5%; max-width: 1300px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    border: 1px solid rgba(201,146,42,0.5);
+    color: var(--gold); font-size: 0.7rem;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 6px 16px; margin-bottom: 2rem;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .hero-h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 900; line-height: 1.05;
+    color: #fff; margin-bottom: 1.5rem;
+  }
+  .hero-h1 em { color: var(--gold); font-style: normal; }
+
+  .hero-sub {
+    color: #aaa; font-size: 1.05rem; line-height: 1.7;
+    margin-bottom: 2.5rem; max-width: 480px;
+  }
+
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold); color: #000;
+    padding: 14px 32px; text-decoration: none;
+    font-weight: 700; font-size: 0.85rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    border-radius: 2px; transition: all 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    border: 1px solid rgba(201,146,42,0.5); color: var(--gold);
+    padding: 14px 32px; text-decoration: none;
+    font-weight: 500; font-size: 0.85rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    border-radius: 2px; transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--gold); background: rgba(201,146,42,0.08); }
+
+  .hero-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,146,42,0.2);
+    padding: 1.5rem; border-radius: 4px;
+    transition: border-color 0.3s;
+  }
+  .stat-card:hover { border-color: rgba(201,146,42,0.5); }
+  .stat-card .icon { font-size: 1.6rem; margin-bottom: 0.8rem; display: block; }
+  .stat-card .label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; color: var(--gold);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .stat-card .val {
+    color: #fff; font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700;
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 100px 5%; }
+  .container { max-width: 1300px; margin: 0 auto; }
+  .section-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 1rem; display: block;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900; line-height: 1.1;
+    margin-bottom: 1.2rem;
+  }
+  .section-desc {
+    color: #666; font-size: 1.05rem; line-height: 1.7;
+    max-width: 580px; margin-bottom: 3rem;
+  }
+
+  /* ── JV MODEL ── */
+  #jv { background: var(--ink); color: #fff; }
+  #jv .section-title { color: #fff; }
+  #jv .section-desc { color: #aaa; }
+
+  .jv-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    align-items: start; margin-top: 3rem;
+  }
+
+  .jv-flow {
+    display: flex; flex-direction: column; gap: 0;
+  }
+
+  .jv-step {
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    padding: 2rem;
+    border-left: 1px solid rgba(201,146,42,0.3);
+    margin-left: 20px;
+    position: relative;
+    transition: border-color 0.3s;
+  }
+  .jv-step:hover { border-color: var(--gold); }
+  .jv-step::before {
+    content: '';
+    position: absolute; left: -9px; top: 2.2rem;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--ink); border: 2px solid var(--gold);
+  }
+  .jv-step:hover::before { background: var(--gold); }
+
+  .jv-step-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem; color: var(--gold);
+    letter-spacing: 0.15em; min-width: 30px;
+    padding-top: 4px;
+  }
+  .jv-step-body h4 {
+    color: #fff; font-size: 1rem; font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .jv-step-body p { color: #888; font-size: 0.9rem; line-height: 1.6; }
+
+  .eyes-ears-card {
+    background: linear-gradient(135deg, rgba(201,146,42,0.12), rgba(201,146,42,0.04));
+    border: 1px solid rgba(201,146,42,0.4);
+    border-radius: 8px; padding: 2.5rem;
+    position: sticky; top: 100px;
+  }
+  .eyes-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.2em;
+    color: var(--gold); text-transform: uppercase;
+    border: 1px solid rgba(201,146,42,0.4);
+    padding: 4px 10px; display: inline-block; margin-bottom: 1.5rem;
+  }
+  .eyes-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; color: #fff; font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .eyes-title span { color: var(--gold); }
+  .eyes-desc { color: #aaa; font-size: 0.9rem; line-height: 1.7; margin-bottom: 2rem; }
+
+  .eyes-features { display: flex; flex-direction: column; gap: 1rem; }
+  .eyes-feat {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1rem; background: rgba(255,255,255,0.03);
+    border-radius: 4px; border: 1px solid rgba(255,255,255,0.06);
+  }
+  .eyes-feat-icon { font-size: 1.2rem; }
+  .eyes-feat-text h5 { color: #fff; font-size: 0.85rem; font-weight: 600; margin-bottom: 2px; }
+  .eyes-feat-text p { color: #777; font-size: 0.8rem; }
+
+  /* ── WOODCRAFT ── */
+  #woodcraft { background: var(--cream); }
+
+  .product-hero-grid {
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center;
+    margin-bottom: 4rem;
+  }
+
+  .product-visual {
+    background: linear-gradient(135deg, #3d2b1f, #6b4226, #8b5e3c);
+    border-radius: 8px; padding: 3rem;
+    text-align: center; position: relative; overflow: hidden;
+    min-height: 320px; display: flex; align-items: center; justify-content: center;
+  }
+  .product-visual::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L60 60 M60 0 L0 60' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/svg%3E");
+  }
+  .product-visual-icon { font-size: 5rem; position: relative; z-index: 1; }
+  .product-visual-label {
+    position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.5); text-transform: uppercase; white-space: nowrap;
+  }
+
+  .product-info h2 { margin-bottom: 1rem; }
+  .product-info p { color: #666; line-height: 1.7; margin-bottom: 2rem; }
+
+  .compliance-badges { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .badge {
+    border: 1px solid var(--border);
+    background: #fff; padding: 6px 14px;
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.08em; border-radius: 2px; color: var(--slate);
+  }
+  .badge.gold { border-color: var(--gold); color: var(--gold); background: rgba(201,146,42,0.06); }
+  .badge.green { border-color: var(--sage); color: var(--sage); background: rgba(74,103,65,0.06); }
+
+  .product-cards {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  }
+
+  .prod-card {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 6px; padding: 1.8rem;
+    transition: all 0.3s; cursor: default;
+  }
+  .prod-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(201,146,42,0.12);
+  }
+  .prod-card-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .prod-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .prod-card p { color: #777; font-size: 0.83rem; line-height: 1.6; }
+
+  /* ── TECH EXCELLENCE ── */
+  #tech { background: var(--slate); color: #fff; }
+  #tech .section-title { color: #fff; }
+  #tech .section-desc { color: #aaa; }
+
+  .tech-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  }
+
+  .tech-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px; padding: 2rem;
+    transition: all 0.3s;
+  }
+  .tech-card:hover {
+    background: rgba(201,146,42,0.08);
+    border-color: rgba(201,146,42,0.4);
+    transform: translateY(-3px);
+  }
+  .tech-icon { font-size: 2rem; margin-bottom: 1.2rem; display: block; }
+  .tech-card h4 { color: #fff; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.8rem; }
+  .tech-card p { color: #999; font-size: 0.85rem; line-height: 1.6; }
+
+  /* ── CERAMICS ── */
+  #ceramics { background: #fff; }
+
+  .ceramics-layout {
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center;
+  }
+
+  .ceramics-visual {
+    background: linear-gradient(135deg, #e8e0d5, #c8bfb0, #a09080);
+    border-radius: 8px; padding: 3rem;
+    min-height: 320px; display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .ceramics-visual::after {
+    content: 'KHURJA CERTIFIED';
+    position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem; letter-spacing: 0.3em; color: rgba(255,255,255,0.6);
+    text-transform: uppercase; white-space: nowrap;
+  }
+
+  /* ── FRESH PRODUCE ── */
+  #produce { background: var(--cream); }
+
+  .produce-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+
+  .produce-visual {
+    background: linear-gradient(135deg, #1a3a1a, #2d5a2d, #4a6741);
+    border-radius: 8px; padding: 3rem;
+    min-height: 320px; display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+
+  .farm-stat {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: rgba(0,0,0,0.5); padding: 1.2rem;
+    display: flex; justify-content: space-around;
+  }
+  .farm-stat-item { text-align: center; }
+  .farm-stat-item .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 900; color: var(--gold-light);
+    display: block;
+  }
+  .farm-stat-item .lbl {
+    font-size: 0.65rem; color: rgba(255,255,255,0.6);
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+
+  .veggie-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;
+  }
+  .veggie-item {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 4px; padding: 1rem 1.2rem;
+    display: flex; align-items: center; gap: 0.8rem;
+    font-size: 0.85rem; font-weight: 500; color: var(--slate);
+  }
+  .veggie-item span:first-child { font-size: 1.3rem; }
+
+  /* ── ABOUT ── */
+  #about { background: var(--ink); color: #fff; }
+  #about .section-title { color: #fff; }
+
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+
+  .about-text p {
+    color: #aaa; line-height: 1.8; margin-bottom: 1.5rem; font-size: 0.95rem;
+  }
+
+  .trust-gap-box {
+    background: rgba(201,146,42,0.08);
+    border: 1px solid rgba(201,146,42,0.3);
+    border-left: 3px solid var(--gold);
+    padding: 1.5rem 2rem; border-radius: 4px;
+    margin-bottom: 2rem;
+  }
+  .trust-gap-box p {
+    color: var(--gold-light) !important;
+    font-size: 1rem !important; line-height: 1.6 !important;
+    font-style: italic; margin: 0 !important;
+  }
+
+  .reg-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  }
+  .reg-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 1rem 1.2rem; border-radius: 4px;
+  }
+  .reg-item .key {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem; color: var(--gold);
+    letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 4px;
+  }
+  .reg-item .val { color: #ccc; font-size: 0.85rem; font-weight: 600; }
+
+  /* ── TESTIMONIALS ── */
+  #trust { background: var(--off-white); }
+
+  .testimonial-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  }
+  .t-card {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 6px; padding: 2rem;
+    transition: all 0.3s;
+  }
+  .t-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.08); transform: translateY(-3px); }
+  .t-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 2px; }
+  .t-text { color: #555; font-size: 0.88rem; line-height: 1.7; margin-bottom: 1.5rem; font-style: italic; }
+  .t-author { font-weight: 700; font-size: 0.82rem; color: var(--ink); }
+  .t-company { font-size: 0.75rem; color: #999; margin-top: 2px; }
+
+  /* ── VENDOR ── */
+  #vendor { background: var(--cream); }
+
+  .vendor-layout {
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start;
+  }
+
+  .vendor-features { display: flex; flex-direction: column; gap: 1.5rem; }
+  .v-feat {
+    display: flex; gap: 1.2rem; align-items: flex-start;
+    padding: 1.2rem; background: #fff; border: 1px solid var(--border);
+    border-radius: 4px; transition: border-color 0.3s;
+  }
+  .v-feat:hover { border-color: var(--gold); }
+  .v-feat-icon { font-size: 1.5rem; }
+  .v-feat h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 4px; }
+  .v-feat p { font-size: 0.8rem; color: #777; line-height: 1.5; }
+
+  .vendor-form {
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 8px; padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  .vendor-form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; margin-bottom: 0.5rem;
+  }
+  .vendor-form .form-sub { color: #999; font-size: 0.83rem; margin-bottom: 2rem; }
+
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group label {
+    display: block; font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: #555; margin-bottom: 6px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; padding: 10px 14px;
+    border: 1px solid var(--border); border-radius: 3px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+    background: var(--off-white); color: var(--ink);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--gold); }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--ink); color: #fff; }
+  #contact .section-title { color: #fff; }
+  #contact .section-desc { color: #aaa; }
+
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start;
+  }
+
+  .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+  .c-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+  }
+  .c-item-icon { font-size: 1.3rem; }
+  .c-item-key {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem; color: var(--gold);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .c-item-val { color: #ddd; font-size: 0.88rem; line-height: 1.5; }
+  .c-item-val a { color: var(--gold-light); text-decoration: none; }
+  .c-item-val a:hover { color: var(--gold); }
+
+  .contact-form {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px; padding: 2.5rem;
+  }
+  .contact-form h3 {
+    font-family: 'Playfair Display', serif;
+    color: #fff; font-size: 1.4rem; margin-bottom: 2rem;
+  }
+  .contact-form .form-group label { color: #888; }
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.12);
+    color: #fff;
+  }
+  .contact-form input::placeholder { color: #555; }
+  .contact-form select option { background: var(--ink); color: #fff; }
+
+  .whatsapp-btn {
+    display: flex; align-items: center; gap: 0.8rem;
+    background: #25d366; color: #fff; padding: 14px 24px;
+    border-radius: 4px; text-decoration: none;
+    font-weight: 700; font-size: 0.85rem; margin-top: 1.5rem;
+    width: 100%; justify-content: center;
+    transition: background 0.2s;
+  }
+  .whatsapp-btn:hover { background: #1ebe5c; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #070707; color: #666;
+    padding: 3rem 5%; border-top: 1px solid rgba(201,146,42,0.15);
+  }
+  .footer-inner {
+    max-width: 1300px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; color: var(--gold); font-weight: 900;
+    margin-bottom: 1rem;
+  }
+  .footer-desc { font-size: 0.82rem; line-height: 1.7; color: #555; }
+  .footer-col h5 {
+    color: #999; font-size: 0.65rem; letter-spacing: 0.2em;
+    text-transform: uppercase; margin-bottom: 1.2rem;
+    font-family: 'Space Mono', monospace;
+  }
+  .footer-col a {
+    display: block; color: #555; text-decoration: none;
+    font-size: 0.82rem; margin-bottom: 0.5rem; transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom {
+    max-width: 1300px; margin: 2rem auto 0;
+    padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.75rem;
+  }
+  .footer-regs { display: flex; gap: 1.5rem; }
+  .footer-regs span { color: #444; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.7s ease forwards; }
+  .delay-1 { animation-delay: 0.1s; opacity: 0; }
+  .delay-2 { animation-delay: 0.2s; opacity: 0; }
+  .delay-3 { animation-delay: 0.35s; opacity: 0; }
+  .delay-4 { animation-delay: 0.5s; opacity: 0; }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    width: 60px; height: 3px; background: var(--gold);
+    margin-bottom: 2rem;
+  }
+
+  /* ── SUCCESS MSG ── */
+  .form-success {
+    display: none; background: rgba(74,103,65,0.1);
+    border: 1px solid var(--sage);
+    color: var(--sage); padding: 1rem; border-radius: 4px;
+    font-size: 0.85rem; margin-top: 1rem; text-align: center;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .hero-inner, .jv-grid, .product-hero-grid, .ceramics-layout,
+    .produce-layout, .about-grid, .vendor-layout, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .product-cards { grid-template-columns: 1fr 1fr; }
+    .tech-grid, .testimonial-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+    .form-row { grid-template-columns: 1fr; }
+    section { padding: 60px 5%; }
+  }
+  @media (max-width: 600px) {
+    .product-cards { grid-template-columns: 1fr; }
+    .veggie-grid { grid-template-columns: 1fr; }
+    .hero-stats { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#hero" class="nav-logo">MARETTO <span>Export Import Co.</span></a>
+  <ul class="nav-links">
+    <li><a href="#jv">JV Model</a></li>
+    <li><a href="#woodcraft">Woodcraft</a></li>
+    <li><a href="#ceramics">Ceramics</a></li>
+    <li><a href="#produce">Fresh Produce</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#vendor">Join as Vendor</a></li>
+    <li><a href="#trust">Testimonials</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get Quote</a>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag fade-up">🌐 Meerut → World Markets</div>
+      <h1 class="hero-h1 fade-up delay-1">
+        India's<br>
+        <em>Transparent</em><br>
+        Supply Chain<br>Partner
+      </h1>
+      <p class="hero-sub fade-up delay-2">
+        हम Supplier और Buyer के बीच का Trust Gap खत्म करते हैं — Saharanpur की Woodcraft, Khurja की Ceramics, और हमारे 100-बीघा Farm की Fresh Produce को Global Markets तक पहुँचाते हैं।
+      </p>
+      <div class="hero-btns fade-up delay-3">
+        <a href="#contact" class="btn-primary">Send Inquiry →</a>
+        <a href="#jv" class="btn-outline">Our JV Model</a>
+      </div>
+    </div>
+    <div class="hero-stats fade-up delay-4">
+      <div class="stat-card">
+        <span class="icon">🪵</span>
+        <div class="label">Artisanal Woodcraft</div>
+        <div class="val">Saharanpur Units</div>
+      </div>
+      <div class="stat-card">
+        <span class="icon">🏺</span>
+        <div class="label">Fine Ceramics</div>
+        <div class="val">Khurja Certified</div>
+      </div>
+      <div class="stat-card">
+        <span class="icon">🌿</span>
+        <div class="label">Fresh Produce</div>
+        <div class="val">100-Bigha Farm</div>
+      </div>
+      <div class="stat-card">
+        <span class="icon">🔬</span>
+        <div class="label">Quality Managed</div>
+        <div class="val">Live Digital Audits</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── JV MODEL ── -->
+<section id="jv">
+  <div class="container">
+    <span class="section-tag">Our Managed JV Model</span>
+    <div class="section-divider"></div>
+    <h2 class="section-title">हम सिर्फ ट्रेड नहीं करते —<br>हम Quality Manage करते हैं</h2>
+    <p class="section-desc">Maretto का Joint Venture Model एक नया approach है जहाँ हम Saharanpur और Khurja की manufacturing units के साथ मिलकर end-to-end quality, compliance, और delivery की जिम्मेदारी लेते हैं।</p>
+
+    <div class="jv-grid">
+      <div class="jv-flow">
+        <div class="jv-step">
+          <div class="jv-step-num">01</div>
+          <div class="jv-step-body">
+            <h4>🤝 Unit Identification & Partnership</h4>
+            <p>Saharanpur (Woodcraft) और Khurja (Ceramics) की verified manufacturing units के साथ Joint Venture agreement — EPCH और VRIKSH compliant।</p>
+          </div>
+        </div>
+        <div class="jv-step">
+          <div class="jv-step-num">02</div>
+          <div class="jv-step-body">
+            <h4>🔍 Pre-Production Quality Lock</h4>
+            <p>Buyer की specifications, material selection, और sampling — production शुरू होने से पहले buyer-approved design confirmation।</p>
+          </div>
+        </div>
+        <div class="jv-step">
+          <div class="jv-step-num">03</div>
+          <div class="jv-step-body">
+            <h4>📹 Eyes & Ears — Live Digital Audits</h4>
+            <p>Production के दौरान real-time video monitoring, milestone updates, और buyer को live factory access — कोई surprise नहीं।</p>
+          </div>
+        </div>
+        <div class="jv-step">
+          <div class="jv-step-num">04</div>
+          <div class="jv-step-body">
+            <h4>📦 7-Layer Export Packing & Dispatch</h4>
+            <p>Fumigation certificate, bubble wrap, wooden crating, और COA documentation के साथ ICD Patparganj / Mundra से CIF delivery।</p>
+          </div>
+        </div>
+        <div class="jv-step">
+          <div class="jv-step-num">05</div>
+          <div class="jv-step-body">
+            <h4>📊 Post-Delivery Support</h4>
+            <p>Customs clearance documentation, claim handling, और next-order planning — long-term supply chain partner की तरह।</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="eyes-ears-card">
+        <div class="eyes-tag">Exclusive Service</div>
+        <div class="eyes-title">👁️ Eyes &amp; <span>Ears</span></div>
+        <p class="eyes-desc">Maretto की signature service — Buyer को लगता है जैसे वो खुद factory में बैठे हैं। हम आपकी आँख और कान बनते हैं।</p>
+        <div class="eyes-features">
+          <div class="eyes-feat">
+            <div class="eyes-feat-icon">📱</div>
+            <div class="eyes-feat-text">
+              <h5>Live Video Walkthroughs</h5>
+              <p>Production milestones पर scheduled live factory tours</p>
+            </div>
+          </div>
+          <div class="eyes-feat">
+            <div class="eyes-feat-icon">📋</div>
+            <div class="eyes-feat-text">
+              <h5>Daily Progress Reports</h5>
+              <p>Photos, measurements, और production count — WhatsApp पर</p>
+            </div>
+          </div>
+          <div class="eyes-feat">
+            <div class="eyes-feat-icon">🔬</div>
+            <div class="eyes-feat-text">
+              <h5>Independent QC Checks</h5>
+              <p>Third-party lab testing + Maretto in-house QC team</p>
+            </div>
+          </div>
+          <div class="eyes-feat">
+            <div class="eyes-feat-icon">🚩</div>
+            <div class="eyes-feat-text">
+              <h5>Instant Issue Escalation</h5>
+              <p>कोई भी defect मिले — तुरंत buyer को alert, production hold</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WOODCRAFT ── -->
+<section id="woodcraft">
+  <div class="container">
+    <span class="section-tag">Artisanal Woodcraft — Saharanpur</span>
+    <div class="section-divider"></div>
+
+    <div class="product-hero-grid">
+      <div>
+        <h2 class="section-title">सहारनपुर की नक्काशी —<br>Global Markets के लिए</h2>
+        <p style="color:#666;line-height:1.7;margin-bottom:1.5rem;">सहारनपुर की 400 साल पुरानी लकड़ी नक्काशी की परंपरा को हम international buyers तक पहुँचाते हैं। EPCH registered units से premium furniture, home décor, और artifacts।</p>
+
+        <div class="compliance-badges">
+          <div class="badge gold">EPCH Certified</div>
+          <div class="badge green">VRIKSH Compliant</div>
+          <div class="badge">Legal Wood Sourcing</div>
+          <div class="badge">FSC Trackable</div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:0.8rem;margin-bottom:2rem;">
+          <div style="display:flex;align-items:center;gap:0.8rem;font-size:0.88rem;color:#555;">
+            <span style="color:#c9922a;font-weight:700;">✓</span>
+            <strong>Moisture Control:</strong>&nbsp;Wood seasoning &lt;12% — no warping in transit
+          </div>
+          <div style="display:flex;align-items:center;gap:0.8rem;font-size:0.88rem;color:#555;">
+            <span style="color:#c9922a;font-weight:700;">✓</span>
+            <strong>7-Layer Export Packing:</strong>&nbsp;Fumigation + crating included
+          </div>
+          <div style="display:flex;align-items:center;gap:0.8rem;font-size:0.88rem;color:#555;">
+            <span style="color:#c9922a;font-weight:700;">✓</span>
+            <strong>MOQ:</strong>&nbsp;50 pieces | Lead Time: 45–60 days
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary">Request Wood Catalogue →</a>
+      </div>
+      <div class="product-visual">
+        <div class="product-visual-icon">🪵🔨🌿</div>
+        <div class="product-visual-label">Saharanpur — Heritage Craft Since 1600s</div>
+      </div>
+    </div>
+
+    <div class="product-cards">
+      <div class="prod-card">
+        <span class="prod-card-icon">🛋️</span>
+        <h4>Premium Carved Furniture</h4>
+        <p>Hand-carved dining sets, sofas, और bed frames। Custom designs उपलब्ध।</p>
+      </div>
+      <div class="prod-card">
+        <span class="prod-card-icon">🖼️</span>
+        <h4>Wall Décor & Panels</h4>
+        <p>Lattice work, carved wall panels, और decorative mirrors — export-grade finishing।</p>
+      </div>
+      <div class="prod-card">
+        <span class="prod-card-icon">🏺</span>
+        <h4>Home Accessories</h4>
+        <p>Candle holders, photo frames, jewelry boxes, और trays — giftable packaging।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TECHNICAL EXCELLENCE ── -->
+<section id="tech">
+  <div class="container">
+    <span class="section-tag">Technical Excellence</span>
+    <div class="section-divider"></div>
+    <h2 class="section-title">Export-Grade Quality —<br>हर Step पर</h2>
+    <p class="section-desc">चाहे लकड़ी हो, ceramic हो, या polymer — Maretto हर product में world-class quality standards ensure करता है।</p>
+
+    <div class="tech-grid">
+      <div class="tech-card">
+        <span class="tech-icon">🌳</span>
+        <h4>VRIKSH & EPCH Compliance</h4>
+        <p>हर लकड़ी के piece की legal traceability। Forest clearance certificates, VRIKSH registration, और EPCH membership के साथ पूरी transparency।</p>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">💧</span>
+        <h4>Moisture & Seasoning Control</h4>
+        <p>Export-grade wood seasoning process — moisture content 12% से कम। Kiln-dried और air-dried options। No warping, no cracking in transit।</p>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">📦</span>
+        <h4>7-Layer Export Packing</h4>
+        <p>Bubble wrap → foam padding → corrugated → wooden crate → shrink wrap → fumigation certificate → Bill of Lading — complete protection।</p>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">🔬</span>
+        <h4>Third-Party Lab Testing</h4>
+        <p>NABL-accredited labs से COA (Certificate of Analysis), lead-free glazing certification, और food-safe testing for ceramics।</p>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">📋</span>
+        <h4>DGFT & Customs Compliance</h4>
+        <p>IEC DPJPR4127C के साथ सभी DGFT regulations follow। Clean customs clearance — COA, MSDS, Phytosanitary certificates सब included।</p>
+      </div>
+      <div class="tech-card">
+        <span class="tech-icon">🌾</span>
+        <h4>Agri Export Standards</h4>
+        <p>APEDA guidelines, pesticide residue testing, cold chain management — fresh produce के लिए global food safety compliance।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CERAMICS ── -->
+<section id="ceramics">
+  <div class="container">
+    <span class="section-tag">Fine Ceramics — Khurja</span>
+    <div class="section-divider"></div>
+
+    <div class="ceramics-layout">
+      <div class="ceramics-visual">
+        <div style="font-size:4rem;position:relative;z-index:1;">🏺🍽️🪴</div>
+      </div>
+      <div>
+        <h2 class="section-title">खुर्जा की Ceramics —<br>World-Class Quality</h2>
+        <p style="color:#666;line-height:1.7;margin-bottom:1.5rem;">खुर्जा — UP के Ceramic Hub से premium home décor, crockery, और sanitaryware। Maretto के JV model के तहत quality-controlled manufacturing।</p>
+
+        <div class="compliance-badges" style="margin-bottom:1.5rem;">
+          <div class="badge gold">Lead-Free Glazing</div>
+          <div class="badge green">Food Safe Certified</div>
+          <div class="badge">EU Standards</div>
+          <div class="badge">Custom Branding</div>
+        </div>
+
+        <div class="product-cards" style="grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem;">
+          <div class="prod-card" style="padding:1.2rem;">
+            <span class="prod-card-icon">🍽️</span>
+            <h4 style="font-size:0.85rem;">Dinner Sets & Crockery</h4>
+            <p style="font-size:0.78rem;">Bone china और stoneware। Custom color और logo printing।</p>
+          </div>
+          <div class="prod-card" style="padding:1.2rem;">
+            <span class="prod-card-icon">🪴</span>
+            <h4 style="font-size:0.85rem;">Home Décor & Vases</h4>
+            <p style="font-size:0.78rem;">Hand-painted vases, planters, और decorative pieces।</p>
+          </div>
+          <div class="prod-card" style="padding:1.2rem;">
+            <span class="prod-card-icon">🏠</span>
+            <h4 style="font-size:0.85rem;">Tiles & Elevation</h4>
+            <p style="font-size:0.78rem;">Vitrified floor tiles और premium wall tiles।</p>
+          </div>
+          <div class="prod-card" style="padding:1.2rem;">
+            <span class="prod-card-icon">🚿</span>
+            <h4 style="font-size:0.85rem;">Sanitaryware</h4>
+            <p style="font-size:0.78rem;">WC, washbasins — international quality standards।</p>
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary" style="background:var(--slate);color:#fff;">Request Ceramics Catalogue →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FRESH PRODUCE ── -->
+<section id="produce">
+  <div class="container">
+    <span class="section-tag">Fresh Produce & Agri Export</span>
+    <div class="section-divider"></div>
+
+    <div class="produce-layout">
+      <div>
+        <h2 class="section-title">100-बीघा Farm से<br>सीधे Global Buyers तक</h2>
+        <p style="color:#666;line-height:1.7;margin-bottom:1.5rem;">Western UP के fertile belt में हमारा 100-बीघा owned farm — pesticide-free, traceable, और APEDA-compliant fresh vegetables। Farm से port तक — zero middlemen।</p>
+
+        <div class="compliance-badges" style="margin-bottom:1.5rem;">
+          <div class="badge green">APEDA Registered</div>
+          <div class="badge gold">Pesticide Tested</div>
+          <div class="badge">Cold Chain Ready</div>
+          <div class="badge">Phytosanitary Cert.</div>
+        </div>
+
+        <div class="veggie-grid">
+          <div class="veggie-item"><span>🧅</span> Onions (Premium)</div>
+          <div class="veggie-item"><span>🥔</span> Potatoes</div>
+          <div class="veggie-item"><span>🌶️</span> Green Chillies</div>
+          <div class="veggie-item"><span>🧄</span> Garlic</div>
+          <div class="veggie-item"><span>🥬</span> Leafy Greens</div>
+          <div class="veggie-item"><span>🥦</span> Seasonal Vegetables</div>
+        </div>
+        <div style="margin-top:2rem;">
+          <a href="#contact" class="btn-primary" style="background:var(--sage);">Request Produce Price List →</a>
+        </div>
+      </div>
+      <div class="produce-visual">
+        <div style="font-size:5rem;position:relative;z-index:1;">🌾🧅🌿</div>
+        <div class="farm-stat">
+          <div class="farm-stat-item">
+            <span class="num">100</span>
+            <span class="lbl">Bigha Farm</span>
+          </div>
+          <div class="farm-stat-item">
+            <span class="num">0</span>
+            <span class="lbl">Middlemen</span>
+          </div>
+          <div class="farm-stat-item">
+            <span class="num">12+</span>
+            <span class="lbl">Countries</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="section-tag" style="color:var(--gold);">About Maretto</span>
+        <div class="section-divider"></div>
+        <h2 class="section-title" style="color:#fff;">India's Transparent<br>Supply Chain Partner</h2>
+
+        <div class="trust-gap-box">
+          <p>"हम Supplier और Buyer के बीच के Trust Gap को खत्म करते हैं — Live Audits, Full Documentation, और एक dedicated partner जो हर step पर आपके साथ है।"</p>
+        </div>
+
+        <p>Maretto Export Import Company एक Meerut-based firm है जो भारत के छोटे manufacturers को global corporate identity दिलाती है। हम सिर्फ trading नहीं करते — हम managed supply chain solutions provide करते हैं।</p>
+        <p>Nafees Ahmed के नेतृत्व में, Maretto ने Saharanpur Woodcraft, Khurja Ceramics, और Fresh Produce — तीनों sectors में JV partnerships बनाई हैं जहाँ quality control हमारी primary responsibility है।</p>
+        <p style="margin-bottom:0;">— <strong style="color:#fff;">Nafees Ahmed</strong>, Managing Director | Maretto Export Import Co.</p>
+      </div>
+
+      <div>
+        <div class="reg-grid">
+          <div class="reg-item">
+            <div class="key">IEC Registration</div>
+            <div class="val">DPJPR4127C</div>
+          </div>
+          <div class="reg-item">
+            <div class="key">GST Number</div>
+            <div class="val">09DPJPR4127C1ZT</div>
+          </div>
+          <div class="reg-item">
+            <div class="key">UDYAM (MSME)</div>
+            <div class="val">UP-560155946</div>
+          </div>
+          <div class="reg-item">
+            <div class="key">CIF Ports</div>
+            <div class="val">Patparganj & Mundra</div>
+          </div>
+          <div class="reg-item">
+            <div class="key">Compliance</div>
+            <div class="val">DGFT & PSIC</div>
+          </div>
+          <div class="reg-item">
+            <div class="key">Documentation</div>
+            <div class="val">COA + MSDS Every Lot</div>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem;padding:2rem;background:rgba(201,146,42,0.06);border:1px solid rgba(201,146,42,0.2);border-radius:6px;">
+          <div style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1rem;">Our JV Sectors</div>
+          <div style="display:flex;flex-direction:column;gap:0.8rem;">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.8rem;background:rgba(255,255,255,0.04);border-radius:3px;">
+              <span style="color:#ddd;font-size:0.85rem;">🪵 Woodcraft</span>
+              <span style="color:var(--gold);font-size:0.75rem;font-weight:600;">Saharanpur</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.8rem;background:rgba(255,255,255,0.04);border-radius:3px;">
+              <span style="color:#ddd;font-size:0.85rem;">🏺 Ceramics</span>
+              <span style="color:var(--gold);font-size:0.75rem;font-weight:600;">Khurja</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.8rem;background:rgba(255,255,255,0.04);border-radius:3px;">
+              <span style="color:#ddd;font-size:0.85rem;">🌿 Fresh Produce</span>
+              <span style="color:var(--gold);font-size:0.75rem;font-weight:600;">100-Bigha Farm</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.8rem;background:rgba(255,255,255,0.04);border-radius:3px;">
+              <span style="color:#ddd;font-size:0.85rem;">🔩 Polymers</span>
+              <span style="color:var(--gold);font-size:0.75rem;font-weight:600;">Global Refineries</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section id="trust">
+  <div class="container">
+    <span class="section-tag">Why Businesses Trust Maretto</span>
+    <div class="section-divider"></div>
+    <h2 class="section-title">Real Experiences,<br>Verified Results</h2>
+
+    <div class="testimonial-grid" style="margin-top:3rem;">
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"The MFI specifications were exactly as promised. Our PP raffia line ran without a single rejection batch across 3 consignments. Technical support from Nafees bhai is outstanding."</p>
+        <div class="t-author">Plant Manager</div>
+        <div class="t-company">Woven Sack Manufacturer, Hapur, UP</div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"Maretto की Eyes & Ears service ने हमें India में manufacturer को personally visit किए बिना ही पूरा confidence दिया। Production videos रोज़ आते थे।"</p>
+        <div class="t-author">Import Manager</div>
+        <div class="t-company">Home Décor Buyer, Dubai, UAE</div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"Every shipment came with COA, MSDS and all DGFT documentation in order. Our customs agent said it was one of the cleanest imports they'd processed."</p>
+        <div class="t-author">Import Manager</div>
+        <div class="t-company">HDPE Pipe Manufacturer, Delhi NCR</div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:center;gap:2rem;margin-top:4rem;flex-wrap:wrap;">
+      <div style="text-align:center;padding:1.5rem 2rem;border:1px solid var(--border);border-radius:4px;background:#fff;">
+        <div style="font-size:1.8rem;font-family:'Playfair Display',serif;font-weight:900;color:var(--gold);">IEC ✓</div>
+        <div style="font-size:0.72rem;color:#999;margin-top:4px;">DPJPR4127C</div>
+      </div>
+      <div style="text-align:center;padding:1.5rem 2rem;border:1px solid var(--border);border-radius:4px;background:#fff;">
+        <div style="font-size:1.8rem;font-family:'Playfair Display',serif;font-weight:900;color:var(--slate);">GST ✓</div>
+        <div style="font-size:0.72rem;color:#999;margin-top:4px;">Verified</div>
+      </div>
+      <div style="text-align:center;padding:1.5rem 2rem;border:1px solid var(--border);border-radius:4px;background:#fff;">
+        <div style="font-size:1.8rem;font-family:'Playfair Display',serif;font-weight:900;color:var(--sage);">UDYAM ✓</div>
+        <div style="font-size:0.72rem;color:#999;margin-top:4px;">MSME Registered</div>
+      </div>
+      <div style="text-align:center;padding:1.5rem 2rem;border:1px solid var(--border);border-radius:4px;background:#fff;">
+        <div style="font-size:1.8rem;font-family:'Playfair Display',serif;font-weight:900;color:var(--rust);">DGFT ✓</div>
+        <div style="font-size:0.72rem;color:#999;margin-top:4px;">Compliant</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VENDOR ── -->
+<section id="vendor">
+  <div class="container">
+    <span class="section-tag">Join Our Network</span>
+    <div class="section-divider"></div>
+    <h2 class="section-title">Manufacturer हैं?<br>Global Market मिलेगा</h2>
+
+    <div class="vendor-layout" style="margin-top:3rem;">
+      <div>
+        <p class="section-desc">Maretto के JV Network में शामिल हों — हम आपकी manufacturing capability को international buyers तक पहुँचाते हैं।</p>
+        <div class="vendor-features">
+          <div class="v-feat">
+            <div class="v-feat-icon">🌍</div>
+            <div><h4>Global Market Access</h4><p>International buyers तक reach — Maretto के IEC-backed export channels के through।</p></div>
+          </div>
+          <div class="v-feat">
+            <div class="v-feat-icon">📋</div>
+            <div><h4>Full Compliance Support</h4><p>DGFT, customs, COA — सब Maretto handle करता है। आप सिर्फ manufacturing करें।</p></div>
+          </div>
+          <div class="v-feat">
+            <div class="v-feat-icon">🏷️</div>
+            <div><h4>Corporate Branding</h4><p>Export-grade packaging और international market positioning।</p></div>
+          </div>
+          <div class="v-feat">
+            <div class="v-feat-icon">🤝</div>
+            <div><h4>Fair JV Structure</h4><p>Transparent margin structure — कोई hidden charges नहीं।</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vendor-form">
+        <h3>Register as a Vendor</h3>
+        <p class="form-sub">हमारी team 24 घंटे में contact करेगी।</p>
+        <form onsubmit="handleVendorSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" placeholder="Ramesh Kumar" required>
+            </div>
+            <div class="form-group">
+              <label>Company Name *</label>
+              <input type="text" placeholder="ABC Crafts Pvt Ltd" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone / WhatsApp *</label>
+              <input type="tel" placeholder="+91 98765 43210" required>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="you@company.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Product Category *</label>
+            <select required>
+              <option value="">— Select —</option>
+              <option>Wooden Handicrafts / Furniture</option>
+              <option>Ceramic Tiles & Sanitaryware</option>
+              <option>Crockery & Home Décor</option>
+              <option>Fresh Vegetables / Agri Produce</option>
+              <option>Plastic Granules / Polymers</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Monthly Capacity</label>
+              <input type="text" placeholder="500 pieces / 10 MT">
+            </div>
+            <div class="form-group">
+              <label>City / State</label>
+              <input type="text" placeholder="Saharanpur, UP">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Tell us about your product</label>
+            <textarea placeholder="Product details, certifications, export experience..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;border:none;cursor:pointer;padding:14px;">🤝 Submit Vendor Application →</button>
+          <div class="form-success" id="vendor-success">✅ Application received! हमारी team 24 घंटे में contact करेगी।</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="container">
+    <span class="section-tag" style="color:var(--gold);">Get In Touch</span>
+    <div class="section-divider"></div>
+    <h2 class="section-title" style="color:#fff;">Start a Conversation</h2>
+    <p class="section-desc">Ready to source Woodcraft, Ceramics, Fresh Produce, or Polymers? हमारी team 24 घंटे में respond करती है।</p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="c-item">
+          <div class="c-item-icon">👤</div>
+          <div>
+            <div class="c-item-key">Managing Director</div>
+            <div class="c-item-val">Nafees Ahmed</div>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-item-icon">📍</div>
+          <div>
+            <div class="c-item-key">Address</div>
+            <div class="c-item-val">NH709A, Village Bubakpur, Near Bubakpur Bus Stand<br>Post Office Dabathwa, Sardhana<br>Meerut – 250341, Uttar Pradesh, India</div>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-item-icon">📞</div>
+          <div>
+            <div class="c-item-key">Phone</div>
+            <div class="c-item-val"><a href="tel:+919761128966">+91 9761128966</a></div>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-item-icon">✉️</div>
+          <div>
+            <div class="c-item-key">Email</div>
+            <div class="c-item-val"><a href="mailto:info@marettoexport.in">info@marettoexport.in</a></div>
+          </div>
+        </div>
+        <a href="https://wa.me/918679661174" class="whatsapp-btn" target="_blank">
+          💬 Chat on WhatsApp — +91 8679661174
+        </a>
+      </div>
+
+      <div class="contact-form">
+        <h3>📋 Send Product Inquiry</h3>
+        <form onsubmit="handleContactSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" placeholder="John Smith" required>
+            </div>
+            <div class="form-group">
+              <label>Company Name</label>
+              <input type="text" placeholder="XYZ Imports LLC">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone / WhatsApp *</label>
+              <input type="tel" placeholder="+1 555 000 0000" required>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="you@company.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Product Required *</label>
+            <select required>
+              <option value="">— Select Product —</option>
+              <option>Artisanal Woodcraft (Saharanpur)</option>
+              <option>Fine Ceramics — Crockery & Home Décor</option>
+              <option>Ceramic Tiles & Sanitaryware (Khurja)</option>
+              <option>Fresh Vegetables / Agri Produce</option>
+              <option>PP Polypropylene (Raffia Grade)</option>
+              <option>HDPE / LLDPE / LDPE</option>
+              <option>ABS & Engineering Plastics</option>
+              <option>Color / Additive Masterbatch</option>
+              <option>Organic Fertilizer</option>
+              <option>Multiple Products</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Quantity / Month</label>
+              <input type="text" placeholder="200 pieces / 5 MT">
+            </div>
+            <div class="form-group">
+              <label>Destination Country</label>
+              <input type="text" placeholder="USA, UK, UAE...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Additional Requirements</label>
+            <textarea placeholder="Specifications, certifications needed, delivery terms..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;border:none;cursor:pointer;padding:14px;">SEND INQUIRY →</button>
+          <div class="form-success" id="contact-success">✅ Inquiry submitted! We will contact you within 24 hours.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">MARETTO Export Import Co.</div>
+      <p class="footer-desc">India's Transparent Supply Chain Partner — connecting Saharanpur Woodcraft, Khurja Ceramics, and Fresh Produce to global markets through our managed JV model.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Products</h5>
+      <a href="#woodcraft">Artisanal Woodcraft</a>
+      <a href="#ceramics">Fine Ceramics</a>
+      <a href="#produce">Fresh Produce</a>
+      <a href="#about">Polymers</a>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="#jv">JV Model</a>
+      <a href="#about">About Us</a>
+      <a href="#vendor">Join as Vendor</a>
+      <a href="#trust">Testimonials</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <a href="tel:+919761128966">+91 9761128966</a>
+      <a href="https://wa.me/918679661174">+91 8679661174 (WA)</a>
+      <a href="mailto:info@marettoexport.in">info@marettoexport.in</a>
+      <a href="https://www.marettoexport.in">www.marettoexport.in</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Maretto Export Import Company. All rights reserved.</span>
+    <div class="footer-regs">
+      <span>GST: 09DPJPR4127C1ZT</span>
+      <span>IEC: DPJPR4127C</span>
+      <span>UDYAM: UP-560155946</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        e.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.prod-card, .tech-card, .t-card, .jv-step, .v-feat, .stat-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    observer.observe(el);
+  });
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.borderBottomColor = window.scrollY > 100
+      ? 'rgba(201,146,42,0.5)' : 'rgba(201,146,42,0.3)';
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    const cta = document.querySelector('.nav-cta');
+    if (links.style.display === 'flex') {
+      links.style.display = 'none';
+      if (cta) cta.style.display = 'none';
+    } else {
+      links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:rgba(14,14,14,0.98);padding:2rem 5%;gap:1.5rem;';
+      if (cta) cta.style.cssText = 'display:block;margin:0 5% 1.5rem;text-align:center;position:absolute;top:280px;left:0;right:0;';
+    }
+  }
+
+  // Form handlers
+  function handleVendorSubmit(e) {
+    e.preventDefault();
+    document.getElementById('vendor-success').style.display = 'block';
+    e.target.reset();
+    setTimeout(() => { document.getElementById('vendor-success').style.display = 'none'; }, 5000);
+  }
+
+  function handleContactSubmit(e) {
+    e.preventDefault();
+    document.getElementById('contact-success').style.display = 'block';
+    e.target.reset();
+    setTimeout(() => { document.getElementById('contact-success').style.display = 'none'; }, 5000);
+  }
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.querySelector('.nav-links').style.display = 'none';
+    });
+  });
+</script>
+</body>
+</html>
