@@ -1,1 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maretto Export Import Co. | Fresh Produce & Chicken Meat Exports from India</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green:#1a6b3c; --green-light:#2d9155; --green-pale:#e8f5ee;
+  --gold:#c9960c; --gold-light:#f0c040; --orange:#e07020;
+  --dark:#111a14; --mid:#3a4a3e; --text:#2a3a2e;
+  --light:#f7faf8; --white:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
+body.rtl{font-family:'Noto Sans Arabic','DM Sans',sans-serif;direction:rtl;}
+body.rtl h1,body.rtl h2,body.rtl h3{font-family:'Noto Sans Arabic',sans-serif;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
 
+/* LANG BAR */
+.lang-bar{
+  background:#080f0a;padding:6px 5%;
+  display:flex;justify-content:flex-end;align-items:center;gap:8px;
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.lang-bar span{color:rgba(255,255,255,0.35);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;}
+.lang-btn{
+  padding:3px 12px;border-radius:50px;border:1px solid rgba(255,255,255,0.18);
+  background:transparent;color:rgba(255,255,255,0.55);
+  font-size:0.72rem;font-weight:600;cursor:pointer;transition:all 0.2s;
+  font-family:'DM Sans',sans-serif;
+}
+.lang-btn:hover,.lang-btn.active{background:var(--gold);color:var(--dark);border-color:var(--gold);}
+
+/* NAV */
+nav{
+  position:fixed;top:31px;left:0;right:0;z-index:999;
+  background:rgba(17,26,20,0.97);backdrop-filter:blur(14px);
+  padding:0 5%;display:flex;align-items:center;justify-content:space-between;
+  height:60px;border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.nav-logo{font-family:'Playfair Display',serif;color:var(--white);font-size:1.2rem;font-weight:700;text-decoration:none;}
+.nav-logo span{color:var(--gold-light);}
+.nav-links{display:flex;gap:18px;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.8rem;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--gold-light);}
+.nav-cta{background:var(--gold);color:var(--dark);padding:7px 16px;border-radius:6px;font-weight:700;font-size:0.82rem;text-decoration:none;transition:background 0.2s;white-space:nowrap;}
+.nav-cta:hover{background:var(--gold-light);}
+
+/* HERO */
+#hero{
+  min-height:100vh;
+  background:linear-gradient(135deg,#0d2e1a 0%,#1a4a2a 55%,#0a1f10 100%);
+  display:flex;align-items:center;padding:120px 5% 60px;
+  position:relative;overflow:hidden;
+}
+#hero::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-content{position:relative;z-index:2;max-width:620px;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(201,150,12,0.17);border:1px solid rgba(201,150,12,0.44);
+  color:var(--gold-light);padding:6px 14px;border-radius:50px;
+  font-size:0.77rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;
+  margin-bottom:20px;animation:fadeUp 0.6s ease both;
+}
+#hero h1{font-size:clamp(2.2rem,4.5vw,3.6rem);color:var(--white);line-height:1.15;margin-bottom:18px;animation:fadeUp 0.6s 0.1s ease both;}
+#hero h1 em{font-style:normal;color:var(--gold-light);}
+.hero-sub{color:rgba(255,255,255,0.72);font-size:1rem;line-height:1.75;margin-bottom:28px;animation:fadeUp 0.6s 0.2s ease both;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp 0.6s 0.3s ease both;}
+.btn-primary{background:var(--gold);color:var(--dark);padding:12px 26px;border-radius:8px;font-weight:700;font-size:0.92rem;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,150,12,0.4);}
+.btn-wa{background:#25d366;color:#fff;padding:12px 26px;border-radius:8px;font-weight:700;font-size:0.92rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform 0.2s,box-shadow 0.2s;}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(37,211,102,0.33);}
+.hero-stats{display:flex;gap:28px;margin-top:44px;flex-wrap:wrap;animation:fadeUp 0.6s 0.4s ease both;}
+.stat-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold-light);font-weight:700;}
+.stat-label{font-size:0.73rem;color:rgba(255,255,255,0.48);letter-spacing:0.05em;text-transform:uppercase;}
+.hero-visual{
+  position:absolute;right:5%;top:50%;transform:translateY(-50%);
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;width:330px;
+  animation:fadeUp 0.8s 0.3s ease both;
+}
+.hero-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px 14px;text-align:center;backdrop-filter:blur(8px);transition:transform 0.25s,border-color 0.25s;}
+.hero-card:hover{transform:translateY(-4px);border-color:rgba(201,150,12,0.5);}
+.hero-card .icon{font-size:1.9rem;margin-bottom:7px;display:block;}
+.hero-card .lbl{color:rgba(255,255,255,0.77);font-size:0.77rem;font-weight:500;}
+.hero-card.feat{grid-column:1/-1;background:rgba(201,150,12,0.15);border-color:rgba(201,150,12,0.4);}
+
+/* COMMON */
+section{padding:76px 5%;}
+.section-label{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
+.section-title{font-size:clamp(1.7rem,3.2vw,2.5rem);line-height:1.2;color:var(--dark);margin-bottom:12px;}
+.section-title em{font-style:normal;color:var(--green);}
+.section-sub{color:var(--mid);font-size:0.97rem;line-height:1.75;max-width:540px;}
+.divider{height:4px;background:linear-gradient(90deg,var(--green),var(--gold-light),var(--orange));}
+
+/* MANGO */
+#mango{background:linear-gradient(120deg,#fff7e0,#fff3cc 40%,#ffe8a0);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);padding:48px 5%;}
+.mango-inner{display:flex;align-items:center;gap:36px;flex-wrap:wrap;}
+.mango-text{flex:1;min-width:240px;}
+.mango-badge{background:var(--gold);color:var(--dark);display:inline-block;padding:4px 12px;border-radius:50px;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;}
+.mango-text h2{font-size:clamp(1.5rem,2.8vw,2.2rem);color:var(--dark);margin-bottom:10px;}
+.mango-text p{color:#5a4a10;font-size:0.95rem;line-height:1.72;margin-bottom:14px;}
+.mango-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.mango-tag{background:rgba(201,150,12,0.14);border:1px solid rgba(201,150,12,0.38);color:#7a5800;padding:4px 11px;border-radius:50px;font-size:0.76rem;font-weight:500;}
+.mango-emoji{font-size:5.5rem;filter:drop-shadow(0 8px 16px rgba(200,120,0,0.3));}
+
+/* PRODUCE */
+#produce{background:var(--light);}
+.produce-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:16px;margin-top:34px;}
+.produce-card{background:var(--white);border-radius:13px;padding:20px 16px;text-align:center;border:1.5px solid #e0ece5;transition:transform 0.25s,border-color 0.25s,box-shadow 0.25s;}
+.produce-card:hover{transform:translateY(-5px);border-color:var(--green-light);box-shadow:0 12px 28px rgba(26,107,60,0.1);}
+.produce-card .vi{font-size:2.5rem;margin-bottom:10px;display:block;}
+.produce-card h3{font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;color:var(--dark);margin-bottom:5px;}
+.produce-card .vd{font-size:0.75rem;color:var(--mid);line-height:1.5;}
+.produce-card.sp{background:linear-gradient(135deg,#fff7e0,#fff3cc);border-color:var(--gold);}
+.pack-strip{margin-top:32px;background:var(--green);border-radius:13px;padding:24px 26px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.pack-strip h3{color:var(--white);font-size:1.05rem;margin-bottom:4px;}
+.pack-strip p{color:rgba(255,255,255,0.7);font-size:0.82rem;}
+.pack-steps{display:flex;gap:7px;flex-wrap:wrap;}
+.pack-step{background:rgba(255,255,255,0.14);color:var(--white);padding:5px 11px;border-radius:50px;font-size:0.73rem;font-weight:500;}
+
+/* CHICKEN */
+#chicken{background:var(--white);}
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:34px;}
+.cat-points{list-style:none;margin-top:13px;display:flex;flex-direction:column;gap:9px;}
+.cat-points li{display:flex;align-items:flex-start;gap:9px;font-size:0.85rem;color:var(--mid);line-height:1.6;}
+.cat-points li::before{content:'✓';color:var(--green);font-weight:700;margin-top:2px;flex-shrink:0;}
+.cat-card-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
+.cat-card{background:var(--light);border:1.5px solid #e0ece5;border-radius:10px;padding:15px 11px;text-align:center;transition:border-color 0.2s,transform 0.2s;}
+.cat-card:hover{border-color:var(--green);transform:translateY(-3px);}
+.cat-card .ci{font-size:1.8rem;margin-bottom:7px;display:block;}
+.cat-card h4{font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;color:var(--dark);}
+
+/* PACKING VISUAL */
+#packing{background:#0d1a10;padding:72px 5%;}
+#packing .section-label{color:var(--gold-light);}
+#packing .section-title{color:var(--white);}
+#packing .section-title em{color:var(--gold-light);}
+#packing .section-sub{color:rgba(255,255,255,0.58);}
+
+.pv-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);margin-top:42px;
+  border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);
+}
+.pv-step{
+  background:rgba(255,255,255,0.04);padding:30px 16px;text-align:center;
+  position:relative;transition:background 0.25s;
+  border-right:1px solid rgba(255,255,255,0.08);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.pv-step:nth-child(4n){border-right:none;}
+.pv-step:nth-child(n+5){border-bottom:none;}
+.pv-step:hover{background:rgba(201,150,12,0.09);}
+.pv-num{
+  position:absolute;top:13px;left:50%;transform:translateX(-50%);
+  background:var(--gold);color:var(--dark);
+  font-weight:800;font-size:0.63rem;padding:2px 9px;border-radius:50px;letter-spacing:0.07em;white-space:nowrap;
+}
+.pv-icon{font-size:3rem;margin:22px 0 12px;display:block;filter:drop-shadow(0 4px 10px rgba(255,255,255,0.08));}
+.pv-step h3{font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.87rem;color:var(--white);margin-bottom:7px;}
+.pv-step p{font-size:0.74rem;color:rgba(255,255,255,0.47);line-height:1.55;}
+.pv-temp{display:inline-block;margin-top:9px;background:rgba(26,107,60,0.45);border:1px solid rgba(45,145,85,0.38);color:#7ddc9a;padding:3px 10px;border-radius:50px;font-size:0.69rem;font-weight:600;}
+
+.packing-certs{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;}
+.pcert{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.055);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:11px 16px;transition:border-color 0.2s;}
+.pcert:hover{border-color:rgba(201,150,12,0.38);}
+.pcert .pc{font-size:1.45rem;}
+.pcert strong{display:block;color:var(--white);font-size:0.83rem;}
+.pcert span{color:rgba(255,255,255,0.42);font-size:0.71rem;}
+
+/* EYES */
+#eyes{background:var(--dark);position:relative;overflow:hidden;}
+#eyes::before{content:'👁️';position:absolute;right:4%;top:50%;transform:translateY(-50%);font-size:17rem;opacity:0.04;pointer-events:none;}
+#eyes .section-label{color:var(--gold-light);}
+#eyes .section-title{color:var(--white);}
+#eyes .section-title em{color:var(--gold-light);}
+#eyes .section-sub{color:rgba(255,255,255,0.6);}
+.eyes-highlight{margin:22px 0 34px;background:rgba(201,150,12,0.09);border:1px solid rgba(201,150,12,0.28);border-left:4px solid var(--gold-light);border-radius:10px;padding:17px 20px;max-width:680px;}
+.eyes-highlight p{color:var(--gold-light);font-size:0.98rem;font-style:italic;line-height:1.7;}
+.eyes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:16px;margin-top:34px;}
+.eyes-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px 16px;transition:border-color 0.25s,background 0.25s;}
+.eyes-card:hover{border-color:rgba(201,150,12,0.38);background:rgba(255,255,255,0.07);}
+.eyes-card .ei{font-size:1.85rem;margin-bottom:11px;display:block;}
+.eyes-card h3{color:var(--white);font-size:0.94rem;margin-bottom:7px;font-family:'DM Sans',sans-serif;font-weight:600;}
+.eyes-card p{color:rgba(255,255,255,0.55);font-size:0.8rem;line-height:1.6;}
+
+/* TRUST */
+#trust{background:var(--green-pale);}
+.trust-badges{display:flex;flex-wrap:wrap;gap:13px;margin-top:34px;}
+.trust-badge{display:flex;align-items:center;gap:10px;background:var(--white);border:1.5px solid #c5e0d0;border-radius:10px;padding:11px 17px;min-width:168px;transition:box-shadow 0.2s;}
+.trust-badge:hover{box-shadow:0 6px 16px rgba(26,107,60,0.1);}
+.trust-badge .ti{font-size:1.65rem;}
+.trust-badge strong{display:block;font-size:0.85rem;color:var(--dark);font-weight:700;}
+.trust-badge span{font-size:0.7rem;color:var(--mid);}
+.reg-strip{margin-top:32px;background:var(--white);border:1.5px solid #c5e0d0;border-radius:13px;padding:22px 26px;display:flex;flex-wrap:wrap;gap:22px;align-items:center;}
+.reg-item .rl{font-size:0.68rem;color:var(--mid);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:3px;}
+.reg-item .rv{font-weight:700;font-size:0.86rem;color:var(--dark);font-family:monospace;}
+
+/* JV */
+#jv{background:var(--light);}
+.jv-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:16px;margin-top:34px;}
+.jv-step{border:1.5px solid #dde8e1;border-radius:12px;padding:20px 15px;position:relative;transition:border-color 0.25s,box-shadow 0.25s;background:var(--white);}
+.jv-step:hover{border-color:var(--green-light);box-shadow:0 8px 20px rgba(26,107,60,0.09);}
+.jv-num{position:absolute;top:-12px;left:15px;background:var(--green);color:var(--white);font-weight:700;font-size:0.73rem;padding:2px 9px;border-radius:50px;}
+.jv-step h3{font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.9rem;color:var(--dark);margin-bottom:7px;}
+.jv-step p{font-size:0.79rem;color:var(--mid);line-height:1.6;}
+
+/* WOODCRAFT */
+#woodcraft{background:var(--white);}
+
+/* TESTIMONIALS */
+#testimonials{background:var(--dark);}
+#testimonials .section-title{color:var(--white);}
+#testimonials .section-label{color:var(--gold-light);}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:16px;margin-top:34px;}
+.testi-card{background:rgba(255,255,255,0.055);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px 17px;}
+.testi-stars{color:var(--gold-light);font-size:0.94rem;margin-bottom:10px;}
+.testi-text{color:rgba(255,255,255,0.7);font-size:0.83rem;line-height:1.7;font-style:italic;margin-bottom:12px;}
+.testi-author strong{color:var(--white);font-size:0.82rem;display:block;}
+.testi-author span{color:rgba(255,255,255,0.4);font-size:0.73rem;}
+
+/* CONTACT */
+#contact{background:var(--light);}
+.contact-wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:34px;margin-top:34px;}
+.contact-info h3{font-family:'Playfair Display',serif;font-size:1.42rem;color:var(--dark);margin-bottom:18px;}
+.crow{display:flex;align-items:flex-start;gap:11px;margin-bottom:15px;}
+.cicon{font-size:1.25rem;margin-top:2px;}
+.clabel{font-size:0.7rem;color:var(--mid);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px;}
+.cval{font-size:0.9rem;color:var(--dark);font-weight:500;}
+.cval a{color:var(--green);text-decoration:none;}
+.cval a:hover{text-decoration:underline;}
+.wa-big{display:inline-flex;align-items:center;gap:9px;background:#25d366;color:#fff;padding:12px 20px;border-radius:9px;font-weight:700;font-size:0.93rem;text-decoration:none;margin-top:18px;transition:transform 0.2s,box-shadow 0.2s;}
+.wa-big:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,211,102,0.27);}
+form{display:flex;flex-direction:column;gap:12px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+input,select,textarea{width:100%;padding:10px 13px;border:1.5px solid #cde0d5;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.87rem;color:var(--dark);background:var(--white);transition:border-color 0.2s;outline:none;}
+input:focus,select:focus,textarea:focus{border-color:var(--green);}
+textarea{min-height:108px;resize:vertical;}
+.submit-btn{background:var(--green);color:var(--white);padding:12px 24px;border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;transition:background 0.2s,transform 0.2s;align-self:flex-start;}
+.submit-btn:hover{background:var(--green-light);transform:translateY(-2px);}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,0.52);padding:42px 5% 22px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:26px;margin-bottom:28px;}
+.footer-logo{font-family:'Playfair Display',serif;color:var(--white);font-size:1.18rem;font-weight:700;margin-bottom:9px;display:block;}
+.footer-logo span{color:var(--gold-light);}
+.footer-brand p{font-size:0.78rem;line-height:1.7;color:rgba(255,255,255,0.42);max-width:225px;}
+.footer-col h4{color:var(--white);font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.82rem;margin-bottom:11px;text-transform:uppercase;letter-spacing:0.06em;}
+.footer-col a{display:block;color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.78rem;margin-bottom:7px;transition:color 0.2s;}
+.footer-col a:hover{color:var(--gold-light);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:17px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:7px;font-size:0.73rem;}
+
+/* FLOAT WA */
+.wa-float{position:fixed;bottom:22px;right:22px;z-index:888;background:#25d366;color:#fff;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.65rem;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,0.36);animation:pulse 2.5s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,0.36)}50%{box-shadow:0 4px 30px rgba(37,211,102,0.6)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* RESPONSIVE */
+@media(max-width:960px){.hero-visual{display:none;}.nav-links{display:none;}}
+@media(max-width:860px){.pv-grid{grid-template-columns:repeat(2,1fr);}.pv-step:nth-child(4n){border-right:1px solid rgba(255,255,255,0.08);}.pv-step:nth-child(2n){border-right:none;}.pv-step:nth-child(n+5){border-bottom:1px solid rgba(255,255,255,0.08);}.pv-step:last-child,.pv-step:nth-last-child(2):nth-child(odd){border-bottom:none;}}
+@media(max-width:700px){.cat-grid{grid-template-columns:1fr;}.contact-wrap{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:500px){#hero{padding-top:108px;}.hero-stats{gap:16px;}.pack-strip{flex-direction:column;}.mango-inner{flex-direction:column;text-align:center;}.mango-tags{justify-content:center;}.form-row{grid-template-columns:1fr;}.pv-grid{grid-template-columns:1fr 1fr;}.footer-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <span>Language:</span>
+  <button class="lang-btn active" id="btn-en" onclick="setLang('en')">🇬🇧 English</button>
+  <button class="lang-btn" id="btn-ar" onclick="setLang('ar')">🇦🇪 العربية</button>
+  <button class="lang-btn" id="btn-ur" onclick="setLang('ur')">🇵🇰 اردو</button>
+</div>
+
+<!-- FLOAT WA -->
+<a href="https://wa.me/918679661174" class="wa-float" target="_blank" title="WhatsApp">💬</a>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">MARETTO <span>Export</span></a>
+  <ul class="nav-links">
+    <li><a href="#produce" data-key="nav_produce">Fresh Produce</a></li>
+    <li><a href="#mango" data-key="nav_mango">Mangoes</a></li>
+    <li><a href="#chicken" data-key="nav_chicken">Chicken Meat</a></li>
+    <li><a href="#eyes" data-key="nav_eyes">Eyes &amp; Ears</a></li>
+    <li><a href="#trust" data-key="nav_certs">Certifications</a></li>
+    <li><a href="#woodcraft" data-key="nav_wood">Woodcraft</a></li>
+    <li><a href="#contact" data-key="nav_contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta" data-key="nav_quote">Get Quote</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-badge" data-key="hero_badge">🌾 Now Exporting: Mangoes, Vegetables &amp; Chicken Meat to Dubai &amp; GCC</div>
+    <h1 data-key="hero_h1">Farm-to-Port<br><em>Fresh Produce</em><br>from India's Heartland</h1>
+    <p class="hero-sub" data-key="hero_sub">100-Bigha owned farm in Western UP — Dashahari &amp; Chausa Mangoes, Bhindi, Green Chilli, Loki, Petha &amp; more. Plus: Fresh &amp; Frozen Chicken Meat — Halal certified, FSSAI &amp; APEDA compliant. Zero middlemen. Live video audits.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary" data-key="btn_price">Request Price List →</a>
+      <a href="https://wa.me/918679661174" class="btn-wa" target="_blank">💬 <span data-key="btn_wa">WhatsApp Now</span></a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">100</div><div class="stat-label" data-key="stat1">Bigha Owned Farm</div></div>
+      <div class="stat"><div class="stat-num">0</div><div class="stat-label" data-key="stat2">Middlemen</div></div>
+      <div class="stat"><div class="stat-num">12+</div><div class="stat-label" data-key="stat3">Countries Served</div></div>
+      <div class="stat"><div class="stat-num">24hr</div><div class="stat-label" data-key="stat4">Response Time</div></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card feat">
+      <span class="icon">🥭</span>
+      <div class="lbl" style="color:#f0c040;font-weight:700;font-size:0.9rem;" data-key="hc_mango">Premium Mangoes</div>
+      <div class="lbl" style="margin-top:3px;" data-key="hc_mango2">Dashahari • Chausa • UP</div>
+    </div>
+    <div class="hero-card"><span class="icon">🌿</span><div class="lbl" data-key="hc_veg">Farm-Fresh Vegetables</div></div>
+    <div class="hero-card"><span class="icon">🍗</span><div class="lbl" data-key="hc_chicken">Fresh &amp; Frozen Chicken</div></div>
+    <div class="hero-card"><span class="icon">👁️</span><div class="lbl" data-key="hc_eyes">Live Video Audit</div></div>
+    <div class="hero-card"><span class="icon">☪️</span><div class="lbl" data-key="hc_halal">Halal + APEDA Cert</div></div>
+    <div class="hero-card"><span class="icon">✈️</span><div class="lbl" data-key="hc_cif">CIF Delivery Dubai</div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MANGO -->
+<section id="mango">
+  <div class="mango-inner">
+    <div class="mango-text">
+      <div class="mango-badge" data-key="mango_badge">🥭 Season Special — May to July</div>
+      <h2 data-key="mango_h2">Premium UP Dashahari<br>&amp; Chausa Mangoes</h2>
+      <p data-key="mango_p">Directly from the mango orchards of Uttar Pradesh — the world's most sought-after Dashahari and Chausa varieties. Phytosanitary certified, pesticide-residue tested, and export-packed with cold chain integrity for Dubai, Abu Dhabi &amp; GCC markets.</p>
+      <div class="mango-tags">
+        <span class="mango-tag" data-key="mt1">✅ Phytosanitary Certified</span>
+        <span class="mango-tag" data-key="mt2">✅ Pesticide Tested</span>
+        <span class="mango-tag" data-key="mt3">✅ Cold Chain Ready</span>
+        <span class="mango-tag" data-key="mt4">✅ 3.5kg / 5kg Gift Boxes</span>
+        <span class="mango-tag" data-key="mt5">✅ Live Video Grading</span>
+      </div>
+      <a href="https://wa.me/918679661174?text=Hi%20Maretto%2C%20I%20want%20Mango%20export%20pricing" class="btn-wa" style="margin-top:17px;display:inline-flex;" target="_blank">
+        💬 <span data-key="mango_wa">Inquire for Mango Pricing</span>
+      </a>
+    </div>
+    <div class="mango-emoji">🥭</div>
+  </div>
+</section>
+
+<!-- FRESH PRODUCE -->
+<section id="produce">
+  <span class="section-label" data-key="prod_label">🌿 Fresh Produce &amp; Agri Export</span>
+  <h2 class="section-title" data-key="prod_h2">100-Bigha Farm — <em>Straight to Global Buyers</em></h2>
+  <p class="section-sub" data-key="prod_sub">Our 100-bigha owned farm in Western UP — zero middlemen, fully traceable, APEDA-compliant fresh vegetables and fruits. Farm to port with complete documentation.</p>
+  <div class="produce-grid">
+    <div class="produce-card sp"><span class="vi">🥭</span><h3 data-key="p1h">Dashahari Mangoes</h3><div class="vd" data-key="p1d">Premium UP origin · Phytosanitary certified · 3.5kg &amp; 5kg gift boxes</div></div>
+    <div class="produce-card sp"><span class="vi">🥭</span><h3 data-key="p2h">Chausa Mangoes</h3><div class="vd" data-key="p2d">Fibreless, honeyed variety · Cold chain packed · Dubai market favourite</div></div>
+    <div class="produce-card"><span class="vi">🫛</span><h3 data-key="p3h">Bhindi (Okra)</h3><div class="vd" data-key="p3d">Tender grade · Sorted &amp; graded · 5kg export cartons</div></div>
+    <div class="produce-card"><span class="vi">🌶️</span><h3 data-key="p4h">Green Chilli</h3><div class="vd" data-key="p4d">Medium heat · Pesticide-free · Air-cooled packing</div></div>
+    <div class="produce-card"><span class="vi">🥒</span><h3 data-key="p5h">Loki (Bottle Gourd)</h3><div class="vd" data-key="p5d">Uniform size grading · Fresh harvest · 5–7kg cartons</div></div>
+    <div class="produce-card"><span class="vi">🟡</span><h3 data-key="p6h">Petha (Ash Gourd)</h3><div class="vd" data-key="p6d">Premium Agra variety · Export grade · Custom packaging</div></div>
+    <div class="produce-card"><span class="vi">🧅</span><h3 data-key="p7h">Onions (Premium)</h3><div class="vd" data-key="p7d">40–60mm grade · 25kg mesh bags or 5kg cartons</div></div>
+    <div class="produce-card"><span class="vi">🥔</span><h3 data-key="p8h">Potatoes</h3><div class="vd" data-key="p8d">Chipsona &amp; cooking grade · Low moisture · Clean sorted</div></div>
+    <div class="produce-card"><span class="vi">🧄</span><h3 data-key="p9h">Garlic</h3><div class="vd" data-key="p9d">Dry-skin variety · 30–50mm bulb · Fumigation included</div></div>
+    <div class="produce-card"><span class="vi">🥬</span><h3 data-key="p10h">Leafy Greens</h3><div class="vd" data-key="p10d">Spinach, Methi, Palak · Pre-cooled · Air freight ready</div></div>
+  </div>
+  <div class="pack-strip">
+    <div>
+      <h3 data-key="pack_h">📦 Export-Grade Packaging</h3>
+      <p data-key="pack_p">Every consignment packed per APEDA &amp; destination country standards</p>
+    </div>
+    <div class="pack-steps">
+      <span class="pack-step" data-key="ps1">1. Farm Grading</span>
+      <span class="pack-step" data-key="ps2">2. Pesticide Test</span>
+      <span class="pack-step" data-key="ps3">3. Pre-Cooling</span>
+      <span class="pack-step" data-key="ps4">4. Export Pack</span>
+      <span class="pack-step" data-key="ps5">5. Phytosanitary Cert</span>
+      <span class="pack-step" data-key="ps6">6. CIF Dispatch</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CHICKEN MEAT -->
+<section id="chicken">
+  <span class="section-label" data-key="chk_label">🍗 Fresh &amp; Frozen Chicken Meat</span>
+  <h2 class="section-title" data-key="chk_h2">Halal Certified Chicken — <em>Farm to Dubai, Direct</em></h2>
+  <div class="cat-grid">
+    <div>
+      <p style="color:var(--mid);line-height:1.75;margin-bottom:13px;" data-key="chk_p">FSSAI-certified processing units — Halal slaughter, strict cold chain, and complete export documentation. Ready stock for Dubai, Abu Dhabi, and all GCC markets.</p>
+      <ul class="cat-points">
+        <li data-key="cl1">Halal Certified — GCC &amp; UAE import approved</li>
+        <li data-key="cl2">FSSAI &amp; APEDA compliant processing unit</li>
+        <li data-key="cl3">Cold Chain: 0–4°C (Fresh) / -18°C (Frozen)</li>
+        <li data-key="cl4">Full traceability — farm to processing to port</li>
+        <li data-key="cl5">Vacuum &amp; MAP packaging — extended shelf life</li>
+        <li data-key="cl6">Health Certificate + Veterinary Certificate every lot</li>
+      </ul>
+      <a href="https://wa.me/918679661174?text=Hi%20Maretto%2C%20I%20want%20Chicken%20Meat%20export%20pricing" class="btn-wa" style="display:inline-flex;margin-top:17px;" target="_blank">
+        💬 <span data-key="chk_wa">Get Chicken Meat Price List</span>
+      </a>
+    </div>
+    <div class="cat-card-grid">
+      <div class="cat-card"><span class="ci">🍗</span><h4 data-key="cc1">Whole Chicken (Fresh)</h4></div>
+      <div class="cat-card"><span class="ci">❄️</span><h4 data-key="cc2">Whole Chicken (Frozen)</h4></div>
+      <div class="cat-card"><span class="ci">🥩</span><h4 data-key="cc3">Boneless Breast &amp; Thigh</h4></div>
+      <div class="cat-card"><span class="ci">🍖</span><h4 data-key="cc4">Leg Quarters &amp; Drumsticks</h4></div>
+      <div class="cat-card"><span class="ci">🫙</span><h4 data-key="cc5">Minced Chicken</h4></div>
+      <div class="cat-card"><span class="ci">📦</span><h4 data-key="cc6">Custom Cut &amp; Pack</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHICKEN PACKING VISUAL -->
+<section id="packing">
+  <span class="section-label" data-key="pk_label">📦 Export Packing &amp; Cold Chain — Step by Step</span>
+  <h2 class="section-title" data-key="pk_h2">Every Step Visible — <em>Zero Compromise on Quality</em></h2>
+  <p class="section-sub" data-key="pk_sub">Our chicken export packing follows a strict 8-step process — from Halal slaughter to reefer container dispatch. Dubai buyers can watch every step live via our Eyes &amp; Ears service.</p>
+
+  <div class="pv-grid">
+    <div class="pv-step">
+      <div class="pv-num" data-key="pvn1">STEP 01</div>
+      <span class="pv-icon">☪️</span>
+      <h3 data-key="pvh1">Halal Slaughter</h3>
+      <p data-key="pvp1">Certified Halal slaughtermen. Islamic requirements fully met. GCC &amp; UAE approved process.</p>
+    </div>
+    <div class="pv-step">
+      <div class="pv-num" data-key="pvn2">STEP 02</div>
+      <span class="pv-icon">🔬</span>
+      <h3 data-key="pvh2">Veterinary Inspection</h3>
+      <p data-key="pvp2">Every bird inspected by certified government vet. Ante &amp; post-mortem checks. Unfit birds rejected.</p>
+    </div>
+    <div class="pv-step">
+      <div class="pv-num" data-key="pvn3">STEP 03</div>
+      <span class="pv-icon">🧊</span>
+      <h3 data-key="pvh3">Rapid Chilling</h3>
+      <p data-key="pvp3">Chilled to 0–4°C within 1 hour of slaughter. Evisceration, washing and cleaning in hygienic facility.</p>
+      <span class="pv-temp">0–4°C</span>
+    </div>
+    <div class="pv-step">
+      <div class="pv-num" data-key="pvn4">STEP 04</div>
+      <span class="pv-icon">⚖️</span>
+      <h3 data-key="pvh4">Grading &amp; Cutting</h3>
+      <p data-key="pvp4">Weight-based grading. Whole bird or cut parts per buyer specification. Custom cuts available.</p>
+    </div>
+    <div class="pv-step">
+      <div class="pv-num" data-key="pvn5">STEP 05</div>
+      <span class="pv-icon">🫙</span>
+      <h3 data-key="pvh5">Vacuum / MAP Packing</h3>
+      <p data-key="pvp5">Food-grade vacuum packs or Modified Atmosphere Packaging. Extended shelf life. Zero contamination.</p>
+    </div>
+    <div class="pv-step">
+      <div class="pv-num" data-key="pvn6">STEP 06</div>
+      <span class="pv-icon">📦</span>
+      <h3 data-key="pvh6">Master Carton Packing</h3>
+      <p data-key="pvp6">HDPE inner bags + corrugated master cartons. Weight, lot number &amp; Halal mark printed. Buyer logo available.</p>
+    </div>
+    <div class="pv-step">
+      <div class="pv-num" data-key="pvn7">STEP 07</div>
+      <span class="pv-icon">🚛</span>
+      <h3 data-key="pvh7">Cold Storage &amp; Dispatch</h3>
+      <p data-key="pvp7">Frozen stored at -18°C. Reefer trucks to ICD Patparganj / Mundra port. Temperature logs maintained.</p>
+      <span class="pv-temp">-18°C</span>
+    </div>
+    <div class="pv-step">
+      <div class="pv-num" data-key="pvn8">STEP 08</div>
+      <span class="pv-icon">📋</span>
+      <h3 data-key="pvh8">Full Documentation</h3>
+      <p data-key="pvp8">Halal Cert · Health Cert · Veterinary Cert · COA · MSDS · Bill of Lading · APEDA docs — all included.</p>
+    </div>
+  </div>
+
+  <div class="packing-certs">
+    <div class="pcert"><span class="pc">☪️</span><div><strong data-key="pc1t">Halal Certified</strong><span data-key="pc1s">GCC &amp; UAE Approved</span></div></div>
+    <div class="pcert"><span class="pc">🏥</span><div><strong data-key="pc2t">Health Certificate</strong><span data-key="pc2s">Every Shipment</span></div></div>
+    <div class="pcert"><span class="pc">🩺</span><div><strong data-key="pc3t">Veterinary Certificate</strong><span data-key="pc3s">Govt. Approved Vet</span></div></div>
+    <div class="pcert"><span class="pc">🌾</span><div><strong data-key="pc4t">APEDA Registered</strong><span data-key="pc4s">India Export Authority</span></div></div>
+    <div class="pcert"><span class="pc">🏛️</span><div><strong data-key="pc5t">FSSAI Compliant</strong><span data-key="pc5s">India Food Safety</span></div></div>
+    <div class="pcert"><span class="pc">❄️</span><div><strong data-key="pc6t">Cold Chain Guaranteed</strong><span data-key="pc6s">Temperature Logs Provided</span></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EYES & EARS -->
+<section id="eyes">
+  <span class="section-label" data-key="eye_label">👁️ Signature Service</span>
+  <h2 class="section-title" style="max-width:580px;" data-key="eye_h2"><em>Eyes &amp; Ears</em> — You Are Present, Even When You Are Not</h2>
+  <p class="section-sub" data-key="eye_sub">Our game-changing service for Dubai buyers — watch your order live without travelling to India.</p>
+  <div class="eyes-highlight">
+    <p data-key="eye_quote">"Watch your chicken being graded, packed and loaded live via video call. See every mango sorted and every vegetable weighed — in real time, before it ships to you."</p>
+  </div>
+  <div class="eyes-grid">
+    <div class="eyes-card"><span class="ei">📱</span><h3 data-key="ec1h">Live Video Walkthroughs</h3><p data-key="ec1p">Scheduled live video calls during grading, packing and loading — you see exactly what is happening at our farm and processing unit.</p></div>
+    <div class="eyes-card"><span class="ei">📋</span><h3 data-key="ec2h">Daily Progress Reports</h3><p data-key="ec2p">Photos, weight records, grading count and packing status sent on WhatsApp daily. No surprises, ever.</p></div>
+    <div class="eyes-card"><span class="ei">🔬</span><h3 data-key="ec3h">Independent Lab Testing</h3><p data-key="ec3p">NABL-accredited lab for pesticide residue, microbiological and chemical tests. COA issued with every lot.</p></div>
+    <div class="eyes-card"><span class="ei">🚩</span><h3 data-key="ec4h">Instant Issue Escalation</h3><p data-key="ec4p">Any defect found — buyer alerted immediately, consignment held. Zero compromise on your quality standards.</p></div>
+    <div class="eyes-card"><span class="ei">🏭</span><h3 data-key="ec5h">Processing Unit Access</h3><p data-key="ec5p">Live tours of our chicken processing facility — slaughter, chilling, packing — scheduled to your timezone.</p></div>
+    <div class="eyes-card"><span class="ei">📄</span><h3 data-key="ec6h">Full Documentation Package</h3><p data-key="ec6p">Halal, Health, Vet, Phytosanitary, COA, MSDS, Bill of Lading — every certificate, every shipment, one package.</p></div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section id="trust">
+  <span class="section-label" data-key="tr_label">🏅 Certifications &amp; Compliance</span>
+  <h2 class="section-title" data-key="tr_h2">Verified. Certified. <em>Trusted Globally.</em></h2>
+  <p class="section-sub" data-key="tr_sub">Every certification Dubai and GCC buyers need — all in place, all documented.</p>
+  <div class="trust-badges">
+    <div class="trust-badge"><span class="ti">☪️</span><div><strong data-key="tb1t">Halal Certified</strong><span data-key="tb1s">GCC &amp; UAE Approved</span></div></div>
+    <div class="trust-badge"><span class="ti">🌾</span><div><strong data-key="tb2t">APEDA Registered</strong><span data-key="tb2s">Fresh Produce Export Authority</span></div></div>
+    <div class="trust-badge"><span class="ti">🌿</span><div><strong data-key="tb3t">Phytosanitary Certified</strong><span data-key="tb3s">Plant Health — Every Lot</span></div></div>
+    <div class="trust-badge"><span class="ti">🔬</span><div><strong data-key="tb4t">Pesticide Residue Tested</strong><span data-key="tb4s">NABL Accredited Lab</span></div></div>
+    <div class="trust-badge"><span class="ti">📋</span><div><strong data-key="tb5t">IEC Registered</strong><span>DPJPR4127C — DGFT</span></div></div>
+    <div class="trust-badge"><span class="ti">🏢</span><div><strong data-key="tb6t">UDYAM (MSME)</strong><span>UP-560155946</span></div></div>
+    <div class="trust-badge"><span class="ti">💎</span><div><strong data-key="tb7t">GST Verified</strong><span>09DPJPR4127C1ZT</span></div></div>
+    <div class="trust-badge"><span class="ti">❄️</span><div><strong data-key="tb8t">Cold Chain Ready</strong><span data-key="tb8s">Reefer Container &amp; Pre-Cooling</span></div></div>
+  </div>
+  <div class="reg-strip">
+    <div class="reg-item"><div class="rl">IEC</div><div class="rv">DPJPR4127C</div></div>
+    <div class="reg-item"><div class="rl">GST</div><div class="rv">09DPJPR4127C1ZT</div></div>
+    <div class="reg-item"><div class="rl">UDYAM</div><div class="rv">UP-560155946</div></div>
+    <div class="reg-item"><div class="rl" data-key="rp">Export Ports</div><div class="rv">Patparganj &amp; Mundra</div></div>
+    <div class="reg-item"><div class="rl">DGFT</div><div class="rv">✅ Compliant</div></div>
+    <div class="reg-item"><div class="rl" data-key="rd">Docs</div><div class="rv">COA + MSDS Every Lot</div></div>
+  </div>
+</section>
+
+<!-- JV MODEL -->
+<section id="jv">
+  <span class="section-label" data-key="jv_label">🤝 Our Approach</span>
+  <h2 class="section-title" data-key="jv_h2">Managed JV Model — <em>End-to-End Quality</em></h2>
+  <p class="section-sub" data-key="jv_sub">We do not just trade — we manage quality. Fresh Produce, Chicken Meat and Agri exports — end-to-end JV partnerships across all categories.</p>
+  <div class="jv-steps">
+    <div class="jv-step"><div class="jv-num">01</div><h3>🤝 <span data-key="jv1h">Unit Partnership</span></h3><p data-key="jv1p">Verified processing units and farms — APEDA, FSSAI and Halal compliant agreements.</p></div>
+    <div class="jv-step"><div class="jv-num">02</div><h3>🔍 <span data-key="jv2h">Pre-Production Quality Lock</span></h3><p data-key="jv2p">Buyer specifications, variety/breed selection and sampling — buyer-approved before production or harvest begins.</p></div>
+    <div class="jv-step"><div class="jv-num">03</div><h3>📹 <span data-key="jv3h">Eyes &amp; Ears — Live Audits</span></h3><p data-key="jv3p">Real-time video monitoring, daily updates, live farm and unit access — no surprises.</p></div>
+    <div class="jv-step"><div class="jv-num">04</div><h3>📦 <span data-key="jv4h">Export Packing &amp; Dispatch</span></h3><p data-key="jv4p">Halal and Phytosanitary certified packing, full COA documentation — CIF delivery via Patparganj or Mundra.</p></div>
+    <div class="jv-step"><div class="jv-num">05</div><h3>📊 <span data-key="jv5h">Post-Delivery Support</span></h3><p data-key="jv5p">Customs clearance documentation, claim handling and next-order planning — like a long-term supply chain partner.</p></div>
+  </div>
+</section>
+
+<!-- WOODCRAFT — MOVED TO BOTTOM -->
+<section id="woodcraft" style="background:var(--light);">
+  <span class="section-label" data-key="wc_label">🪵 Artisanal Woodcraft — Saharanpur</span>
+  <h2 class="section-title" data-key="wc_h2">Heritage Woodcraft — <em>Global Markets</em></h2>
+  <p class="section-sub" data-key="wc_sub">400-year-old woodcarving tradition of Saharanpur, UP — EPCH registered units, premium furniture, home décor and artifacts for international buyers.</p>
+  <div class="cat-grid" style="margin-top:34px;">
+    <div>
+      <ul class="cat-points">
+        <li data-key="wl1">EPCH Certified &amp; VRIKSH Compliant — Legal wood sourcing</li>
+        <li data-key="wl2">Moisture Control: Wood seasoning &lt;12% — no warping in transit</li>
+        <li data-key="wl3">7-Layer Export Packing: Fumigation + wooden crating included</li>
+        <li data-key="wl4">MOQ: 50 pieces | Lead Time: 45–60 days</li>
+        <li data-key="wl5">FSC trackable | Custom designs available</li>
+      </ul>
+      <a href="#contact" class="btn-primary" style="display:inline-block;margin-top:20px;" data-key="wc_btn">Request Wood Catalogue →</a>
+    </div>
+    <div class="cat-card-grid">
+      <div class="cat-card"><span class="ci">🛋️</span><h4 data-key="wc1">Carved Furniture</h4></div>
+      <div class="cat-card"><span class="ci">🖼️</span><h4 data-key="wc2">Wall Panels &amp; Décor</h4></div>
+      <div class="cat-card"><span class="ci">🕯️</span><h4 data-key="wc3">Candle Holders</h4></div>
+      <div class="cat-card"><span class="ci">💍</span><h4 data-key="wc4">Jewelry Boxes &amp; Trays</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <span class="section-label" data-key="ts_label">⭐ Client Experiences</span>
+  <h2 class="section-title" style="color:var(--white);" data-key="ts_h2">Real Results, <em style="color:var(--gold-light);">Verified Trust</em></h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text" data-key="t1">"The Eyes &amp; Ears service gave us complete confidence without visiting India. Packing videos arrived daily — we watched everything from Dubai."</p>
+      <div class="testi-author"><strong data-key="t1n">Import Manager</strong><span data-key="t1c">Home Décor Buyer, Dubai, UAE</span></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text" data-key="t2">"Specifications were exactly as promised across 3 consignments. Zero rejections. Technical support from Nafees is outstanding."</p>
+      <div class="testi-author"><strong data-key="t2n">Plant Manager</strong><span data-key="t2c">Manufacturer, Hapur, UP, India</span></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text" data-key="t3">"Every shipment came with full COA, MSDS and DGFT documentation. Our customs agent said it was one of the cleanest imports processed."</p>
+      <div class="testi-author"><strong data-key="t3n">Import Manager</strong><span data-key="t3c">Manufacturer, Delhi NCR, India</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <span class="section-label" data-key="ct_label">📞 Get In Touch</span>
+  <h2 class="section-title" data-key="ct_h2">Start a Conversation — <em>We Respond in 24 Hours</em></h2>
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <h3>Nafees Ahmed<br><span style="font-size:0.93rem;color:var(--mid);font-family:'DM Sans',sans-serif;font-weight:400;" data-key="ct_title">Managing Director, Maretto Export Import Co.</span></h3>
+      <div class="crow"><span class="cicon">📍</span><div><div class="clabel" data-key="ct_addr_l">Address</div><div class="cval">NH709A, Village Bubakpur, Near Bubakpur Bus Stand<br>PO Dabathwa, Sardhana, Meerut – 250341, UP, India</div></div></div>
+      <div class="crow"><span class="cicon">📞</span><div><div class="clabel" data-key="ct_ph_l">Phone</div><div class="cval"><a href="tel:+919761128966">+91 9761128966</a></div></div></div>
+      <div class="crow"><span class="cicon">📱</span><div><div class="clabel" data-key="ct_wa_l">WhatsApp (Direct)</div><div class="cval"><a href="https://wa.me/918679661174">+91 8679661174</a></div></div></div>
+      <div class="crow"><span class="cicon">✉️</span><div><div class="clabel" data-key="ct_em_l">Email</div><div class="cval"><a href="mailto:info@marettoexport.in">info@marettoexport.in</a></div></div></div>
+      <a href="https://wa.me/918679661174" class="wa-big" target="_blank">
+        💬 <span data-key="ct_wa_btn">Chat on WhatsApp — +91 8679661174</span>
+      </a>
+      <p style="font-size:0.74rem;color:var(--mid);margin-top:10px;" data-key="ct_wa_note">Tap above to chat directly — no need to save the number first.</p>
+    </div>
+    <form onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <input type="text" placeholder="Your Name *" required>
+        <input type="text" placeholder="Company Name">
+      </div>
+      <div class="form-row">
+        <input type="tel" placeholder="Phone / WhatsApp *" required>
+        <input type="email" placeholder="Email">
+      </div>
+      <select required>
+        <option value="">— Select Product —</option>
+        <option>🥭 Fresh Mangoes (Dashahari / Chausa)</option>
+        <option>🌿 Fresh Vegetables (Bhindi, Chilli, Loki etc.)</option>
+        <option>🧅 Onions &amp; Potatoes</option>
+        <option>🍗 Fresh Chicken Meat (Whole / Cut Parts)</option>
+        <option>❄️ Frozen Chicken Meat (Whole / Boneless)</option>
+        <option>🥩 Chicken Parts (Breast, Thigh, Drumstick)</option>
+        <option>🪵 Artisanal Woodcraft (Saharanpur)</option>
+        <option>Multiple Products</option>
+      </select>
+      <div class="form-row">
+        <input type="text" placeholder="Quantity / Month">
+        <input type="text" placeholder="Destination Country">
+      </div>
+      <textarea placeholder="Additional Requirements — packaging, certifications, delivery timeline..."></textarea>
+      <button type="submit" class="submit-btn" data-key="form_submit">SEND INQUIRY →</button>
+      <div id="form-ok" style="display:none;color:var(--green);font-weight:600;font-size:0.88rem;">✅ Inquiry submitted! We will contact you within 24 hours.</div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="footer-logo">MARETTO <span>Export</span></span>
+      <p data-key="foot_p">India's Transparent Supply Chain Partner — Fresh &amp; Frozen Chicken Meat, 100-Bigha Farm Produce, Premium Mangoes and Saharanpur Woodcraft to global markets. Live Digital Audits. Zero Middlemen.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-key="foot_h1">Products</h4>
+      <a href="#mango" data-key="foot_p1">Mangoes (Dashahari/Chausa)</a>
+      <a href="#produce" data-key="foot_p2">Fresh Vegetables</a>
+      <a href="#chicken" data-key="foot_p3">Fresh Chicken Meat</a>
+      <a href="#chicken" data-key="foot_p4">Frozen Chicken Meat</a>
+      <a href="#woodcraft" data-key="foot_p5">Artisanal Woodcraft</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-key="foot_h2">Company</h4>
+      <a href="#jv" data-key="foot_c1">JV Model</a>
+      <a href="#eyes" data-key="foot_c2">Eyes &amp; Ears Service</a>
+      <a href="#trust" data-key="foot_c3">Certifications</a>
+      <a href="#testimonials" data-key="foot_c4">Testimonials</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-key="foot_h3">Contact</h4>
+      <a href="tel:+919761128966">📞 +91 9761128966</a>
+      <a href="https://wa.me/918679661174" target="_blank">💬 +91 8679661174 (WA)</a>
+      <a href="mailto:info@marettoexport.in">✉️ info@marettoexport.in</a>
+      <a href="https://www.marettoexport.in">🌐 marettoexport.in</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Maretto Export Import Company. All rights reserved.</span>
+    <span>GST: 09DPJPR4127C1ZT &nbsp;|&nbsp; IEC: DPJPR4127C &nbsp;|&nbsp; UDYAM: UP-560155946</span>
+  </div>
+</footer>
+
+<script>
+/* ─── TRANSLATIONS ─── */
+const T = {
+  en: {
+    nav_produce:"Fresh Produce", nav_mango:"Mangoes", nav_chicken:"Chicken Meat",
+    nav_eyes:"Eyes & Ears", nav_certs:"Certifications", nav_wood:"Woodcraft", nav_contact:"Contact", nav_quote:"Get Quote",
+    hero_badge:"🌾 Now Exporting: Mangoes, Vegetables & Chicken Meat to Dubai & GCC",
+    hero_h1:"Farm-to-Port<br><em>Fresh Produce</em><br>from India's Heartland",
+    hero_sub:"100-Bigha owned farm in Western UP — Dashahari & Chausa Mangoes, Bhindi, Green Chilli, Loki, Petha & more. Plus: Fresh & Frozen Chicken Meat — Halal certified, FSSAI & APEDA compliant. Zero middlemen. Live video audits.",
+    btn_price:"Request Price List →", btn_wa:"WhatsApp Now",
+    stat1:"Bigha Owned Farm", stat2:"Middlemen", stat3:"Countries Served", stat4:"Response Time",
+    hc_mango:"Premium Mangoes", hc_mango2:"Dashahari • Chausa • UP",
+    hc_veg:"Farm-Fresh Vegetables", hc_chicken:"Fresh & Frozen Chicken",
+    hc_eyes:"Live Video Audit", hc_halal:"Halal + APEDA Cert", hc_cif:"CIF Delivery Dubai",
+    mango_badge:"🥭 Season Special — May to July",
+    mango_h2:"Premium UP Dashahari<br>& Chausa Mangoes",
+    mango_p:"Directly from the mango orchards of Uttar Pradesh — the world's most sought-after Dashahari and Chausa varieties. Phytosanitary certified, pesticide-residue tested, and export-packed with cold chain integrity for Dubai, Abu Dhabi & GCC markets.",
+    mt1:"✅ Phytosanitary Certified", mt2:"✅ Pesticide Tested", mt3:"✅ Cold Chain Ready", mt4:"✅ 3.5kg / 5kg Gift Boxes", mt5:"✅ Live Video Grading",
+    mango_wa:"Inquire for Mango Pricing",
+    prod_label:"🌿 Fresh Produce & Agri Export",
+    prod_h2:"100-Bigha Farm — <em>Straight to Global Buyers</em>",
+    prod_sub:"Our 100-bigha owned farm in Western UP — zero middlemen, fully traceable, APEDA-compliant fresh vegetables and fruits. Farm to port with complete documentation.",
+    p1h:"Dashahari Mangoes", p1d:"Premium UP origin · Phytosanitary certified · 3.5kg & 5kg gift boxes",
+    p2h:"Chausa Mangoes", p2d:"Fibreless, honeyed variety · Cold chain packed · Dubai market favourite",
+    p3h:"Bhindi (Okra)", p3d:"Tender grade · Sorted & graded · 5kg export cartons",
+    p4h:"Green Chilli", p4d:"Medium heat · Pesticide-free · Air-cooled packing",
+    p5h:"Loki (Bottle Gourd)", p5d:"Uniform size grading · Fresh harvest · 5–7kg cartons",
+    p6h:"Petha (Ash Gourd)", p6d:"Premium Agra variety · Export grade · Custom packaging",
+    p7h:"Onions (Premium)", p7d:"40–60mm grade · 25kg mesh bags or 5kg cartons",
+    p8h:"Potatoes", p8d:"Chipsona & cooking grade · Low moisture · Clean sorted",
+    p9h:"Garlic", p9d:"Dry-skin variety · 30–50mm bulb · Fumigation included",
+    p10h:"Leafy Greens", p10d:"Spinach, Methi, Palak · Pre-cooled · Air freight ready",
+    pack_h:"📦 Export-Grade Packaging", pack_p:"Every consignment packed per APEDA & destination country standards",
+    ps1:"1. Farm Grading", ps2:"2. Pesticide Test", ps3:"3. Pre-Cooling", ps4:"4. Export Pack", ps5:"5. Phytosanitary Cert", ps6:"6. CIF Dispatch",
+    chk_label:"🍗 Fresh & Frozen Chicken Meat",
+    chk_h2:"Halal Certified Chicken — <em>Farm to Dubai, Direct</em>",
+    chk_p:"FSSAI-certified processing units — Halal slaughter, strict cold chain, and complete export documentation. Ready stock for Dubai, Abu Dhabi, and all GCC markets.",
+    cl1:"Halal Certified — GCC & UAE import approved", cl2:"FSSAI & APEDA compliant processing unit",
+    cl3:"Cold Chain: 0–4°C (Fresh) / -18°C (Frozen)", cl4:"Full traceability — farm to processing to port",
+    cl5:"Vacuum & MAP packaging — extended shelf life", cl6:"Health Certificate + Veterinary Certificate every lot",
+    chk_wa:"Get Chicken Meat Price List",
+    cc1:"Whole Chicken (Fresh)", cc2:"Whole Chicken (Frozen)", cc3:"Boneless Breast & Thigh",
+    cc4:"Leg Quarters & Drumsticks", cc5:"Minced Chicken", cc6:"Custom Cut & Pack",
+    pk_label:"📦 Export Packing & Cold Chain — Step by Step",
+    pk_h2:"Every Step Visible — <em>Zero Compromise on Quality</em>",
+    pk_sub:"Our chicken export packing follows a strict 8-step process — from Halal slaughter to reefer container dispatch. Dubai buyers can watch every step live via our Eyes & Ears service.",
+    pvn1:"STEP 01", pvn2:"STEP 02", pvn3:"STEP 03", pvn4:"STEP 04", pvn5:"STEP 05", pvn6:"STEP 06", pvn7:"STEP 07", pvn8:"STEP 08",
+    pvh1:"Halal Slaughter", pvp1:"Certified Halal slaughtermen. Islamic requirements fully met. GCC & UAE approved process.",
+    pvh2:"Veterinary Inspection", pvp2:"Every bird inspected by certified government vet. Ante & post-mortem checks. Unfit birds rejected.",
+    pvh3:"Rapid Chilling", pvp3:"Chilled to 0–4°C within 1 hour of slaughter. Evisceration, washing and cleaning in hygienic facility.",
+    pvh4:"Grading & Cutting", pvp4:"Weight-based grading. Whole bird or cut parts per buyer specification. Custom cuts available.",
+    pvh5:"Vacuum / MAP Packing", pvp5:"Food-grade vacuum packs or Modified Atmosphere Packaging. Extended shelf life. Zero contamination.",
+    pvh6:"Master Carton Packing", pvp6:"HDPE inner bags + corrugated master cartons. Weight, lot number & Halal mark printed. Buyer logo available.",
+    pvh7:"Cold Storage & Dispatch", pvp7:"Frozen stored at -18°C. Reefer trucks to ICD Patparganj / Mundra port. Temperature logs maintained.",
+    pvh8:"Full Documentation", pvp8:"Halal Cert · Health Cert · Vet Cert · COA · MSDS · Bill of Lading · APEDA docs — all included.",
+    pc1t:"Halal Certified", pc1s:"GCC & UAE Approved", pc2t:"Health Certificate", pc2s:"Every Shipment",
+    pc3t:"Veterinary Certificate", pc3s:"Govt. Approved Vet", pc4t:"APEDA Registered", pc4s:"India Export Authority",
+    pc5t:"FSSAI Compliant", pc5s:"India Food Safety", pc6t:"Cold Chain Guaranteed", pc6s:"Temperature Logs Provided",
+    eye_label:"👁️ Signature Service",
+    eye_h2:"<em>Eyes & Ears</em> — You Are Present, Even When You Are Not",
+    eye_sub:"Our game-changing service for Dubai buyers — watch your order live without travelling to India.",
+    eye_quote:'"Watch your chicken being graded, packed and loaded live via video call. See every mango sorted and every vegetable weighed — in real time, before it ships to you."',
+    ec1h:"Live Video Walkthroughs", ec1p:"Scheduled live video calls during grading, packing and loading — you see exactly what is happening at our farm and processing unit.",
+    ec2h:"Daily Progress Reports", ec2p:"Photos, weight records, grading count and packing status sent on WhatsApp daily. No surprises, ever.",
+    ec3h:"Independent Lab Testing", ec3p:"NABL-accredited lab for pesticide residue, microbiological and chemical tests. COA issued with every lot.",
+    ec4h:"Instant Issue Escalation", ec4p:"Any defect found — buyer alerted immediately, consignment held. Zero compromise on your quality standards.",
+    ec5h:"Processing Unit Access", ec5p:"Live tours of our chicken processing facility — slaughter, chilling, packing — scheduled to your timezone.",
+    ec6h:"Full Documentation Package", ec6p:"Halal, Health, Vet, Phytosanitary, COA, MSDS, Bill of Lading — every certificate, every shipment, one package.",
+    tr_label:"🏅 Certifications & Compliance",
+    tr_h2:"Verified. Certified. <em>Trusted Globally.</em>",
+    tr_sub:"Every certification Dubai and GCC buyers need — all in place, all documented.",
+    tb1t:"Halal Certified", tb1s:"GCC & UAE Approved", tb2t:"APEDA Registered", tb2s:"Fresh Produce Export Authority",
+    tb3t:"Phytosanitary Certified", tb3s:"Plant Health — Every Lot", tb4t:"Pesticide Residue Tested", tb4s:"NABL Accredited Lab",
+    tb5t:"IEC Registered", tb6t:"UDYAM (MSME)", tb7t:"GST Verified", tb8t:"Cold Chain Ready", tb8s:"Reefer Container & Pre-Cooling",
+    rp:"Export Ports", rd:"Docs",
+    jv_label:"🤝 Our Approach",
+    jv_h2:"Managed JV Model — <em>End-to-End Quality</em>",
+    jv_sub:"We do not just trade — we manage quality. Fresh Produce, Chicken Meat and Agri exports — end-to-end JV partnerships across all categories.",
+    jv1h:"Unit Partnership", jv1p:"Verified processing units and farms — APEDA, FSSAI and Halal compliant agreements.",
+    jv2h:"Pre-Production Quality Lock", jv2p:"Buyer specifications, variety/breed selection and sampling — buyer-approved before production or harvest begins.",
+    jv3h:"Eyes & Ears — Live Audits", jv3p:"Real-time video monitoring, daily updates, live farm and unit access — no surprises.",
+    jv4h:"Export Packing & Dispatch", jv4p:"Halal and Phytosanitary certified packing, full COA documentation — CIF delivery via Patparganj or Mundra.",
+    jv5h:"Post-Delivery Support", jv5p:"Customs clearance documentation, claim handling and next-order planning — like a long-term supply chain partner.",
+    wc_label:"🪵 Artisanal Woodcraft — Saharanpur",
+    wc_h2:"Heritage Woodcraft — <em>Global Markets</em>",
+    wc_sub:"400-year-old woodcarving tradition of Saharanpur, UP — EPCH registered units, premium furniture, home décor and artifacts for international buyers.",
+    wl1:"EPCH Certified & VRIKSH Compliant — Legal wood sourcing",
+    wl2:"Moisture Control: Wood seasoning <12% — no warping in transit",
+    wl3:"7-Layer Export Packing: Fumigation + wooden crating included",
+    wl4:"MOQ: 50 pieces | Lead Time: 45–60 days",
+    wl5:"FSC trackable | Custom designs available",
+    wc_btn:"Request Wood Catalogue →",
+    wc1:"Carved Furniture", wc2:"Wall Panels & Décor", wc3:"Candle Holders", wc4:"Jewelry Boxes & Trays",
+    ts_label:"⭐ Client Experiences",
+    ts_h2:"Real Results, <em style='color:var(--gold-light)'>Verified Trust</em>",
+    t1:'"The Eyes & Ears service gave us complete confidence without visiting India. Packing videos arrived daily — we watched everything from Dubai."',
+    t1n:"Import Manager", t1c:"Home Décor Buyer, Dubai, UAE",
+    t2:'"Specifications were exactly as promised across 3 consignments. Zero rejections. Technical support from Nafees is outstanding."',
+    t2n:"Plant Manager", t2c:"Manufacturer, Hapur, UP, India",
+    t3:'"Every shipment came with full COA, MSDS and DGFT documentation. Our customs agent said it was one of the cleanest imports processed."',
+    t3n:"Import Manager", t3c:"Manufacturer, Delhi NCR, India",
+    ct_label:"📞 Get In Touch",
+    ct_h2:"Start a Conversation — <em>We Respond in 24 Hours</em>",
+    ct_title:"Managing Director, Maretto Export Import Co.",
+    ct_addr_l:"Address", ct_ph_l:"Phone", ct_wa_l:"WhatsApp (Direct)", ct_em_l:"Email",
+    ct_wa_btn:"Chat on WhatsApp — +91 8679661174",
+    ct_wa_note:"Tap above to chat directly — no need to save the number first.",
+    form_submit:"SEND INQUIRY →",
+    foot_p:"India's Transparent Supply Chain Partner — Fresh & Frozen Chicken Meat, 100-Bigha Farm Produce, Premium Mangoes and Saharanpur Woodcraft to global markets.",
+    foot_h1:"Products", foot_p1:"Mangoes (Dashahari/Chausa)", foot_p2:"Fresh Vegetables",
+    foot_p3:"Fresh Chicken Meat", foot_p4:"Frozen Chicken Meat", foot_p5:"Artisanal Woodcraft",
+    foot_h2:"Company", foot_c1:"JV Model", foot_c2:"Eyes & Ears Service", foot_c3:"Certifications", foot_c4:"Testimonials",
+    foot_h3:"Contact"
+  },
+  ar: {
+    nav_produce:"المنتجات الطازجة", nav_mango:"المانجو", nav_chicken:"لحم الدجاج",
+    nav_eyes:"العيون والآذان", nav_certs:"الشهادات", nav_wood:"الأخشاب", nav_contact:"اتصل بنا", nav_quote:"احصل على عرض",
+    hero_badge:"🌾 نصدر الآن إلى دبي والخليج: المانجو والخضروات ولحم الدجاج",
+    hero_h1:"من المزرعة إلى الميناء<br><em>منتجات طازجة</em><br>من قلب الهند",
+    hero_sub:"مزرعة 100 بيغا في غرب UP — مانجو داشاهاري وتشاوسا، بامية، فلفل أخضر، قرع وأكثر. بالإضافة إلى لحم دجاج طازج ومجمد — حلال معتمد، متوافق مع FSSAI وAPEDA. بدون وسطاء. تدقيق مرئي مباشر.",
+    btn_price:"طلب قائمة الأسعار ←", btn_wa:"واتساب الآن",
+    stat1:"بيغا مزرعة مملوكة", stat2:"وسطاء", stat3:"دول تم خدمتها", stat4:"وقت الاستجابة",
+    hc_mango:"مانجو فاخرة", hc_mango2:"داشاهاري • تشاوسا • UP",
+    hc_veg:"خضروات طازجة من المزرعة", hc_chicken:"دجاج طازج ومجمد",
+    hc_eyes:"تدقيق مرئي مباشر", hc_halal:"حلال + APEDA معتمد", hc_cif:"تسليم CIF دبي",
+    mango_badge:"🥭 موسم خاص — مايو إلى يوليو",
+    mango_h2:"مانجو داشاهاري وتشاوسا<br>الفاخرة من UP",
+    mango_p:"مباشرة من بساتين المانجو في أوتار براديش — أصناف داشاهاري وتشاوسا الأكثر طلباً في العالم. معتمدة صحياً، مختبرة لبقايا المبيدات، ومعبأة بسلسلة برودة متكاملة لأسواق دبي وأبوظبي والخليج.",
+    mt1:"✅ شهادة صحة نباتية", mt2:"✅ مختبر للمبيدات", mt3:"✅ سلسلة برودة جاهزة", mt4:"✅ صناديق هدايا 3.5-5 كجم", mt5:"✅ تصنيف مرئي مباشر",
+    mango_wa:"الاستفسار عن أسعار المانجو",
+    prod_label:"🌿 المنتجات الطازجة والتصدير الزراعي",
+    prod_h2:"مزرعة 100 بيغا — <em>مباشرة إلى المشترين العالميين</em>",
+    prod_sub:"مزرعتنا المملوكة في غرب UP — بدون وسطاء، قابلة للتتبع بالكامل، خضروات وفواكه طازجة متوافقة مع APEDA. من المزرعة إلى الميناء مع توثيق كامل.",
+    p1h:"مانجو داشاهاري", p1d:"منشأ UP الفاخر · شهادة صحية نباتية · صناديق هدايا",
+    p2h:"مانجو تشاوسا", p2d:"صنف بدون ألياف · سلسلة برودة · المفضل في دبي",
+    p3h:"البامية", p3d:"درجة طرية · مرتبة ومصنفة · كراتين 5 كجم",
+    p4h:"الفلفل الأخضر", p4d:"حدة متوسطة · خالٍ من المبيدات · تعبئة بالهواء البارد",
+    p5h:"القرع الزجاجي", p5d:"تصنيف موحد الحجم · حصاد طازج · 5-7 كجم",
+    p6h:"القرع الرمادي", p6d:"صنف آغرا الفاخر · درجة تصدير · تعبئة مخصصة",
+    p7h:"البصل الفاخر", p7d:"درجة 40-60 ملم · أكياس شبكية 25 كجم",
+    p8h:"البطاطس", p8d:"درجة الشيبسونا والطهي · رطوبة منخفضة",
+    p9h:"الثوم", p9d:"صنف جلد جاف · 30-50 ملم · تبخير مشمول",
+    p10h:"الخضروات الورقية", p10d:"سبانخ، حلبة، سبانخ · مبرد مسبقاً · شحن جوي",
+    pack_h:"📦 تعبئة بمستوى التصدير", pack_p:"كل شحنة وفق معايير APEDA والدولة المستوردة",
+    ps1:"1. تصنيف المزرعة", ps2:"2. اختبار المبيدات", ps3:"3. تبريد مسبق", ps4:"4. تعبئة للتصدير", ps5:"5. شهادة صحية", ps6:"6. إرسال CIF",
+    chk_label:"🍗 لحم الدجاج الطازج والمجمد",
+    chk_h2:"دجاج حلال معتمد — <em>من المزرعة إلى دبي مباشرة</em>",
+    chk_p:"وحدات معالجة معتمدة من FSSAI — ذبح حلال، سلسلة برودة صارمة، توثيق تصدير كامل. مخزون جاهز لدبي وأبوظبي وجميع أسواق الخليج.",
+    cl1:"حلال معتمد — موافق لاستيراد دول الخليج والإمارات", cl2:"وحدة معالجة متوافقة مع FSSAI وAPEDA",
+    cl3:"سلسلة برودة: 0-4°م (طازج) / -18°م (مجمد)", cl4:"تتبع كامل — من المزرعة إلى المعالجة إلى الميناء",
+    cl5:"تعبئة بالفراغ وMAP — إطالة مدة الصلاحية", cl6:"شهادة صحية + شهادة بيطرية مع كل دفعة",
+    chk_wa:"احصل على قائمة أسعار الدجاج",
+    cc1:"دجاج كامل (طازج)", cc2:"دجاج كامل (مجمد)", cc3:"صدر وفخذ بدون عظم",
+    cc4:"أرباع أرجل ودجاج", cc5:"دجاج مفروم", cc6:"قطع وتعبئة مخصصة",
+    pk_label:"📦 عملية التعبئة وسلسلة البرودة — خطوة بخطوة",
+    pk_h2:"كل خطوة مرئية — <em>لا تنازل عن الجودة</em>",
+    pk_sub:"تتبع تعبئة الدجاج المصدَّر عملية صارمة من 8 خطوات — من الذبح الحلال إلى إرسال حاوية التبريد. يمكن مشاهدة كل خطوة مباشرة.",
+    pvn1:"الخطوة 01", pvn2:"الخطوة 02", pvn3:"الخطوة 03", pvn4:"الخطوة 04", pvn5:"الخطوة 05", pvn6:"الخطوة 06", pvn7:"الخطوة 07", pvn8:"الخطوة 08",
+    pvh1:"الذبح الحلال", pvp1:"جزارون حلال معتمدون. استيفاء كامل للمتطلبات الإسلامية. عملية معتمدة خليجياً.",
+    pvh2:"الفحص البيطري", pvp2:"فحص كل طائر من قبل بيطري حكومي معتمد. فحوصات قبل وبعد الذبح.",
+    pvh3:"تبريد سريع", pvp3:"تبريد إلى 0-4°م خلال ساعة من الذبح. تحضير وغسيل وتنظيف.",
+    pvh4:"التصنيف والقطع", pvp4:"تصنيف حسب الوزن. طائر كامل أو قطع حسب مواصفات المشتري.",
+    pvh5:"تعبئة بالفراغ / MAP", pvp5:"أكياس فراغ صالحة للأغذية أو تعبئة جو معدل. إطالة مدة الصلاحية.",
+    pvh6:"تعبئة الكرتون الرئيسي", pvp6:"أكياس HDPE + كراتين رئيسية. طباعة الوزن ورقم الدفعة وعلامة الحلال.",
+    pvh7:"التخزين البارد والإرسال", pvp7:"مجمد عند -18°م. شاحنات مبردة للميناء. سجلات درجة الحرارة محفوظة.",
+    pvh8:"التوثيق الكامل", pvp8:"شهادة حلال · صحية · بيطرية · COA · MSDS · بوليصة شحن · APEDA — كل شيء.",
+    pc1t:"حلال معتمد", pc1s:"معتمد خليجياً وإماراتياً", pc2t:"شهادة صحية", pc2s:"مع كل شحنة",
+    pc3t:"شهادة بيطرية", pc3s:"بيطري حكومي معتمد", pc4t:"مسجل APEDA", pc4s:"هيئة التصدير الهندية",
+    pc5t:"متوافق FSSAI", pc5s:"سلامة الغذاء الهندية", pc6t:"سلسلة برودة مضمونة", pc6s:"سجلات الحرارة مقدمة",
+    eye_label:"👁️ خدمة مميزة",
+    eye_h2:"<em>العيون والآذان</em> — أنت موجود حتى عندما لا تكون",
+    eye_sub:"خدمتنا الثورية للمشترين في دبي — شاهد طلبك مباشرة دون السفر إلى الهند.",
+    eye_quote:'"شاهد دجاجك يُصنَّف ويُعبَّأ ويُشحَن مباشرة من وحدة المعالجة عبر مكالمة مرئية. شاهد كل مانجو مرتب وكل خضروات موزونة — في الوقت الفعلي."',
+    ec1h:"جولات مرئية مباشرة", ec1p:"مكالمات مرئية مجدولة أثناء التصنيف والتعبئة والشحن.",
+    ec2h:"تقارير تقدم يومية", ec2p:"صور وسجلات وزن وحالة تعبئة — ترسل يومياً على واتساب.",
+    ec3h:"اختبار مستقل في المختبر", ec3p:"مختبر معتمد NABL لاختبارات بقايا المبيدات والميكروبيولوجية.",
+    ec4h:"تصعيد فوري للمشكلات", ec4p:"أي عيب — تنبيه فوري للمشتري، توقف الشحنة. لا تنازل عن معاييرك.",
+    ec5h:"وصول لوحدة المعالجة", ec5p:"جولات مباشرة لمنشأة معالجة الدجاج — مجدولة وفق منطقتك الزمنية.",
+    ec6h:"حزمة توثيق كاملة", ec6p:"حلال، صحية، بيطرية، COA، MSDS، بوليصة شحن — كل شهادة في كل شحنة.",
+    tr_label:"🏅 الشهادات والامتثال",
+    tr_h2:"موثق. معتمد. <em>موثوق عالمياً.</em>",
+    tr_sub:"كل شهادة يحتاجها المشترون في دبي والخليج — موجودة ومسجلة.",
+    tb1t:"حلال معتمد", tb1s:"معتمد خليجياً وإماراتياً", tb2t:"مسجل APEDA", tb2s:"هيئة تصدير المنتجات الطازجة",
+    tb3t:"شهادة صحة نباتية", tb3s:"صحة نباتية — لكل دفعة", tb4t:"اختبار بقايا المبيدات", tb4s:"مختبر معتمد NABL",
+    tb5t:"مسجل IEC", tb6t:"UDYAM مشروع صغير", tb7t:"GST موثق", tb8t:"سلسلة برودة جاهزة", tb8s:"حاوية مبردة وتبريد مسبق",
+    rp:"موانئ التصدير", rd:"وثائق",
+    jv_label:"🤝 نهجنا",
+    jv_h2:"نموذج JV المُدار — <em>جودة شاملة من البداية للنهاية</em>",
+    jv_sub:"نحن لا نتاجر فحسب — بل ندير الجودة. شراكات JV شاملة في جميع الفئات.",
+    jv1h:"شراكة الوحدة", jv1p:"وحدات معالجة ومزارع موثقة — اتفاقيات متوافقة مع APEDA وFSSAI والحلال.",
+    jv2h:"قفل جودة ما قبل الإنتاج", jv2p:"مواصفات المشتري واختيار الصنف والعينات — موافقة المشتري قبل البدء.",
+    jv3h:"العيون والآذان — تدقيق مباشر", jv3p:"مراقبة مرئية في الوقت الفعلي، تحديثات يومية، وصول مباشر.",
+    jv4h:"التعبئة للتصدير والإرسال", jv4p:"تعبئة معتمدة حلال ونباتياً، توثيق COA — تسليم CIF.",
+    jv5h:"دعم ما بعد التسليم", jv5p:"وثائق تخليص جمركي، معالجة المطالبات — كشريك دائم.",
+    wc_label:"🪵 الأخشاب الحرفية — سهارنبور",
+    wc_h2:"نقش الخشب التراثي — <em>الأسواق العالمية</em>",
+    wc_sub:"تقليد نقش الخشب العريق في سهارنبور، UP — وحدات مسجلة في EPCH، أثاث فاخر وديكور منزلي.",
+    wl1:"معتمد EPCH ومتوافق VRIKSH — مصادر خشب قانونية",
+    wl2:"التحكم في الرطوبة: معالجة الخشب <12% — لا تشقق في العبور",
+    wl3:"تعبئة 7 طبقات للتصدير: تبخير + تعبئة خشبية",
+    wl4:"الحد الأدنى: 50 قطعة | مهلة التسليم: 45-60 يوماً",
+    wl5:"قابل للتتبع FSC | تصاميم مخصصة متاحة",
+    wc_btn:"طلب كتالوج الأخشاب ←",
+    wc1:"أثاث منحوت", wc2:"لوحات جدارية وديكور", wc3:"حاملات شموع", wc4:"صناديق مجوهرات وأطباق",
+    ts_label:"⭐ تجارب العملاء",
+    ts_h2:"نتائج حقيقية، <em style='color:var(--gold-light)'>ثقة موثقة</em>",
+    t1:'"خدمة العيون والآذان أعطتنا ثقة كاملة دون زيارة الهند. مقاطع تعبئة يومية — شاهدنا كل شيء من دبي."',
+    t1n:"مدير الاستيراد", t1c:"مشتري ديكور منزلي، دبي، الإمارات",
+    t2:'"المواصفات كما وُعد في 3 شحنات. صفر رفضات. الدعم الفني من نفيس ممتاز."',
+    t2n:"مدير المصنع", t2c:"مصنع، هابور، UP، الهند",
+    t3:'"كل شحنة مع COA وMSDS ووثائق DGFT كاملة. قال وكيل الجمارك إنه من أنظف الاستيرادات."',
+    t3n:"مدير الاستيراد", t3c:"مصنع، دلهي NCR، الهند",
+    ct_label:"📞 تواصل معنا",
+    ct_h2:"ابدأ محادثة — <em>نرد خلال 24 ساعة</em>",
+    ct_title:"المدير العام، شركة ماريتو للاستيراد والتصدير",
+    ct_addr_l:"العنوان", ct_ph_l:"الهاتف", ct_wa_l:"واتساب (مباشر)", ct_em_l:"البريد الإلكتروني",
+    ct_wa_btn:"دردشة على واتساب — 8679661174 91+",
+    ct_wa_note:"اضغط أعلاه للدردشة مباشرة — لا حاجة لحفظ الرقم.",
+    form_submit:"إرسال الاستفسار ←",
+    foot_p:"شريك سلسلة التوريد الشفاف في الهند — لحم دجاج طازج ومجمد، منتجات مزرعة 100 بيغا، مانجو فاخرة وأخشاب سهارنبور للأسواق العالمية.",
+    foot_h1:"المنتجات", foot_p1:"مانجو (داشاهاري/تشاوسا)", foot_p2:"خضروات طازجة",
+    foot_p3:"دجاج طازج", foot_p4:"دجاج مجمد", foot_p5:"أخشاب حرفية",
+    foot_h2:"الشركة", foot_c1:"نموذج JV", foot_c2:"خدمة العيون والآذان", foot_c3:"الشهادات", foot_c4:"شهادات العملاء",
+    foot_h3:"اتصل بنا"
+  },
+  ur: {
+    nav_produce:"تازہ پیداوار", nav_mango:"آم", nav_chicken:"مرغی کا گوشت",
+    nav_eyes:"آنکھ اور کان", nav_certs:"سرٹیفکیشن", nav_wood:"لکڑی کاری", nav_contact:"رابطہ", nav_quote:"قیمت جانیں",
+    hero_badge:"🌾 ابھی ایکسپورٹ: آم، سبزیاں اور مرغی — دبئی اور خلیج",
+    hero_h1:"فارم سے بندرگاہ تک<br><em>تازہ پیداوار</em><br>بھارت کے دل سے",
+    hero_sub:"مغربی UP میں 100 بیگھہ اپنا فارم — داشہری اور چوسا آم، بھنڈی، ہری مرچ، لوکی، پیٹھا اور مزید۔ نیز: تازہ اور منجمد مرغی — حلال سرٹیفائیڈ، FSSAI اور APEDA کمپلائنٹ۔ کوئی بیچ والا نہیں۔ لائیو ویڈیو آڈٹ۔",
+    btn_price:"قیمت فہرست منگوائیں ←", btn_wa:"ابھی واٹس ایپ کریں",
+    stat1:"بیگھہ اپنا فارم", stat2:"بیچ والے", stat3:"ممالک خدمت", stat4:"جواب کا وقت",
+    hc_mango:"پریمیم آم", hc_mango2:"داشہری • چوسا • یوپی",
+    hc_veg:"تازہ سبزیاں", hc_chicken:"تازہ و منجمد مرغی",
+    hc_eyes:"لائیو ویڈیو آڈٹ", hc_halal:"حلال + APEDA سرٹ", hc_cif:"CIF ڈیلیوری دبئی",
+    mango_badge:"🥭 سیزن اسپیشل — مئی تا جولائی",
+    mango_h2:"پریمیم یوپی داشہری<br>اور چوسا آم",
+    mango_p:"اتر پردیش کے باغات سے براہ راست — دنیا کی سب سے مطلوب داشہری اور چوسا اقسام۔ فائیٹوسینیٹری سرٹیفائیڈ، کیڑے مار دوا ٹیسٹ، دبئی اور خلیجی مارکیٹ کے لیے کولڈ چین ایکسپورٹ پیک۔",
+    mt1:"✅ فائیٹوسینیٹری سرٹیفائیڈ", mt2:"✅ کیڑے مار دوا ٹیسٹ", mt3:"✅ کولڈ چین تیار", mt4:"✅ 3.5/5 کلو گفٹ باکس", mt5:"✅ لائیو ویڈیو گریڈنگ",
+    mango_wa:"آم کی قیمت پوچھیں",
+    prod_label:"🌿 تازہ پیداوار اور زرعی برآمد",
+    prod_h2:"100 بیگھہ فارم — <em>سیدھا عالمی خریداروں تک</em>",
+    prod_sub:"مغربی یوپی میں ہمارا 100 بیگھہ اپنا فارم — کوئی بیچ والا نہیں، مکمل ٹریس ایبل، APEDA کمپلائنٹ تازہ سبزیاں اور پھل۔ فارم سے بندرگاہ تک مکمل دستاویزات۔",
+    p1h:"داشہری آم", p1d:"پریمیم یوپی · فائیٹوسینیٹری سرٹ · گفٹ باکس",
+    p2h:"چوسا آم", p2d:"بغیر ریشہ · کولڈ چین پیک · دبئی پسندیدہ",
+    p3h:"بھنڈی", p3d:"ٹینڈر گریڈ · چھانٹی · 5 کلو کارٹن",
+    p4h:"ہری مرچ", p4d:"میڈیم حدت · بغیر کیڑے مار دوا · ایئر کولڈ پیکنگ",
+    p5h:"لوکی", p5d:"یکساں سائز گریڈنگ · تازہ فصل · 5-7 کلو کارٹن",
+    p6h:"پیٹھا", p6d:"پریمیم آگرہ قسم · ایکسپورٹ گریڈ · کسٹم پیکنگ",
+    p7h:"پیاز (پریمیم)", p7d:"40-60mm گریڈ · 25 کلو جالی بیگ یا 5 کلو کارٹن",
+    p8h:"آلو", p8d:"چپسونا و کوکنگ گریڈ · کم نمی · صاف",
+    p9h:"لہسن", p9d:"خشک جلد · 30-50mm بلب · فیومیگیشن شامل",
+    p10h:"پتے دار سبزیاں", p10d:"پالک، میتھی · پری کولڈ · ہوائی مال برداری تیار",
+    pack_h:"📦 ایکسپورٹ گریڈ پیکیجنگ", pack_p:"ہر کھیپ APEDA اور منزل ملک کے معیار کے مطابق پیک",
+    ps1:"1. فارم گریڈنگ", ps2:"2. ٹیسٹ", ps3:"3. پری کولنگ", ps4:"4. ایکسپورٹ پیک", ps5:"5. فائیٹوسینیٹری سرٹ", ps6:"6. CIF ڈسپیچ",
+    chk_label:"🍗 تازہ و منجمد مرغی کا گوشت",
+    chk_h2:"حلال سرٹیفائیڈ مرغی — <em>فارم سے دبئی، براہ راست</em>",
+    chk_p:"FSSAI سرٹیفائیڈ پروسیسنگ یونٹس — حلال ذبح، سخت کولڈ چین، مکمل ایکسپورٹ دستاویزات۔ دبئی، ابوظبی اور خلیجی منڈیوں کے لیے تیار۔",
+    cl1:"حلال سرٹیفائیڈ — خلیج اور یوپی اے منظور", cl2:"FSSAI اور APEDA کمپلائنٹ پروسیسنگ یونٹ",
+    cl3:"کولڈ چین: 0-4°C (تازہ) / -18°C (منجمد)", cl4:"مکمل ٹریس ایبلٹی — فارم سے پروسیسنگ تا بندرگاہ",
+    cl5:"ویکیوم اور MAP پیکنگ — طویل شیلف لائف", cl6:"ہیلتھ سرٹ + ویٹرنری سرٹ ہر لاٹ",
+    chk_wa:"مرغی کی قیمت فہرست حاصل کریں",
+    cc1:"پوری مرغی (تازہ)", cc2:"پوری مرغی (منجمد)", cc3:"بے ہڈی سینہ و ران",
+    cc4:"ٹانگ و ڈرم اسٹک", cc5:"قیمہ مرغی", cc6:"کسٹم کٹ و پیک",
+    pk_label:"📦 ایکسپورٹ پیکنگ اور کولڈ چین — قدم بہ قدم",
+    pk_h2:"ہر قدم نظر آتا ہے — <em>معیار پر کوئی سمجھوتہ نہیں</em>",
+    pk_sub:"ہماری مرغی ایکسپورٹ پیکنگ 8 مرحلہ سخت عمل پر مبنی — حلال ذبح سے ریفر کنٹینر تک۔ دبئی کے خریدار ہر قدم لائیو دیکھ سکتے ہیں۔",
+    pvn1:"مرحلہ 01", pvn2:"مرحلہ 02", pvn3:"مرحلہ 03", pvn4:"مرحلہ 04", pvn5:"مرحلہ 05", pvn6:"مرحلہ 06", pvn7:"مرحلہ 07", pvn8:"مرحلہ 08",
+    pvh1:"حلال ذبح", pvp1:"سرٹیفائیڈ حلال قصاب۔ مکمل اسلامی تقاضے۔ خلیج و یوپی اے منظور شدہ۔",
+    pvh2:"ویٹرنری معائنہ", pvp2:"سرکاری ویٹ سے ہر پرندے کا معائنہ۔ قبل و بعد از ذبح جانچ۔ نامناسب پرندے مسترد۔",
+    pvh3:"تیز ٹھنڈا کرنا", pvp3:"ذبح کے 1 گھنٹے میں 0-4°C تک۔ صاف سہولت میں صفائی و دھلائی۔",
+    pvh4:"گریڈنگ و کٹنگ", pvp4:"وزن کی بنیاد پر گریڈنگ۔ خریدار کی تفصیل کے مطابق پوری یا کٹی ہوئی مرغی۔",
+    pvh5:"ویکیوم / MAP پیکنگ", pvp5:"فوڈ گریڈ ویکیوم یا MAP پیکنگ۔ طویل شیلف لائف۔ صفر آلودگی خطرہ۔",
+    pvh6:"ماسٹر کارٹن پیکنگ", pvp6:"HDPE بیگ + ماسٹر کارٹن۔ وزن، لاٹ نمبر اور حلال مارک پرنٹ۔ بائر لوگو آپشن۔",
+    pvh7:"کولڈ اسٹوریج و ڈسپیچ", pvp7:"-18°C پر منجمد اسٹوریج۔ ICD پاتپرگنج / منڈرا تک ریفر ٹرک۔ درجہ حرارت لاگ۔",
+    pvh8:"مکمل دستاویزات", pvp8:"حلال سرٹ · ہیلتھ سرٹ · ویٹرنری سرٹ · COA · MSDS · بل آف لیڈنگ · APEDA — سب شامل۔",
+    pc1t:"حلال سرٹیفائیڈ", pc1s:"خلیج و یوپی اے منظور", pc2t:"ہیلتھ سرٹیفکیٹ", pc2s:"ہر کھیپ",
+    pc3t:"ویٹرنری سرٹیفکیٹ", pc3s:"سرکاری ویٹ", pc4t:"APEDA رجسٹرڈ", pc4s:"بھارت ایکسپورٹ اتھارٹی",
+    pc5t:"FSSAI کمپلائنٹ", pc5s:"بھارت فوڈ سیفٹی", pc6t:"کولڈ چین ضمانت", pc6s:"درجہ حرارت لاگ فراہم",
+    eye_label:"👁️ خاص سروس",
+    eye_h2:"<em>آنکھ اور کان</em> — آپ موجود ہیں، چاہے نہ ہوں",
+    eye_sub:"دبئی کے خریداروں کے لیے گیم چینجنگ سروس — بھارت آئے بغیر اپنا آرڈر لائیو دیکھیں۔",
+    eye_quote:'"اپنی مرغی کو گریڈ، پیک اور لوڈ ہوتے لائیو ویڈیو کال سے دیکھیں۔ ہر آم چھانٹتے اور ہر سبزی تولتے ریئل ٹائم میں — آپ تک آنے سے پہلے۔"',
+    ec1h:"لائیو ویڈیو ٹور", ec1p:"گریڈنگ، پیکنگ اور لوڈنگ کے دوران شیڈول لائیو ویڈیو کالز۔",
+    ec2h:"روزانہ رپورٹ", ec2p:"تصاویر، وزن ریکارڈ اور پیکنگ اسٹیٹس — روزانہ واٹس ایپ پر۔",
+    ec3h:"آزاد لیب ٹیسٹ", ec3p:"NABL منظور لیب — کیڑے مار دوا، مائکروبائیولوجیکل ٹیسٹ۔ ہر لاٹ COA۔",
+    ec4h:"فوری مسئلہ اٹھانا", ec4p:"کوئی بھی خرابی — فوری الرٹ، کھیپ روکی گئی۔ آپ کے معیار پر صفر سمجھوتہ۔",
+    ec5h:"پروسیسنگ یونٹ رسائی", ec5p:"مرغی پروسیسنگ کے لائیو ٹور — آپ کے ٹائم زون کے مطابق شیڈول۔",
+    ec6h:"مکمل دستاویز پیکج", ec6p:"حلال، ہیلتھ، ویٹ، فائیٹوسینیٹری، COA، MSDS، بل آف لیڈنگ — ہر سرٹیفکیٹ، ہر کھیپ۔",
+    tr_label:"🏅 سرٹیفکیشن اور تعمیل",
+    tr_h2:"تصدیق شدہ۔ سرٹیفائیڈ۔ <em>عالمی اعتماد۔</em>",
+    tr_sub:"دبئی اور خلیجی خریداروں کی ہر ضروری سرٹیفکیشن — موجود اور دستاویزی۔",
+    tb1t:"حلال سرٹیفائیڈ", tb1s:"خلیج و یوپی اے منظور", tb2t:"APEDA رجسٹرڈ", tb2s:"تازہ پیداوار ایکسپورٹ اتھارٹی",
+    tb3t:"فائیٹوسینیٹری سرٹ", tb3s:"پلانٹ ہیلتھ — ہر لاٹ", tb4t:"کیڑے مار دوا ٹیسٹ", tb4s:"NABL منظور لیب",
+    tb5t:"IEC رجسٹرڈ", tb6t:"UDYAM (MSME)", tb7t:"GST تصدیق شدہ", tb8t:"کولڈ چین تیار", tb8s:"ریفر کنٹینر و پری کولنگ",
+    rp:"ایکسپورٹ بندرگاہیں", rd:"دستاویزات",
+    jv_label:"🤝 ہمارا طریقہ",
+    jv_h2:"منیجڈ JV ماڈل — <em>شروع سے آخر تک معیار</em>",
+    jv_sub:"ہم صرف تجارت نہیں کرتے — ہم معیار مینیج کرتے ہیں۔ تمام زمروں میں مکمل JV شراکت۔",
+    jv1h:"یونٹ شراکت", jv1p:"تصدیق شدہ پروسیسنگ یونٹس اور فارمز — APEDA، FSSAI اور حلال کمپلائنٹ۔",
+    jv2h:"پیداوار سے پہلے معیار لاک", jv2p:"خریدار کی تفصیلات اور نمونے — پیداوار یا فصل سے پہلے منظوری۔",
+    jv3h:"آنکھ اور کان — لائیو آڈٹ", jv3p:"ریئل ٹائم ویڈیو نگرانی، روزانہ اپڈیٹ، لائیو رسائی — کوئی حیرانی نہیں۔",
+    jv4h:"ایکسپورٹ پیکنگ و ڈسپیچ", jv4p:"سرٹیفائیڈ پیکنگ، COA دستاویزات — CIF ڈیلیوری پاتپرگنج یا منڈرا سے۔",
+    jv5h:"ڈیلیوری کے بعد سپورٹ", jv5p:"کسٹمز کلیئرنس، کلیم ہینڈلنگ اور اگلے آرڈر کی منصوبہ بندی — طویل مدتی پارٹنر کی طرح۔",
+    wc_label:"🪵 لکڑی کاری — سہارنپور",
+    wc_h2:"ورثہ لکڑی کاری — <em>عالمی منڈیاں</em>",
+    wc_sub:"سہارنپور، یوپی کی 400 سالہ لکڑی نقاشی روایت — EPCH رجسٹرڈ یونٹس، پریمیم فرنیچر، ہوم ڈیکور اور آرٹی فیکٹس۔",
+    wl1:"EPCH سرٹیفائیڈ اور VRIKSH کمپلائنٹ — قانونی لکڑی کے ذرائع",
+    wl2:"نمی کنٹرول: لکڑی کی سیزننگ <12% — ٹرانزٹ میں کوئی خرابی نہیں",
+    wl3:"7 پرت ایکسپورٹ پیکنگ: فیومیگیشن + لکڑی کا کریٹ",
+    wl4:"کم از کم آرڈر: 50 پیس | ڈیلیوری: 45-60 دن",
+    wl5:"FSC ٹریک ایبل | کسٹم ڈیزائن دستیاب",
+    wc_btn:"وڈ کیٹالاگ منگوائیں ←",
+    wc1:"نقشین فرنیچر", wc2:"وال پینل و ڈیکور", wc3:"کینڈل ہولڈر", wc4:"جیولری باکس و ٹرے",
+    ts_label:"⭐ کلائنٹ تجربات",
+    ts_h2:"حقیقی نتائج، <em style='color:var(--gold-light)'>تصدیق شدہ اعتماد</em>",
+    t1:'"Eyes & Ears سروس نے بھارت گئے بغیر مکمل اعتماد دیا۔ روزانہ پیکنگ ویڈیوز آتی رہیں — ہم نے دبئی سے سب دیکھا۔"',
+    t1n:"امپورٹ مینیجر", t1c:"ہوم ڈیکور خریدار، دبئی، متحدہ عرب امارات",
+    t2:'"3 کھیپوں میں تفصیلات بالکل وعدے کے مطابق۔ صفر مسترد۔ نفیس کی تکنیکی مدد شاندار۔"',
+    t2n:"پلانٹ مینیجر", t2c:"مینوفیکچرر، ہاپور، یوپی، بھارت",
+    t3:'"ہر کھیپ مکمل COA، MSDS اور DGFT دستاویزات کے ساتھ۔ کسٹمز ایجنٹ نے کہا سب سے صاف درآمدات میں سے۔"',
+    t3n:"امپورٹ مینیجر", t3c:"مینوفیکچرر، دہلی NCR، بھارت",
+    ct_label:"📞 رابطہ کریں",
+    ct_h2:"گفتگو شروع کریں — <em>24 گھنٹے میں جواب</em>",
+    ct_title:"مینیجنگ ڈائریکٹر، مریٹو ایکسپورٹ امپورٹ کمپنی",
+    ct_addr_l:"پتہ", ct_ph_l:"فون", ct_wa_l:"واٹس ایپ (براہ راست)", ct_em_l:"ای میل",
+    ct_wa_btn:"واٹس ایپ پر چیٹ کریں — 8679661174 91+",
+    ct_wa_note:"اوپر والے بٹن کو دبائیں براہ راست چیٹ کے لیے — نمبر سیو کرنے کی ضرورت نہیں۔",
+    form_submit:"انکوائری بھیجیں ←",
+    foot_p:"بھارت کا شفاف سپلائی چین پارٹنر — تازہ و منجمد مرغی، 100 بیگھہ فارم پیداوار، پریمیم آم اور سہارنپور لکڑی کاری عالمی منڈیوں تک۔",
+    foot_h1:"مصنوعات", foot_p1:"آم (داشہری/چوسا)", foot_p2:"تازہ سبزیاں",
+    foot_p3:"تازہ مرغی", foot_p4:"منجمد مرغی", foot_p5:"لکڑی کاری",
+    foot_h2:"کمپنی", foot_c1:"JV ماڈل", foot_c2:"آنکھ اور کان سروس", foot_c3:"سرٹیفکیشن", foot_c4:"کلائنٹ تعریف",
+    foot_h3:"رابطہ"
+  }
+};
+
+function setLang(lang) {
+  const t = T[lang];
+  if (!t) return;
+  const isRTL = lang === 'ar' || lang === 'ur';
+  document.body.classList.toggle('rtl', isRTL);
+  document.documentElement.lang = lang;
+  document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+
+  document.querySelectorAll('[data-key]').forEach(el => {
+    const key = el.getAttribute('data-key');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById('btn-' + lang);
+  if (btn) btn.classList.add('active');
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('form-ok').style.display = 'block';
+  e.target.reset();
+  setTimeout(() => { document.getElementById('form-ok').style.display = 'none'; }, 5000);
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }); }
+  });
+});
+</script>
+</body>
+</html>
