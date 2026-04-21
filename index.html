@@ -600,7 +600,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.52);padding:42px 5% 22px;
     <div class="contact-info">
       <h3>Nafees Ahmed<br><span style="font-size:0.93rem;color:var(--mid);font-family:'DM Sans',sans-serif;font-weight:400;" data-key="ct_title">Managing Director, Maretto Export Import Co.</span></h3>
       <div class="crow"><span class="cicon">📍</span><div><div class="clabel" data-key="ct_addr_l">Address</div><div class="cval">NH709A, Village Bubakpur, Near Bubakpur Bus Stand<br>PO Dabathwa, Sardhana, Meerut – 250341, UP, India</div></div></div>
-      <div class="crow"><span class="cicon">📞</span><div><div class="clabel" data-key="ct_ph_l">Phone</div><div class="cval"><a href="tel:+919761128966">+91 9761128966</a></div></div></div>
+      <div class="crow"><span class="cicon">📞</span><div><div class="clabel" data-key="ct_ph_l">Phone</div><div class="cval"><a href="tel:+919761128964">+91 9761128964</a></div></div></div>
       <div class="crow"><span class="cicon">📱</span><div><div class="clabel" data-key="ct_wa_l">WhatsApp (Direct)</div><div class="cval"><a href="https://wa.me/918679661174">+91 8679661174</a></div></div></div>
       <div class="crow"><span class="cicon">✉️</span><div><div class="clabel" data-key="ct_em_l">Email</div><div class="cval"><a href="mailto:info@marettoexport.in">info@marettoexport.in</a></div></div></div>
       <a href="https://wa.me/918679661174" class="wa-big" target="_blank">
@@ -608,16 +608,17 @@ footer{background:var(--dark);color:rgba(255,255,255,0.52);padding:42px 5% 22px;
       </a>
       <p style="font-size:0.74rem;color:var(--mid);margin-top:10px;" data-key="ct_wa_note">Tap above to chat directly — no need to save the number first.</p>
     </div>
-    <form onsubmit="handleSubmit(event)">
+    <!-- INQUIRY FORM — sends directly to WhatsApp +91 8679661174, zero setup needed -->
+    <form id="inquiry-form" onsubmit="sendToWhatsApp(event)">
       <div class="form-row">
-        <input type="text" placeholder="Your Name *" required>
-        <input type="text" placeholder="Company Name">
+        <input type="text" id="f-name" placeholder="Your Name *" required>
+        <input type="text" id="f-company" placeholder="Company Name">
       </div>
       <div class="form-row">
-        <input type="tel" placeholder="Phone / WhatsApp *" required>
-        <input type="email" placeholder="Email">
+        <input type="tel" id="f-phone" placeholder="Phone / WhatsApp *" required>
+        <input type="email" id="f-email" placeholder="Email">
       </div>
-      <select required>
+      <select id="f-product" required>
         <option value="">— Select Product —</option>
         <option>🥭 Fresh Mangoes (Dashahari / Chausa)</option>
         <option>🌿 Fresh Vegetables (Bhindi, Chilli, Loki etc.)</option>
@@ -629,12 +630,14 @@ footer{background:var(--dark);color:rgba(255,255,255,0.52);padding:42px 5% 22px;
         <option>Multiple Products</option>
       </select>
       <div class="form-row">
-        <input type="text" placeholder="Quantity / Month">
-        <input type="text" placeholder="Destination Country">
+        <input type="text" id="f-qty" placeholder="Quantity / Month">
+        <input type="text" id="f-dest" placeholder="Destination Country">
       </div>
-      <textarea placeholder="Additional Requirements — packaging, certifications, delivery timeline..."></textarea>
-      <button type="submit" class="submit-btn" data-key="form_submit">SEND INQUIRY →</button>
-      <div id="form-ok" style="display:none;color:var(--green);font-weight:600;font-size:0.88rem;">✅ Inquiry submitted! We will contact you within 24 hours.</div>
+      <textarea id="f-msg" placeholder="Additional Requirements — packaging, certifications, delivery timeline..."></textarea>
+      <button type="submit" class="submit-btn">SEND INQUIRY →</button>
+      <div id="form-ok" style="display:none;color:var(--green);font-weight:600;font-size:0.88rem;margin-top:8px;">
+        ✅ Opening WhatsApp with your inquiry details... If it did not open, <a href="https://wa.me/918679661174" target="_blank" style="color:var(--green);">click here</a>.
+      </div>
     </form>
   </div>
 </section>
@@ -663,7 +666,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.52);padding:42px 5% 22px;
     </div>
     <div class="footer-col">
       <h4 data-key="foot_h3">Contact</h4>
-      <a href="tel:+919761128966">📞 +91 9761128966</a>
+      <a href="tel:+919761128964">📞 +91 9761128964</a>
       <a href="https://wa.me/918679661174" target="_blank">💬 +91 8679661174 (WA)</a>
       <a href="mailto:info@marettoexport.in">✉️ info@marettoexport.in</a>
       <a href="https://www.marettoexport.in">🌐 marettoexport.in</a>
@@ -1031,11 +1034,44 @@ function setLang(lang) {
   if (btn) btn.classList.add('active');
 }
 
-function handleSubmit(e) {
+function sendToWhatsApp(e) {
   e.preventDefault();
+
+  const name    = document.getElementById('f-name').value.trim();
+  const company = document.getElementById('f-company').value.trim();
+  const phone   = document.getElementById('f-phone').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const product = document.getElementById('f-product').value.trim();
+  const qty     = document.getElementById('f-qty').value.trim();
+  const dest    = document.getElementById('f-dest').value.trim();
+  const msg     = document.getElementById('f-msg').value.trim();
+
+  const text = [
+    '📋 *NEW INQUIRY — Maretto Export Website*',
+    '───────────────────────',
+    '👤 *Name:* ' + name,
+    company  ? '🏢 *Company:* ' + company : '',
+    '📱 *Phone/WA:* ' + phone,
+    email    ? '✉️ *Email:* ' + email : '',
+    '📦 *Product:* ' + product,
+    qty      ? '⚖️ *Quantity/Month:* ' + qty : '',
+    dest     ? '✈️ *Destination:* ' + dest : '',
+    msg      ? '📝 *Requirements:* ' + msg : '',
+    '───────────────────────',
+    '🌐 Source: marettoexport.in'
+  ].filter(Boolean).join('\n');
+
+  const waURL = 'https://wa.me/918679661174?text=' + encodeURIComponent(text);
+
   document.getElementById('form-ok').style.display = 'block';
-  e.target.reset();
-  setTimeout(() => { document.getElementById('form-ok').style.display = 'none'; }, 5000);
+  document.getElementById('inquiry-form').reset();
+
+  // Open WhatsApp
+  window.open(waURL, '_blank');
+
+  setTimeout(() => {
+    document.getElementById('form-ok').style.display = 'none';
+  }, 8000);
 }
 
 document.querySelectorAll('a[href^="#"]').forEach(a => {
