@@ -1,1 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maretto Exports | Premium Agricultural Products & Spices from India</title>
+  <meta name="description" content="Maretto Exports - Trusted exporter of premium quality agricultural products and spices from India to the world."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --green:    #1a5c38;
+      --green-lt: #2e7d52;
+      --gold:     #c9962a;
+      --gold-lt:  #e8b94a;
+      --cream:    #faf6ef;
+      --dark:     #0f1f16;
+      --text:     #2d2d2d;
+      --muted:    #6b7280;
+      --border:   #e2ddd4;
+      --white:    #ffffff;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:1000;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    }
+    .nav-logo {
+      display:flex; align-items:center; gap:10px; text-decoration:none;
+    }
+    .nav-logo-icon {
+      width:40px; height:40px; background: var(--green);
+      border-radius:8px; display:flex; align-items:center; justify-content:center;
+    }
+    .nav-logo-icon svg { width:22px; height:22px; fill:white; }
+    .nav-logo-text { font-family:'Playfair Display',serif; font-size:1.25rem; font-weight:700; color:var(--dark); }
+    .nav-logo-text span { color:var(--gold); }
+    .nav-links { display:flex; align-items:center; gap:32px; list-style:none; }
+    .nav-links a { text-decoration:none; font-size:0.92rem; font-weight:500; color:var(--muted); transition:color 0.2s; }
+    .nav-links a:hover { color:var(--green); }
+    .nav-cta {
+      background:var(--green); color:white; padding:9px 22px; border-radius:6px;
+      font-size:0.88rem; font-weight:600; text-decoration:none; letter-spacing:0.3px;
+      transition:background 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { background:var(--green-lt); transform:translateY(-1px); }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; }
+    .hamburger span { width:24px; height:2px; background:var(--dark); border-radius:2px; transition:all 0.3s; }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(145deg, var(--dark) 0%, #1a3d28 60%, #0f2b1b 100%);
+      display: flex; align-items: center;
+      padding: 100px 5% 60px;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg-pattern {
+      position:absolute; inset:0; opacity:0.04;
+      background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .hero-glow {
+      position:absolute; top:-200px; right:-200px;
+      width:700px; height:700px; border-radius:50%;
+      background: radial-gradient(circle, rgba(201,150,42,0.18) 0%, transparent 70%);
+    }
+    .hero-inner {
+      max-width: 1200px; margin:0 auto; width:100%;
+      display: grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;
+    }
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:8px;
+      background: rgba(201,150,42,0.15); border:1px solid rgba(201,150,42,0.3);
+      color:var(--gold-lt); padding:6px 14px; border-radius:20px;
+      font-size:0.8rem; font-weight:600; letter-spacing:1px; text-transform:uppercase;
+      margin-bottom:24px;
+    }
+    .hero-badge::before { content:''; width:7px; height:7px; background:var(--gold); border-radius:50%; }
+    .hero-title {
+      font-family:'Playfair Display',serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight:700; line-height:1.18;
+      color:white; margin-bottom:20px;
+    }
+    .hero-title span { color:var(--gold-lt); display:block; }
+    .hero-desc {
+      font-size:1.05rem; color:rgba(255,255,255,0.7);
+      line-height:1.75; margin-bottom:36px; max-width:480px;
+    }
+    .hero-btns { display:flex; gap:14px; flex-wrap:wrap; }
+    .btn-primary {
+      background:var(--gold); color:var(--dark); padding:13px 28px;
+      border-radius:7px; font-weight:700; font-size:0.95rem;
+      text-decoration:none; letter-spacing:0.3px;
+      transition:all 0.2s; box-shadow:0 4px 20px rgba(201,150,42,0.35);
+    }
+    .btn-primary:hover { background:var(--gold-lt); transform:translateY(-2px); box-shadow:0 6px 28px rgba(201,150,42,0.45); }
+    .btn-secondary {
+      background:transparent; color:white; padding:13px 28px;
+      border-radius:7px; font-weight:600; font-size:0.95rem;
+      text-decoration:none; border:1.5px solid rgba(255,255,255,0.3);
+      transition:all 0.2s;
+    }
+    .btn-secondary:hover { border-color:white; background:rgba(255,255,255,0.07); }
+    .hero-stats {
+      display:flex; gap:32px; margin-top:48px; padding-top:32px;
+      border-top:1px solid rgba(255,255,255,0.1);
+    }
+    .stat-item { text-align:left; }
+    .stat-num { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--gold-lt); }
+    .stat-lbl { font-size:0.8rem; color:rgba(255,255,255,0.5); margin-top:2px; text-transform:uppercase; letter-spacing:0.8px; }
+
+    /* Hero right: visual grid */
+    .hero-visual { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .hero-card {
+      border-radius:14px; overflow:hidden; background:rgba(255,255,255,0.07);
+      border:1px solid rgba(255,255,255,0.1); padding:22px;
+      display:flex; flex-direction:column; gap:10px;
+      transition:transform 0.3s; animation: fadeUp 0.8s ease both;
+    }
+    .hero-card:hover { transform:translateY(-4px); }
+    .hero-card:nth-child(1) { animation-delay:0.1s; }
+    .hero-card:nth-child(2) { animation-delay:0.2s; margin-top:24px; }
+    .hero-card:nth-child(3) { animation-delay:0.3s; }
+    .hero-card:nth-child(4) { animation-delay:0.4s; margin-top:24px; }
+    .hero-card-icon { font-size:2rem; }
+    .hero-card-name { font-weight:600; color:white; font-size:0.95rem; }
+    .hero-card-desc { font-size:0.78rem; color:rgba(255,255,255,0.5); line-height:1.5; }
+
+    /* ─── SECTION COMMON ─── */
+    section { padding: 90px 5%; }
+    .section-tag {
+      display:inline-block; background:rgba(26,92,56,0.1); color:var(--green);
+      padding:5px 14px; border-radius:20px; font-size:0.78rem;
+      font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:14px;
+    }
+    .section-title {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight:700; color:var(--dark); line-height:1.25; margin-bottom:14px;
+    }
+    .section-desc { font-size:1rem; color:var(--muted); max-width:560px; line-height:1.75; margin-bottom:50px; }
+    .max-w { max-width:1200px; margin:0 auto; }
+
+    /* ─── ABOUT ─── */
+    #about { background:white; }
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center; }
+    .about-img-wrap { position:relative; }
+    .about-img-box {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-lt) 100%);
+      border-radius:20px; padding:50px 40px;
+      display:flex; flex-direction:column; gap:20px;
+    }
+    .about-img-leaf { font-size:5rem; text-align:center; }
+    .about-img-text { color:rgba(255,255,255,0.85); font-size:1.05rem; line-height:1.8; text-align:center; }
+    .about-badge-float {
+      position:absolute; bottom:-20px; right:-20px;
+      background:var(--gold); color:var(--dark);
+      padding:16px 20px; border-radius:14px;
+      font-weight:700; font-size:0.9rem; text-align:center;
+      box-shadow:0 8px 24px rgba(201,150,42,0.4);
+    }
+    .about-badge-float span { display:block; font-size:1.6rem; font-family:'Playfair Display',serif; }
+    .about-features { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:30px; }
+    .about-feat {
+      background:var(--cream); border-radius:10px; padding:16px;
+      display:flex; align-items:flex-start; gap:12px;
+    }
+    .about-feat-icon { font-size:1.4rem; }
+    .about-feat-text h4 { font-size:0.9rem; font-weight:600; color:var(--dark); margin-bottom:3px; }
+    .about-feat-text p { font-size:0.78rem; color:var(--muted); line-height:1.5; }
+
+    /* ─── PRODUCTS ─── */
+    #products { background:var(--cream); }
+    .products-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .product-card {
+      background:white; border-radius:16px; overflow:hidden;
+      box-shadow:0 2px 16px rgba(0,0,0,0.06);
+      transition:transform 0.3s, box-shadow 0.3s;
+      border:1px solid var(--border);
+    }
+    .product-card:hover { transform:translateY(-6px); box-shadow:0 12px 36px rgba(0,0,0,0.12); }
+    .product-img {
+      height:160px; display:flex; align-items:center; justify-content:center;
+      font-size:4rem; position:relative;
+    }
+    .product-img-1 { background: linear-gradient(135deg,#f0f7ee,#c8e6c9); }
+    .product-img-2 { background: linear-gradient(135deg,#fff8e1,#ffe082); }
+    .product-img-3 { background: linear-gradient(135deg,#fce4ec,#f8bbd0); }
+    .product-img-4 { background: linear-gradient(135deg,#e8f5e9,#a5d6a7); }
+    .product-img-5 { background: linear-gradient(135deg,#fff3e0,#ffcc80); }
+    .product-img-6 { background: linear-gradient(135deg,#f3e5f5,#ce93d8); }
+    .product-badge {
+      position:absolute; top:12px; right:12px;
+      background:var(--green); color:white;
+      font-size:0.68rem; font-weight:700; padding:4px 10px; border-radius:20px;
+      text-transform:uppercase; letter-spacing:0.5px;
+    }
+    .product-body { padding:22px; }
+    .product-body h3 { font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:700; color:var(--dark); margin-bottom:8px; }
+    .product-body p { font-size:0.85rem; color:var(--muted); line-height:1.65; margin-bottom:14px; }
+    .product-tags { display:flex; flex-wrap:wrap; gap:6px; }
+    .product-tag {
+      background:var(--cream); border:1px solid var(--border);
+      font-size:0.72rem; color:var(--green); padding:3px 10px; border-radius:20px; font-weight:500;
+    }
+
+    /* ─── WHY US ─── */
+    #why { background:var(--dark); }
+    #why .section-title { color:white; }
+    #why .section-desc { color:rgba(255,255,255,0.6); }
+    #why .section-tag { background:rgba(201,150,42,0.2); color:var(--gold-lt); }
+    .why-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+    .why-card {
+      background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08);
+      border-radius:16px; padding:28px 22px;
+      transition:all 0.3s;
+    }
+    .why-card:hover { background:rgba(255,255,255,0.09); border-color:rgba(201,150,42,0.3); transform:translateY(-4px); }
+    .why-icon { font-size:2.2rem; margin-bottom:16px; }
+    .why-card h3 { color:white; font-size:1rem; font-weight:600; margin-bottom:8px; }
+    .why-card p { color:rgba(255,255,255,0.55); font-size:0.85rem; line-height:1.65; }
+
+    /* ─── PROCESS ─── */
+    #process { background:white; }
+    .process-steps { display:grid; grid-template-columns:repeat(5,1fr); gap:0; position:relative; }
+    .process-steps::before {
+      content:''; position:absolute; top:36px; left:10%; right:10%; height:2px;
+      background: linear-gradient(90deg, var(--green), var(--gold));
+      z-index:0;
+    }
+    .process-step { text-align:center; padding:0 10px; position:relative; z-index:1; }
+    .step-num {
+      width:72px; height:72px; border-radius:50%; margin:0 auto 16px;
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700;
+      border:3px solid var(--green); background:white; color:var(--green);
+      box-shadow:0 4px 16px rgba(26,92,56,0.15);
+    }
+    .process-step.active .step-num { background:var(--green); color:white; }
+    .process-step h4 { font-weight:700; font-size:0.9rem; color:var(--dark); margin-bottom:6px; }
+    .process-step p { font-size:0.78rem; color:var(--muted); line-height:1.55; }
+
+    /* ─── INQUIRY FORM ─── */
+    #contact { background: linear-gradient(135deg, #f8fdf8 0%, #faf6ef 100%); }
+    .contact-wrap {
+      display:grid; grid-template-columns:1fr 1.3fr; gap:60px; align-items:start;
+    }
+    .contact-info h2 { font-family:'Playfair Display',serif; font-size:2rem; color:var(--dark); margin-bottom:16px; }
+    .contact-info p { color:var(--muted); line-height:1.8; margin-bottom:30px; }
+    .contact-detail {
+      display:flex; align-items:flex-start; gap:14px; margin-bottom:18px;
+    }
+    .contact-detail-icon {
+      width:42px; height:42px; background:var(--green); border-radius:10px;
+      display:flex; align-items:center; justify-content:center; flex-shrink:0;
+      font-size:1.1rem;
+    }
+    .contact-detail-text h4 { font-size:0.85rem; color:var(--muted); font-weight:500; }
+    .contact-detail-text p { font-size:0.95rem; font-weight:600; color:var(--dark); }
+    .contact-form-box {
+      background:white; border-radius:20px; padding:40px;
+      box-shadow:0 4px 32px rgba(0,0,0,0.08); border:1px solid var(--border);
+    }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .form-group { margin-bottom:18px; }
+    .form-group label { display:block; font-size:0.85rem; font-weight:600; color:var(--dark); margin-bottom:7px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width:100%; padding:12px 16px; border:1.5px solid var(--border);
+      border-radius:8px; font-family:'DM Sans',sans-serif; font-size:0.9rem;
+      color:var(--dark); background:var(--cream); outline:none;
+      transition:border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color:var(--green);
+      box-shadow:0 0 0 3px rgba(26,92,56,0.1);
+    }
+    .form-group textarea { resize:vertical; min-height:110px; }
+    .form-submit {
+      width:100%; padding:15px; background:var(--green); color:white;
+      border:none; border-radius:8px; font-family:'DM Sans',sans-serif;
+      font-size:1rem; font-weight:700; cursor:pointer; letter-spacing:0.3px;
+      transition:all 0.2s; display:flex; align-items:center; justify-content:center; gap:10px;
+    }
+    .form-submit:hover { background:var(--green-lt); transform:translateY(-1px); }
+    .form-submit svg { width:20px; height:20px; fill:white; }
+    .form-note { text-align:center; font-size:0.78rem; color:var(--muted); margin-top:12px; }
+    .success-msg {
+      display:none; background:#e8f5e9; border:1px solid #a5d6a7;
+      color:#1b5e20; padding:16px; border-radius:8px; text-align:center;
+      font-weight:600; margin-top:14px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background:var(--dark); color:rgba(255,255,255,0.7);
+      padding:60px 5% 30px;
+    }
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; max-width:1200px; margin:0 auto 40px; }
+    .footer-brand .nav-logo-text { color:white; font-size:1.4rem; }
+    .footer-brand p { margin-top:14px; font-size:0.88rem; line-height:1.75; max-width:280px; }
+    .footer-col h4 { color:white; font-weight:700; font-size:0.95rem; margin-bottom:16px; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:10px; }
+    .footer-col ul li a { color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.88rem; transition:color 0.2s; }
+    .footer-col ul li a:hover { color:var(--gold-lt); }
+    .footer-bottom {
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding-top:24px; max-width:1200px; margin:0 auto;
+      display:flex; align-items:center; justify-content:space-between;
+      flex-wrap:wrap; gap:12px;
+    }
+    .footer-bottom p { font-size:0.82rem; }
+    .certifications { display:flex; gap:10px; }
+    .cert-badge {
+      background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12);
+      padding:5px 12px; border-radius:5px; font-size:0.75rem; color:rgba(255,255,255,0.7);
+    }
+
+    /* ─── WHATSAPP BUTTON ─── */
+    .wa-float {
+      position:fixed; bottom:28px; right:28px; z-index:9999;
+      display:flex; flex-direction:column; align-items:flex-end; gap:10px;
+    }
+    .wa-tooltip {
+      background:white; color:var(--dark); padding:9px 15px;
+      border-radius:10px; font-size:0.82rem; font-weight:600;
+      box-shadow:0 4px 20px rgba(0,0,0,0.15); white-space:nowrap;
+      border-left:3px solid #25D366;
+      opacity:0; transform:translateY(8px) scale(0.95);
+      pointer-events:none; transition:all 0.25s ease;
+    }
+    .wa-float:hover .wa-tooltip,
+    .wa-float.show .wa-tooltip {
+      opacity:1; transform:translateY(0) scale(1);
+    }
+    .wa-btn {
+      width:62px; height:62px; background:linear-gradient(135deg,#25D366,#128C7E);
+      border-radius:50%; display:flex; align-items:center; justify-content:center;
+      text-decoration:none; box-shadow:0 4px 20px rgba(37,211,102,0.5);
+      transition:transform 0.2s, box-shadow 0.2s; position:relative;
+    }
+    .wa-btn:hover { transform:scale(1.1); box-shadow:0 6px 28px rgba(37,211,102,0.65); }
+    .wa-btn svg { width:32px; height:32px; fill:white; }
+    .wa-btn::before {
+      content:''; position:absolute; width:100%; height:100%; border-radius:50%;
+      background:rgba(37,211,102,0.3); animation:waPulse 2s ease-out infinite;
+    }
+    .wa-dot {
+      position:absolute; top:3px; right:3px; width:13px; height:13px;
+      background:#4CAF50; border-radius:50%; border:2px solid white;
+    }
+    @keyframes waPulse {
+      0%   { transform:scale(1);   opacity:0.7; }
+      70%  { transform:scale(1.65);opacity:0;   }
+      100% { transform:scale(1.65);opacity:0;   }
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(30px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.7s ease both; }
+    .delay-1 { animation-delay:0.1s; }
+    .delay-2 { animation-delay:0.2s; }
+    .delay-3 { animation-delay:0.3s; }
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:992px){
+      .hero-inner { grid-template-columns:1fr; }
+      .hero-visual { display:none; }
+      .about-grid { grid-template-columns:1fr; }
+      .products-grid { grid-template-columns:1fr 1fr; }
+      .why-grid { grid-template-columns:1fr 1fr; }
+      .process-steps { grid-template-columns:1fr; }
+      .process-steps::before { display:none; }
+      .contact-wrap { grid-template-columns:1fr; }
+      .footer-grid { grid-template-columns:1fr 1fr; }
+    }
+    @media(max-width:640px){
+      .nav-links { display:none; }
+      .hamburger { display:flex; }
+      .products-grid { grid-template-columns:1fr; }
+      .why-grid { grid-template-columns:1fr; }
+      .form-row { grid-template-columns:1fr; }
+      .footer-grid { grid-template-columns:1fr; }
+      section { padding:60px 5%; }
+      .hero-stats { gap:20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M17,8C8,10,5.9,16.17,3.82,21.34L5.71,22l1-2.3A4.49,4.49,0,0,0,8,20C19,20,22,3,22,3,21,5,14,5.25,9,6.25S2,11.5,2,13.5a6.22,6.22,0,0,0,.35,2L4,14.5C5,10,17,8,17,8Z"/></svg>
+      </div>
+      <span class="nav-logo-text">Maretto<span>Exports</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact" class="nav-cta">Get Quote</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">🌍 Trusted Global Exporter</div>
+        <h1 class="hero-title">
+          Premium Spices &<span>Agricultural Products</span>From India
+        </h1>
+        <p class="hero-desc">
+          Maretto Exports connects the finest Indian agricultural produce with buyers worldwide. Farm-fresh, certified, and delivered with care to 30+ countries.
+        </p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary">📦 Request a Quote</a>
+          <a href="#products" class="btn-secondary">View Products →</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">30+</div>
+            <div class="stat-lbl">Countries</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">500+</div>
+            <div class="stat-lbl">Happy Clients</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">15+</div>
+            <div class="stat-lbl">Years Experience</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-icon">🌶️</div>
+          <div class="hero-card-name">Red Chilli</div>
+          <div class="hero-card-desc">Finest Guntur & Kashmiri varieties, rich colour & pungency</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">🌿</div>
+          <div class="hero-card-name">Turmeric</div>
+          <div class="hero-card-desc">High curcumin content, certified organic options available</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">🫚</div>
+          <div class="hero-card-name">Mustard Seeds</div>
+          <div class="hero-card-desc">Yellow & black varieties, cleaned and graded</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">🌾</div>
+          <div class="hero-card-name">Basmati Rice</div>
+          <div class="hero-card-desc">Long-grain aromatic, aged and premium quality</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="max-w about-grid">
+      <div class="about-img-wrap">
+        <div class="about-img-box">
+          <div class="about-img-leaf">🌱</div>
+          <p class="about-img-text">
+            "Rooted in India's fertile lands, we bring the world the purest flavours nature has to offer — from farm to your doorstep."
+          </p>
+          <div style="display:flex;gap:16px;justify-content:center;margin-top:10px;">
+            <span style="background:rgba(255,255,255,0.15);color:white;padding:6px 14px;border-radius:20px;font-size:0.8rem;">✅ FSSAI Certified</span>
+            <span style="background:rgba(255,255,255,0.15);color:white;padding:6px 14px;border-radius:20px;font-size:0.8rem;">✅ ISO Quality</span>
+          </div>
+        </div>
+        <div class="about-badge-float">
+          <span>15+</span>Years of Excellence
+        </div>
+      </div>
+      <div>
+        <span class="section-tag">About Us</span>
+        <h2 class="section-title">India's Trusted Agricultural Export Partner</h2>
+        <p class="section-desc">
+          Maretto Exports was founded with a single vision — to bring the finest quality spices and agricultural products from the heartland of India to global markets. We work directly with farmers, ensuring fair trade, quality control, and timely delivery.
+        </p>
+        <div class="about-features">
+          <div class="about-feat">
+            <div class="about-feat-icon">🌾</div>
+            <div class="about-feat-text">
+              <h4>Farm Direct Sourcing</h4>
+              <p>We partner directly with trusted farmers across India</p>
+            </div>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-icon">🔬</div>
+            <div class="about-feat-text">
+              <h4>Quality Testing</h4>
+              <p>Every batch lab-tested before export</p>
+            </div>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-icon">📦</div>
+            <div class="about-feat-text">
+              <h4>Custom Packaging</h4>
+              <p>Private label & bulk packaging available</p>
+            </div>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-icon">🚢</div>
+            <div class="about-feat-text">
+              <h4>Timely Shipment</h4>
+              <p>On-time delivery with full documentation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <div class="max-w">
+      <span class="section-tag">Our Products</span>
+      <h2 class="section-title">Premium Export Quality Products</h2>
+      <p class="section-desc">Carefully sourced, processed, and packaged to meet international quality standards.</p>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-img product-img-1">🌶️<div class="product-badge">Best Seller</div></div>
+          <div class="product-body">
+            <h3>Red Chilli & Chilli Powder</h3>
+            <p>Guntur Sannam, Teja, S17, Kashmiri varieties. Bold colour, high pungency, available whole & powdered.</p>
+            <div class="product-tags">
+              <span class="product-tag">Whole</span>
+              <span class="product-tag">Powder</span>
+              <span class="product-tag">Stemless</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img product-img-2">🟡<div class="product-badge">Popular</div></div>
+          <div class="product-body">
+            <h3>Turmeric Finger & Powder</h3>
+            <p>High curcumin (3–5%) Erode & Nizamabad turmeric. Bright golden colour, organic certified available.</p>
+            <div class="product-tags">
+              <span class="product-tag">Finger</span>
+              <span class="product-tag">Powder</span>
+              <span class="product-tag">Organic</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img product-img-3">🫚</div>
+          <div class="product-body">
+            <h3>Cumin (Jeera)</h3>
+            <p>Premium Rajasthan & Gujarat cumin seeds — strong aroma, uniform sizing, moisture controlled.</p>
+            <div class="product-tags">
+              <span class="product-tag">Whole Seeds</span>
+              <span class="product-tag">Powder</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img product-img-4">🌿</div>
+          <div class="product-body">
+            <h3>Coriander Seeds</h3>
+            <p>Eagle & Scooter varieties from Rajasthan. Clean, sorted, high oil content for flavour & aroma.</p>
+            <div class="product-tags">
+              <span class="product-tag">Whole</span>
+              <span class="product-tag">Split</span>
+              <span class="product-tag">Powder</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img product-img-5">🌾</div>
+          <div class="product-body">
+            <h3>Basmati & Non-Basmati Rice</h3>
+            <p>1121, Pusa, Sella varieties. Long-grain, aromatic, aged rice processed in modern mills.</p>
+            <div class="product-tags">
+              <span class="product-tag">Basmati</span>
+              <span class="product-tag">Parboiled</span>
+              <span class="product-tag">White/Brown</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img product-img-6">🫘</div>
+          <div class="product-body">
+            <h3>Pulses & Lentils</h3>
+            <p>Toor Dal, Moong, Masoor, Chana — machine cleaned, sortex graded, polished & unpolished options.</p>
+            <div class="product-tags">
+              <span class="product-tag">Toor Dal</span>
+              <span class="product-tag">Moong</span>
+              <span class="product-tag">Chana</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why">
+    <div class="max-w">
+      <span class="section-tag">Why Choose Us</span>
+      <h2 class="section-title">Your Reliable Export Partner</h2>
+      <p class="section-desc">We go beyond just selling products — we build long-term partnerships built on trust, quality, and transparency.</p>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🏆</div>
+          <h3>Certified Quality</h3>
+          <p>FSSAI, APEDA, ISO compliant. Every shipment tested and certified before dispatch.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🌍</div>
+          <h3>Global Reach</h3>
+          <p>Successfully supplying to 30+ countries across Middle East, Europe, USA, and Southeast Asia.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">💰</div>
+          <h3>Competitive Pricing</h3>
+          <p>Direct farm sourcing eliminates middlemen — you get premium quality at the best market price.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🚢</div>
+          <h3>End-to-End Support</h3>
+          <p>From sample to shipment — we handle documentation, logistics, and customs clearance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="max-w">
+      <span class="section-tag">How It Works</span>
+      <h2 class="section-title">Simple 5-Step Export Process</h2>
+      <p class="section-desc">We make international procurement easy, transparent, and stress-free.</p>
+      <div class="process-steps">
+        <div class="process-step active">
+          <div class="step-num">1</div>
+          <h4>Inquiry</h4>
+          <p>Share your product requirements & quantity via WhatsApp or our form</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h4>Quotation</h4>
+          <p>We send competitive pricing with product specifications within 24 hours</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h4>Sample</h4>
+          <p>Free sample dispatched for quality approval before bulk order</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h4>Order & Pack</h4>
+          <p>Custom packaging, labelling and quality inspection of your order</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">5</div>
+          <h4>Shipment</h4>
+          <p>Secure dispatch with all export documents — BL, COO, Phytosanitary</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / INQUIRY FORM -->
+  <section id="contact">
+    <div class="max-w contact-wrap">
+      <div class="contact-info">
+        <span class="section-tag">Contact Us</span>
+        <h2>Ready to Start Your Import Journey?</h2>
+        <p>Fill the inquiry form or reach us directly on WhatsApp. We respond within 2 hours on business days.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📱</div>
+          <div class="contact-detail-text">
+            <h4>WhatsApp / Call</h4>
+            <p>+91 86796 61174</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📧</div>
+          <div class="contact-detail-text">
+            <h4>Email</h4>
+            <p>info@marettoexports.in</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🌐</div>
+          <div class="contact-detail-text">
+            <h4>Website</h4>
+            <p>www.marettoexports.in</p>
+          </div>
+        </div>
+        <div style="margin-top:30px;">
+          <a href="https://wa.me/918679661174?text=Hello%20Maretto%20Exports%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
+             target="_blank"
+             style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:white;padding:13px 24px;border-radius:8px;text-decoration:none;font-weight:700;font-size:0.95rem;box-shadow:0 4px 16px rgba(37,211,102,0.4);">
+            <svg width="20" height="20" viewBox="0 0 32 32" fill="white"><path d="M16.002 2.667C8.636 2.667 2.667 8.636 2.667 16c0 2.367.627 4.587 1.72 6.507L2.667 29.333l6.96-1.693A13.26 13.26 0 0 0 16.002 29.333C23.368 29.333 29.333 23.364 29.333 16S23.368 2.667 16.002 2.667zm0 2.4c5.96 0 10.931 4.96 10.931 10.933 0 5.96-4.971 10.933-10.931 10.933a10.87 10.87 0 0 1-5.507-1.493l-.387-.227-4.013.973.987-3.907-.253-.4A10.867 10.867 0 0 1 5.071 16C5.071 10.04 10.04 5.067 16.002 5.067zm-3.2 5.2c-.24 0-.627.093-.96.453-.333.36-1.267 1.24-1.267 3.027s1.293 3.507 1.48 3.747c.173.24 2.493 3.907 6.107 5.32 3.013 1.187 3.613.96 4.267.907.653-.053 2.107-.853 2.4-1.68.293-.827.293-1.533.213-1.68-.08-.147-.307-.24-.64-.413-.333-.173-1.973-.973-2.28-1.08-.307-.107-.52-.16-.747.16-.213.32-.853 1.08-1.053 1.293-.187.213-.387.24-.72.08-.333-.173-1.413-.52-2.693-1.653-1-.893-1.667-1.987-1.867-2.32-.187-.333-.013-.507.147-.68.147-.16.333-.413.493-.613.16-.2.213-.347.32-.573.107-.24.053-.44-.027-.613-.08-.173-.72-1.747-1-2.4-.28-.653-.547-.547-.747-.56a13.6 13.6 0 0 0-.627-.013z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-box">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--dark);margin-bottom:24px;">📋 Send an Inquiry</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="f-name" placeholder="Your Name" />
+          </div>
+          <div class="form-group">
+            <label>Company Name</label>
+            <input type="text" id="f-company" placeholder="Company (optional)" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone / WhatsApp *</label>
+            <input type="tel" id="f-phone" placeholder="+1 234 567 8900" />
+          </div>
+          <div class="form-group">
+            <label>Country *</label>
+            <input type="text" id="f-country" placeholder="Your Country" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Product Required *</label>
+          <select id="f-product">
+            <option value="">-- Select Product --</option>
+            <option>Red Chilli / Chilli Powder</option>
+            <option>Turmeric Finger / Powder</option>
+            <option>Cumin Seeds (Jeera)</option>
+            <option>Coriander Seeds / Powder</option>
+            <option>Basmati Rice</option>
+            <option>Non-Basmati Rice</option>
+            <option>Pulses & Lentils</option>
+            <option>Other / Multiple Products</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Quantity & Additional Details</label>
+          <textarea id="f-msg" placeholder="e.g. 5 MT Red Chilli, Guntur variety, 25kg bags, CIF Dubai..."></textarea>
+        </div>
+        <button class="form-submit" onclick="sendInquiry()">
+          <svg viewBox="0 0 32 32"><path d="M16.002 2.667C8.636 2.667 2.667 8.636 2.667 16c0 2.367.627 4.587 1.72 6.507L2.667 29.333l6.96-1.693A13.26 13.26 0 0 0 16.002 29.333C23.368 29.333 29.333 23.364 29.333 16S23.368 2.667 16.002 2.667zm0 2.4c5.96 0 10.931 4.96 10.931 10.933 0 5.96-4.971 10.933-10.931 10.933a10.87 10.87 0 0 1-5.507-1.493l-.387-.227-4.013.973.987-3.907-.253-.4A10.867 10.867 0 0 1 5.071 16C5.071 10.04 10.04 5.067 16.002 5.067zm-3.2 5.2c-.24 0-.627.093-.96.453-.333.36-1.267 1.24-1.267 3.027s1.293 3.507 1.48 3.747c.173.24 2.493 3.907 6.107 5.32 3.013 1.187 3.613.96 4.267.907.653-.053 2.107-.853 2.4-1.68.293-.827.293-1.533.213-1.68-.08-.147-.307-.24-.64-.413-.333-.173-1.973-.973-2.28-1.08-.307-.107-.52-.16-.747.16-.213.32-.853 1.08-1.053 1.293-.187.213-.387.24-.72.08-.333-.173-1.413-.52-2.693-1.653-1-.893-1.667-1.987-1.867-2.32-.187-.333-.013-.507.147-.68.147-.16.333-.413.493-.613.16-.2.213-.347.32-.573.107-.24.053-.44-.027-.613-.08-.173-.72-1.747-1-2.4-.28-.653-.547-.547-.747-.56a13.6 13.6 0 0 0-.627-.013z"/></svg>
+          Send via WhatsApp
+        </button>
+        <p class="form-note">📲 Clicking above will open WhatsApp with your inquiry pre-filled</p>
+        <div class="success-msg" id="successMsg">✅ Redirecting to WhatsApp… Thank you for your inquiry!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="nav-logo-icon">
+            <svg viewBox="0 0 24 24"><path d="M17,8C8,10,5.9,16.17,3.82,21.34L5.71,22l1-2.3A4.49,4.49,0,0,0,8,20C19,20,22,3,22,3,21,5,14,5.25,9,6.25S2,11.5,2,13.5a6.22,6.22,0,0,0,.35,2L4,14.5C5,10,17,8,17,8Z"/></svg>
+          </div>
+          <span class="nav-logo-text">Maretto<span style="color:var(--gold-lt)">Exports</span></span>
+        </div>
+        <p>Premium agricultural products & spices exported from India to the world. Trusted by 500+ global buyers since 2009.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#products">Red Chilli</a></li>
+          <li><a href="#products">Turmeric</a></li>
+          <li><a href="#products">Cumin Seeds</a></li>
+          <li><a href="#products">Coriander</a></li>
+          <li><a href="#products">Basmati Rice</a></li>
+          <li><a href="#products">Pulses & Lentils</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#process">Export Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://wa.me/918679661174">📱 +91 86796 61174</a></li>
+          <li><a href="mailto:info@marettoexports.in">📧 info@marettoexports.in</a></li>
+          <li><a href="#">🌐 marettoexports.in</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Maretto Exports. All rights reserved.</p>
+      <div class="certifications">
+        <span class="cert-badge">FSSAI</span>
+        <span class="cert-badge">APEDA</span>
+        <span class="cert-badge">ISO</span>
+        <span class="cert-badge">IEC</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT BUTTON -->
+  <div class="wa-float" id="waFloat">
+    <div class="wa-tooltip">💬 Chat with us!</div>
+    <a class="wa-btn"
+       href="https://wa.me/918679661174?text=Hello%20Maretto%20Exports%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
+       target="_blank">
+      <svg viewBox="0 0 32 32"><path d="M16.002 2.667C8.636 2.667 2.667 8.636 2.667 16c0 2.367.627 4.587 1.72 6.507L2.667 29.333l6.96-1.693A13.26 13.26 0 0 0 16.002 29.333C23.368 29.333 29.333 23.364 29.333 16S23.368 2.667 16.002 2.667zm0 2.4c5.96 0 10.931 4.96 10.931 10.933 0 5.96-4.971 10.933-10.931 10.933a10.87 10.87 0 0 1-5.507-1.493l-.387-.227-4.013.973.987-3.907-.253-.4A10.867 10.867 0 0 1 5.071 16C5.071 10.04 10.04 5.067 16.002 5.067zm-3.2 5.2c-.24 0-.627.093-.96.453-.333.36-1.267 1.24-1.267 3.027s1.293 3.507 1.48 3.747c.173.24 2.493 3.907 6.107 5.32 3.013 1.187 3.613.96 4.267.907.653-.053 2.107-.853 2.4-1.68.293-.827.293-1.533.213-1.68-.08-.147-.307-.24-.64-.413-.333-.173-1.973-.973-2.28-1.08-.307-.107-.52-.16-.747.16-.213.32-.853 1.08-1.053 1.293-.187.213-.387.24-.72.08-.333-.173-1.413-.52-2.693-1.653-1-.893-1.667-1.987-1.867-2.32-.187-.333-.013-.507.147-.68.147-.16.333-.413.493-.613.16-.2.213-.347.32-.573.107-.24.053-.44-.027-.613-.08-.173-.72-1.747-1-2.4-.28-.653-.547-.547-.747-.56a13.6 13.6 0 0 0-.627-.013z"/></svg>
+      <span class="wa-dot"></span>
+    </a>
+  </div>
+
+  <script>
+    // Auto tooltip
+    const wf = document.getElementById('waFloat');
+    setTimeout(() => { wf.classList.add('show'); setTimeout(() => wf.classList.remove('show'), 3500); }, 2000);
+
+    // Mobile menu
+    function toggleMenu() {
+      const nl = document.querySelector('.nav-links');
+      if(nl.style.display === 'flex') {
+        nl.style.display = '';
+      } else {
+        nl.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:white;padding:20px 5%;gap:16px;box-shadow:0 8px 24px rgba(0,0,0,0.1);z-index:999;';
+      }
+    }
+
+    // Inquiry form → WhatsApp
+    function sendInquiry() {
+      const name    = document.getElementById('f-name').value.trim();
+      const company = document.getElementById('f-company').value.trim();
+      const phone   = document.getElementById('f-phone').value.trim();
+      const country = document.getElementById('f-country').value.trim();
+      const product = document.getElementById('f-product').value;
+      const msg     = document.getElementById('f-msg').value.trim();
+
+      if(!name || !phone || !country || !product) {
+        alert('Please fill in all required fields (Name, Phone, Country, Product).');
+        return;
+      }
+
+      const text = [
+        `🌿 *New Inquiry – Maretto Exports*`,
+        ``,
+        `👤 *Name:* ${name}`,
+        company ? `🏢 *Company:* ${company}` : '',
+        `📱 *Phone:* ${phone}`,
+        `🌍 *Country:* ${country}`,
+        `📦 *Product:* ${product}`,
+        msg ? `📝 *Details:* ${msg}` : '',
+        ``,
+        `_Sent from marettoexports.in_`
+      ].filter(Boolean).join('\n');
+
+      document.getElementById('successMsg').style.display = 'block';
+      setTimeout(() => {
+        window.open(`https://wa.me/918679661174?text=${encodeURIComponent(text)}`, '_blank');
+      }, 600);
+    }
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('fade-up'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.product-card, .why-card, .process-step, .about-feat').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
 
